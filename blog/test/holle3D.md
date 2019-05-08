@@ -1,5 +1,22 @@
 # holle3D 代码详解 (zh)
 
+####   顶点着色
+
+        // Vertex shader   顶点着色
+        const vSrc = `
+            attribute vec4 vPos;
+    
+            uniform mat4 mvMat;
+            uniform mat4 pMat;
+    
+            void main() {
+              gl_Position = pMat * mvMat * vPos;
+            }
+    
+            `;
++ mvMat ,pMat  分别为 ProjectionMatrix  和  ModelViewMatrix；
++ 这种简化命名的风格突然想起了五年前学习MFC,吕鑫老师说过的一段话：程序是简单而美好的，命名上没必要写完整的英文;        
+
 #####  片元着色
 
      // Fragment shader  片元着色
