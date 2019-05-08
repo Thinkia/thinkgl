@@ -7,5 +7,6 @@
 
 + 后期的话，我希望thinkgl 是一个轻量灵活的webgl开发工具，同时也是webgl进阶学习的一个工程;  
 
++ thinkgl 目前主要是为了重构公司built-in 项目子工程 （ VR看房 ） 编写 函数库；
 
 ##### webgl -- en
