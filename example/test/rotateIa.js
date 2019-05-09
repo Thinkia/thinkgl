@@ -81,8 +81,8 @@ function main() {
 
     function render() {
 
-        // 绕 [1,0,0]向量  每一帧 旋转 1度       60 f/s
-        ia.action.view.rotate( [ 1,0,0 ],1*Math.PI/180 );
+        // 绕 [0,1,0]向量  每一帧 旋转 1度       60 f/s
+        ia.action.view.rotate( [ 0,1,0 ],1*Math.PI/180 );
 
         helloIaWorld( gl , programInfo, buffers ,ia );
 
@@ -101,14 +101,14 @@ function main() {
 
         gl.bindBuffer( gl.ARRAY_BUFFER,positionBuffer );
 
-        // 绘制顶点   梯形
+        // 绘制顶点   正方形
 
 
         const positions = [
             1.0,  1.0,
             -1.0,  1.0,
-            2.0, -1.0,
-            -2.0, -1.0,
+            1.0, -1.0,
+            -1.0, -1.0,
 
         ]
 
@@ -118,9 +118,9 @@ function main() {
         const  colors = [
 
             1.0,  0.0,  0.0,  1.0,    // red
-            1.0,  0.0,  0.0,  1.0,    // red
+            0.0,  1.0,  0.0,  1.0,    // green
             0.0,  0.0,  1.0,  1.0,    // blue
-            0.0,  0.0,  1.0,  1.0,    // blue
+            1.0,  1.0,  1.0,  1.0,    // white
             
         ]
 

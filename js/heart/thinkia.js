@@ -103,16 +103,18 @@
 
                         let b00 = normaVec3[0] * normaVec3[0] * t + c ,               b01 = normaVec3[1] * normaVec3[0] * t + normaVec3[2] *s ,      b02 = normaVec3[2] *normaVec3[0] *t - normaVec3[1] * s ,
                             b10 = normaVec3[0] * normaVec3[1] * t - normaVec3[2] *s , b11 = normaVec3[1] * normaVec3[1] * t + c,                     b12 = normaVec3[2] *normaVec3[1] *t + normaVec3[0] * s ,
-                            b20 = normaVec3[0] * normaVec3[2] * t  ,                  b21 = normaVec3[1] * normaVec3[2] * t - normaVec3[0] *s,       b22 = normaVec3[2] *normaVec3[2] *t  + c;
+                            b20 = normaVec3[0] * normaVec3[2] * t + normaVec3[1] *s , b21 = normaVec3[1] * normaVec3[2] * t - normaVec3[0] *s,       b22 = normaVec3[2] *normaVec3[2] *t  + c;
 
                         mat4[0] = a00 * b00 + a10 * b01 + a20 * b02;
                         mat4[1] = a01 * b00 + a11 * b01 + a21 * b02;
                         mat4[2] = a02 * b00 + a12 * b01 + a22 * b02;
                         mat4[3] = a03 * b00 + a13 * b01 + a23 * b02;
+
                         mat4[4] = a00 * b10 + a10 * b11 + a20 * b12;
                         mat4[5] = a01 * b10 + a11 * b11 + a21 * b12;
                         mat4[6] = a02 * b10 + a12 * b11 + a22 * b12;
                         mat4[7] = a03 * b10 + a13 * b11 + a23 * b12;
+
                         mat4[8] = a00 * b20 + a10 * b21 + a20 * b22;
                         mat4[9] = a01 * b20 + a11 * b21 + a21 * b22;
                         mat4[10] = a02 * b20 + a12 * b21 + a22 * b22;
