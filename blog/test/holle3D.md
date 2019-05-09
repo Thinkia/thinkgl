@@ -4,17 +4,17 @@
 
         // Vertex shader   顶点着色
         const vSrc = `
-            attribute vec4 vPos;
+            attribute vec4 avPos;
     
-            uniform mat4 mvMat;
-            uniform mat4 pMat;
+            uniform mat4 umvMat;
+            uniform mat4 upMat;
     
             void main() {
-              gl_Position = pMat * mvMat * vPos;
+              gl_Position = upMat * umvMat * avPos;
             }
     
             `;
-+ mvMat ,pMat  分别为 ProjectionMatrix  和  ModelViewMatrix；
++ umvMat ,upMat  分别为uniform类型的 投影矩阵  和  mv矩阵；
 + 这种简化命名的风格突然想起了五年前学习MFC,吕鑫老师说过的一段话：程序是简单而美好的，命名上没必要写完整的英文;        
 
 #####  片元着色

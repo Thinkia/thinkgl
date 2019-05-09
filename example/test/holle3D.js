@@ -27,13 +27,13 @@ function main() {
 
     // Vertex shader   顶点着色
     const vSrc = `
-        attribute vec4 vPos;
+        attribute vec4 avPos;
 
-        uniform mat4 mvMat;
-        uniform mat4 pMat;
+        uniform mat4 umvMat;
+        uniform mat4 upMat;
 
         void main() {
-          gl_Position = pMat * mvMat * vPos;
+          gl_Position = upMat * umvMat * avPos;
         }
 
         `;
@@ -47,18 +47,18 @@ function main() {
 
     //  初始化着色程序，以及建立顶点等等
 
-    const shaderProgram = initThreeWorld( gl, vSrc, fSrc );
+    const shaderProgram = initIaWorld( gl, vSrc, fSrc );
 
     // 着色程序基本属性
 
     const programInfo = {
         program: shaderProgram,
         attribLocations: {
-            vertexPosition: gl.getAttribLocation( shaderProgram, 'vPos' ),
+            vertexPosition: gl.getAttribLocation( shaderProgram, 'avPos' ),
         },
         uniformLocations: {
-            projectionMatrix: gl.getUniformLocation( shaderProgram, 'pMat' ),
-            modelViewMatrix: gl.getUniformLocation( shaderProgram, 'mvMat' ),
+            projectionMatrix: gl.getUniformLocation( shaderProgram, 'upMat' ),
+            modelViewMatrix: gl.getUniformLocation( shaderProgram, 'umvMat' ),
         },
     };
 
@@ -68,7 +68,7 @@ function main() {
 
     // 绘制并显示图像
 
-    helloThreeWorld( gl, programInfo, buffers )
+    helloIaWorld( gl, programInfo, buffers )
 
 }
 
@@ -105,7 +105,7 @@ function initBuffers( gl ) {
 
 // 绘制并显示三维世界
 
-function helloThreeWorld( gl , programInfo, buffers ) {
+function helloIaWorld( gl , programInfo, buffers ) {
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
     gl.clearDepth(1.0);                 // 清除所有图层
@@ -135,12 +135,12 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 
     ia.action.view.jump( [0,0,-5] );
 
-    // 绕向量[-2,0,0] 自转45度
-    ia.action.view.rotate( [-2,0,0],45*Math.PI/180 );
+    // 绕向量[0,1,0] 自转45度
+    ia.action.view.rotate( [0,1,0],60*Math.PI/180 );
 
-    const pMat = ia.eyes.mat4;
+    const upMat = ia.eyes.mat4;
 
-    const mvMat = ia.view.mat4;
+    const umvMat = ia.view.mat4;
 
 
     // 顶点属性.
@@ -171,11 +171,11 @@ function helloThreeWorld( gl , programInfo, buffers ) {
     gl.uniformMatrix4fv(
         programInfo.uniformLocations.projectionMatrix,
         false,
-        pMat);
+        upMat);
     gl.uniformMatrix4fv(
         programInfo.uniformLocations.modelViewMatrix,
         false,
-        mvMat);
+        umvMat);
 
     {
         const offset = 0;
@@ -187,7 +187,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 }
 
 // 准备着色
-function initThreeWorld( gl, vSrc, fSrc  ) {
+function initIaWorld( gl, vSrc, fSrc  ) {
 
     const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vSrc);
     const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fSrc);
