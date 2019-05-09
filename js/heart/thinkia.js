@@ -38,7 +38,8 @@
         ia.action = {
 
                 eyes:{
-
+                    // https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl/28301213#28301213
+                    // http://www.songho.ca/opengl/gl_projectionmatrix.html
                     openEyes:function(
                                             fov = 50 * Math.PI/180,
                                             near = 0.1 ,
@@ -46,7 +47,7 @@
                                             aspect = window.innerHeight/window.innerWidth
                                         ) {
 
-                        if(ia.eyes.isOpen) return ;
+                        if( ia.eyes.isOpen || !fov || near === far ) return ;
 
                         let mat4 = ia.eyes.mat4;
                         mat4[0] = aspect/Math.tan(fov/2) ;
@@ -59,6 +60,13 @@
                         ia.eyes.isOpen = true;
 
                 },
+                    blink:function (  fov = 50 * Math.PI/180,
+                                       near = 0.1 ,
+                                       far  = 1000.0,
+                                       aspect = window.innerHeight/window.innerWidth ) {
+                        ia.eyes.isOpen =false;
+                        ia.action.eyes.openEyes( fov,near,far,aspect );
+                    }
 
             },
 
@@ -75,7 +83,7 @@
 
                          let  normaVec3 = ia.view.normaVec3;
 
-                         // 是否已经为历史单位向量
+                         // vec is normalized?
 
                          if( normaVec3[0] !== vec[0] || normaVec3[1] !== vec[1] || normaVec3[2] !== vec[2] )
                          {
@@ -90,7 +98,7 @@
 
                          }
 
-                        // 矩阵变换
+                        // rotate
 
                         let  s = Math.sin( rad );
                         let  c = Math.cos( rad );

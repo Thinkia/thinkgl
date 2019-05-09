@@ -4,7 +4,8 @@
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/example/test/helloIa.js" afterPath="$PROJECT_DIR$/example/test/helloIa.js" />
-      <change beforePath="$PROJECT_DIR$/example/thinkia.css" afterPath="$PROJECT_DIR$/example/thinkia.css" />
+      <change beforePath="$PROJECT_DIR$/example/test/rotateIa.js" afterPath="$PROJECT_DIR$/example/test/rotateIa.js" />
+      <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +35,8 @@
       <file leaf-file-name="thinkia.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+            <state relative-caret-position="161">
+              <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -61,21 +62,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rotateIa.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rotateIa.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
-              <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+            <state relative-caret-position="2862">
+              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helloIa.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="helloIa.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="143" column="30" lean-forward="false" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding>
                 <element signature="n#!!block;n#initIaWorld#0" expanded="false" />
                 <element signature="n#!!block;n#loadShader#0" expanded="false" />
@@ -157,9 +158,9 @@
         <option value="$PROJECT_DIR$/example/test/rotateIa.html" />
         <option value="$PROJECT_DIR$/example/test/holleIa.html" />
         <option value="$PROJECT_DIR$/example/test/helloIa.html" />
-        <option value="$PROJECT_DIR$/example/test/rotateIa.js" />
-        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
         <option value="$PROJECT_DIR$/example/thinkia.css" />
+        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
+        <option value="$PROJECT_DIR$/example/test/rotateIa.js" />
         <option value="$PROJECT_DIR$/example/test/helloIa.js" />
       </list>
     </option>
@@ -176,9 +177,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-182" />
-    <option name="y" value="127" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -302,12 +303,12 @@
       <updated>1557281497862</updated>
       <workItem from="1557281499381" duration="25927000" />
       <workItem from="1557364130466" duration="2249000" />
-      <workItem from="1557368927124" duration="10085000" />
+      <workItem from="1557368927124" duration="13936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38261000" />
+    <option name="totallyTimeSpent" value="42112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,8 +320,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15331928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -552,10 +552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
+    <entry file="file://$PROJECT_DIR$/example/test/helloIa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+        <state relative-caret-position="270">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -568,30 +568,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/helloIa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        <state relative-caret-position="161">
+          <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="143" column="30" lean-forward="false" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
           <folding>
             <element signature="n#!!block;n#initIaWorld#0" expanded="false" />
             <element signature="n#!!block;n#loadShader#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2862">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

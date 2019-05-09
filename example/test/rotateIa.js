@@ -1,4 +1,6 @@
 /**
+ * Ia's rotate
+ *
  * thikia 2019.5.9
  *
  * 该js 主要演示旋转动画和简单着色传值
@@ -15,7 +17,7 @@ function main() {
     const gl = canvas.getContext('webgl2');
 
     if(!gl){
-        console.error('您的机器或者浏览器不支持webgl2');
+        console.error('Unable to initialize WebGL. Your browser or machine may not support webgl2.');
         return ;
     }
 
@@ -102,7 +104,6 @@ function main() {
         gl.bindBuffer( gl.ARRAY_BUFFER,positionBuffer );
 
         // 绘制顶点   正方形
-
 
         const positions = [
             1.0,  1.0,
