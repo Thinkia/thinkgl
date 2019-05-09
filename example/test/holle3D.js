@@ -5,10 +5,10 @@ function main() {
 
     // 获取webgl 上下文
 
-    let gl = canvas.getContext('webgl');
+    let gl = canvas.getContext('webgl2');
 
     if (!gl) {
-        console.error('Unable to initialize WebGL. Your browser or machine may not support it.')
+        console.error('Unable to initialize WebGL. Your browser or machine may not support webgl2.')
         return;
     }
 
@@ -174,7 +174,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 
 }
 
-
+// 准备着色
 function initThreeWorld( gl, vSrc, fSrc  ) {
 
     const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vSrc);
@@ -199,6 +199,7 @@ function initThreeWorld( gl, vSrc, fSrc  ) {
 
 }
 
+// 加入着色资源
 function loadShader(gl, type, source) {
     const shader = gl.createShader(type);
 
