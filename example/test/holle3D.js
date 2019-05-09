@@ -1,10 +1,19 @@
+/**
+ * thikia  2019.5.9
+ *
+ * 该js主要演示webgl基本片元着色，顶点绘制;
+ *
+ * 如何使用thinkia.js , 做简单mat4的平移旋转变换;
+ *
+ */
+
 main();
 
 function main() {
+
     let canvas = document.querySelector('#glcanvas');
 
     // 获取webgl 上下文
-
     let gl = canvas.getContext('webgl2');
 
     if (!gl) {
@@ -38,18 +47,18 @@ function main() {
 
     //  初始化着色程序，以及建立顶点等等
 
-    const shaderProgram = initThreeWorld(gl, vSrc, fSrc);
+    const shaderProgram = initThreeWorld( gl, vSrc, fSrc );
 
     // 着色程序基本属性
 
     const programInfo = {
         program: shaderProgram,
         attribLocations: {
-            vertexPosition: gl.getAttribLocation(shaderProgram, 'vPos'),
+            vertexPosition: gl.getAttribLocation( shaderProgram, 'vPos' ),
         },
         uniformLocations: {
-            projectionMatrix: gl.getUniformLocation(shaderProgram, 'pMat'),
-            modelViewMatrix: gl.getUniformLocation(shaderProgram, 'mvMat'),
+            projectionMatrix: gl.getUniformLocation( shaderProgram, 'pMat' ),
+            modelViewMatrix: gl.getUniformLocation( shaderProgram, 'mvMat' ),
         },
     };
 
@@ -71,7 +80,7 @@ function initBuffers( gl ) {
 
     // 使用positionBuffer 作为应用缓冲区
 
-    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bindBuffer( gl.ARRAY_BUFFER, positionBuffer );
 
     // 顶点数组. 绘制顺序为 [0,1,2]  [1,2,3]  两个三角形 组成正方形
 
@@ -85,9 +94,9 @@ function initBuffers( gl ) {
     // 创建Float32 ，填充当前缓冲区
 
 
-    gl.bufferData(gl.ARRAY_BUFFER,
+    gl.bufferData( gl.ARRAY_BUFFER,
         new Float32Array(positions),
-        gl.STATIC_DRAW);
+        gl.STATIC_DRAW );
 
     return {
         position: positionBuffer,
@@ -105,7 +114,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 
     // 清理canvas.
 
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
     /*
 
@@ -124,7 +133,10 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 
     // 观察的矩形 向 z轴的反方向跳跃了5个距离;
 
-    ia.action.view.jump([0,0,-5]);
+    ia.action.view.jump( [0,0,-5] );
+
+    // 绕向量[-2,0,0] 自转45度
+    ia.action.view.rotate( [-2,0,0],45*Math.PI/180 );
 
     const pMat = ia.eyes.mat4;
 
@@ -138,7 +150,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
         const normalize = false;
         const stride = 0;
         const offset = 0;
-        gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+        gl.bindBuffer( gl.ARRAY_BUFFER, buffers.position );
         gl.vertexAttribPointer(
             programInfo.attribLocations.vertexPosition,
             numComponents,
@@ -152,7 +164,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
 
     // 使用我们自定义的着色属性
 
-    gl.useProgram(programInfo.program);
+    gl.useProgram( programInfo.program );
 
     // 设置 uniforms
 
@@ -169,7 +181,7 @@ function helloThreeWorld( gl , programInfo, buffers ) {
         const offset = 0;
         // 顶点数量
         const vertexCount = 4;
-        gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+        gl.drawArrays( gl.TRIANGLE_STRIP, offset, vertexCount );
     }
 
 }
