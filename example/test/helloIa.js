@@ -136,10 +136,12 @@ function helloIaWorld( gl , programInfo, buffers ) {
     ia.action.view.jump( [0,0,-5] );
 
     // 绕向量[0,1,0] 自转45度
-    ia.action.view.rotate( [0,1,0],60*Math.PI/180 );
+    ia.action.view.rotate( [0,1,0],45*Math.PI/180 );
 
+    // u :uniform   pMat: 投影矩阵
     const upMat = ia.eyes.mat4;
 
+    // u:uniform  mvMat : mv矩阵
     const umvMat = ia.view.mat4;
 
 
@@ -211,7 +213,7 @@ function initIaWorld( gl, vSrc, fSrc  ) {
 
 }
 
-// 加入着色资源
+// 载入着色资源
 function loadShader(gl, type, source) {
     const shader = gl.createShader(type);
 
