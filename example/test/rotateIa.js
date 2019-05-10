@@ -83,8 +83,10 @@ function main() {
 
     function render() {
 
-        // 绕 [0,1,0]向量  每一帧 旋转 1度       60 f/s
+        // view 绕 [0,1,0]向量  每一帧 旋转 1度       60 f/s
         ia.action.view.rotate( [ 0,1,0 ],1*Math.PI/180 );
+
+        //  try   ia.action.eyes.rotate( [ 0,1,0 ],1*Math.PI/180 );
 
         helloIaWorld( gl , programInfo, buffers ,ia );
 

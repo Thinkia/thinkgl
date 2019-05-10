@@ -12,7 +12,7 @@
 
         // eyes
         ia.eyes = new Object();
-
+        // pMat
         ia.eyes.mat4=[
                 1, 0, 0, 0,
                 0, 1, 0, 0,
@@ -22,9 +22,10 @@
 
         ia.eyes.isOpen = false;
 
-        // view
+        //
         ia.view = new Object();
 
+        // mvMat
         ia.view.mat4=[
 
             1, 0, 0, 0,
@@ -39,7 +40,8 @@
         ia.thinkMath = {
 
             mat4:{
-                 jump: function (mat4,vec) {
+                 // translation
+                 jump: function ( mat4,vec ) {
                          for(let i =0 ;i<4;i++)
                              mat4[12+i] = mat4[i] * vec[0] + mat4[i+4] * vec[1] + mat4[i+8] * vec[2] + mat4[i+12]
                  } ,
@@ -135,18 +137,28 @@
                                        aspect = window.innerHeight/window.innerWidth ) {
                         ia.eyes.isOpen =false;
                         ia.action.eyes.openEyes( fov,near,far,aspect );
+                    },
+
+                    rotate:function ( vec , rad ) {
+
+                        let mat4 = ia.eyes.mat4;
+
+                        return ia.thinkMath.mat4.rotate( mat4 , vec , rad );
+
                     }
 
             },
 
                 view:{
+
                     jump:function ( vec ) {
 
                         let mat4 = ia.view.mat4;
 
                         return  ia.thinkMath.mat4.jump( mat4 , vec );
 
-                },
+                    },
+
                     rotate:function ( vec , rad ) {
 
                        let mat4 = ia.view.mat4;
@@ -155,11 +167,12 @@
 
                     },
 
-            }
+            },
 
         };
 
         return ia;
+
     }
 
 
