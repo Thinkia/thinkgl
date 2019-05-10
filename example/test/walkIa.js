@@ -30,15 +30,15 @@ function main() {
         uniform mat4 umvMat;
         uniform mat4 upMat;
         
-        varying lowp vec4 vColor;
+        varying vec4 vColor;
         
         void main(void) {
         
-            gl_Position = upMat4 * umvMat4 * avPos;
+            gl_Position = upMat * umvMat * avPos;
             vColor = avColor;
         
         }
-    
+   
     `
 
     // Fragment shader
@@ -65,7 +65,7 @@ function main() {
             attribLocations : {
 
                 vertexPosition : gl.getAttribLocation( shaderProgram, 'avPos' ),
-                vertexColor  : gl.getAttribLocation( shaderProgram , 'vColor'),
+                vertexColor  : gl.getAttribLocation( shaderProgram , 'avColor'),
 
             },
 
@@ -81,10 +81,19 @@ function main() {
     // init Buffers
     const  buffers = initBuffers( gl );
 
+    // Ia
+
+    let ia = Ia();
+
+    // 初始化 透视矩阵
+    ia.action.eyes.openEyes();
+
+    ia.action.view.jump( [ 0,0,-5 ]);
 
     function render() {
 
-
+        // walk [ -3,0,0 ]  120 frame  = 2s
+        ia.action.view.walk( [ -3,0,0 ] , 120 );
         helloIaWorld( gl , programInfo , buffers, ia );
 
         requestAnimationFrame( render );
@@ -146,8 +155,8 @@ function main() {
 
         // ia  mat4
 
-        let upMat = ia.eyes.mat4;
-        let umvMat = ia.view.mat4;
+        const upMat = ia.eyes.mat4;
+        const umvMat = ia.view.mat4;
 
 
         // buffer avPos
@@ -187,7 +196,6 @@ function main() {
             gl.bindBuffer( gl.ARRAY_BUFFER, buffers.color );
 
             gl.vertexAttribPointer (
-
                 programInfo.attribLocations.vertexColor ,
                 numComponents,
                 type,
@@ -198,19 +206,21 @@ function main() {
 
             gl.enableVertexAttribArray ( programInfo.attribLocations.vertexColor );
 
+            // use Program
+
+            gl.useProgram( programInfo.program );
+
             //  set the shader uniforms
 
             gl.uniformMatrix4fv(
                 programInfo.uniformLocations.projectionMatrix,
                 false,
-                upMat
-            );
+                upMat);
 
             gl.uniformMatrix4fv(
                 programInfo.uniformLocations.modelViewMatrix,
                 false,
-                umvMat
-            );
+                umvMat);
 
             {
                 const offset = 0;
@@ -252,5 +262,20 @@ function main() {
 
     function loadShader( gl, type , src ) {
 
+        const shader = gl.createShader( type ) ;
+
+        gl.shaderSource( shader , src );
+
+        gl.compileShader( shader );
+
+        if( !gl.getShaderParameter( shader , gl.COMPILE_STATUS ))
+        {
+
+            console.error( ` error: ${gl.getShaderInfoLog( shader )}`);
+            gl.deleteShader( shader );
+            return null;
+
+        }
+        return shader ;
 
     }
