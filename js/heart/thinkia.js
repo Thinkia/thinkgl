@@ -35,6 +35,56 @@
 
         ];
 
+        // ia's soul
+
+        ia.soul = {
+
+            // tween
+            time:{
+
+                oriTimer:0,
+                oriStart:'',
+                oriEnd:'',
+                go:function (  start , end, timer = 120, way =1    ) {
+
+                    switch ( way ){
+
+                        // line
+                        case 1: {
+
+                            if( ia.soul.time.oriTimer > timer ) return ;
+
+                            if( ia.soul.time.oriTimer < 1 )
+                            {
+                                ia.soul.time.oriStart = start ;
+                                ia.soul.time.oriEnd = end;
+                            }
+
+                            for( let i = 0 ;i< start.length;i++ )
+                            {
+                                let startBeta = ia.soul.time.oriStart;
+                                let endBeta = ia.soul.time.oriEnd;
+                                start[i] = startBeta[ i ]  + ia.soul.time.oriTimer * ( endBeta[i] - startBeta[i] ) / timer ;
+                            }
+
+                            ia.soul.time.oriTimer++;
+
+                            break;
+                        }
+
+                        default : console.log( ' dev   ing  ' )
+
+                    }
+
+
+                }
+
+            },
+
+
+
+        };
+
         // thinkMath
 
         ia.thinkMath = {
@@ -156,6 +206,21 @@
                         let mat4 = ia.view.mat4;
 
                         return  ia.thinkMath.mat4.jump( mat4 , vec );
+
+                    },
+
+                    walk:function ( vec , timer ) {
+
+                        let  finalMat4 = [];
+
+                        for( let i =0;i<ia.view.mat4.length;i++)
+                        {
+                            finalMat4[i] = ia.view.mat4[i]
+                        }
+
+                        ia.thinkMath.mat4.jump( finalMat4 , vec );
+
+                        ia.soul.time.go( ia.view.mat4, finalMat4 , timer  ) ;
 
                     },
 
