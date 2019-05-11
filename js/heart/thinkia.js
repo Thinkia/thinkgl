@@ -321,7 +321,13 @@
                        return ia.thinkMath.mat4.rotate( mat4 , vec , rad );
 
                     },
+                    lookAbout:function (  rMat4  ) {
 
+                        let lMat4 = ia.view.mat4;
+
+                        return ia.thinkMath.mat4.multiply( lMat4,rMat4 );
+
+                    }
             },
 
 

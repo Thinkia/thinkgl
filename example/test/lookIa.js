@@ -76,10 +76,17 @@ function main() {
 
     ia.action.view.jump( [ 0,0,-5 ]);
 
-    // add lookIa
+    // add lookIa   rotate view
 
-    let lookAbout = lookIa(canvas,ia );
-    lookAbout.rotate.speed = -1;
+    let lookAbout = lookIa(canvas,ia);
+    lookAbout.rotate.speed = 1.2;
+
+    /*
+            try   ( rotate  eyes  )
+            let lookAbout = lookIa(canvas,ia,2);
+            lookAbout.rotate.speed = -1;
+
+     */
 
     // render
 

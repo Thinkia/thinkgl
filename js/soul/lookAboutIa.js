@@ -5,7 +5,9 @@
  *
  * */
 
- function lookIa( canvas , ia ) {
+ function lookIa( canvas , ia , control =1 ) {
+
+        //  control =1  --> view       control = 2 --> eyes
 
         let  lookAbout = new Object( );
 
@@ -71,7 +73,14 @@
 
                         let rMat4 =  ia.thinkMath.euler.toMat4( ia.eyes.euler );
 
-                        ia.action.eyes.lookAbout( rMat4 );
+                        switch (control){
+
+                            case 1: {ia.action.view.lookAbout( rMat4 ); break;}
+                            case 2: {ia.action.eyes.lookAbout( rMat4 ); break;}
+
+                            default :  console.log( ' dev ing ');
+                        }
+
 
 
                     })
