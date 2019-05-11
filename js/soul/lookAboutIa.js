@@ -50,11 +50,8 @@
 
                     canvas.addEventListener('mousemove',( evt )=>{
 
-
-
                         if( !lookAbout.mouseInfo.isDown )  return ;
 
-                        console.log( 'mouseMove' );
 
                         evt.preventDefault();
 
@@ -70,7 +67,7 @@
                         let y = lookAbout.rotate.speed * distanceY / 200.0 ;
 
 
-                        ia.eyes.euler.cell = [ -y, -x,0 ]
+                        ia.eyes.euler.cell = [ y, x,0 ]
 
                         let rMat4 =  ia.thinkMath.euler.toMat4( ia.eyes.euler );
 
@@ -85,7 +82,6 @@
 
                     canvas.addEventListener( 'mouseup', ()=>{
 
-                        console.log( 'mouseup') ;
                         lookAbout.mouseInfo.isDown = false;
 
                     } )

@@ -79,6 +79,7 @@ function main() {
     // add lookIa
 
     let lookAbout = lookIa(canvas,ia );
+    lookAbout.rotate.speed = -1;
 
     // render
 
