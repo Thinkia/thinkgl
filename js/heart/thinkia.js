@@ -11,29 +11,38 @@
         let ia = new Object();
 
         // eyes
-        ia.eyes = new Object();
-        // pMat
-        ia.eyes.mat4=[
+        ia.eyes ={
+            mat4:[
                 1, 0, 0, 0,
                 0, 1, 0, 0,
                 0, 0, 1, 0,
                 0, 0, 0, 1
-            ];
+            ],
+            euler : {
 
-        ia.eyes.isOpen = false;
+                order:'ZYX',
 
-        //
-        ia.view = new Object();
+                cell:[1,0,0],
 
-        // mvMat
-        ia.view.mat4=[
+            },
+            isOpen : false,
 
-            1, 0, 0, 0,
-            0, 1, 0, 0,
-            0, 0, 1, 0,
-            0, 0, 0, 1
+        }
 
-        ];
+
+        // view
+        ia.view = {
+            // mvMat
+             mat4:[
+                1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1
+            ],
+
+        }
+
+
 
         // ia's soul
 
@@ -77,11 +86,11 @@
                     }
 
 
+                },
+                reTime:function () {
+                    ia.soul.oriTimer = 0;
                 }
-
             },
-
-
 
         };
 
@@ -145,6 +154,80 @@
                     mat4[11] = a03 * b20 + a13 * b21 + a23 * b22;
 
 
+                },
+
+                multiply:function ( lMat4,rMat4  ) {
+
+                    let a11 = lMat4[ 0 ], a12 = lMat4[ 4 ], a13 = lMat4[ 8 ], a14 = lMat4[ 12 ];
+                    let a21 = lMat4[ 1 ], a22 = lMat4[ 5 ], a23 = lMat4[ 9 ], a24 = lMat4[ 13 ];
+                    let a31 = lMat4[ 2 ], a32 = lMat4[ 6 ], a33 = lMat4[ 10 ], a34 = lMat4[ 14 ];
+                    let a41 = lMat4[ 3 ], a42 = lMat4[ 7 ], a43 = lMat4[ 11 ], a44 = lMat4[ 15 ];
+
+                    let b11 = rMat4[ 0 ], b12 = rMat4[ 4 ], b13 = rMat4[ 8 ], b14 = rMat4[ 12 ];
+                    let b21 = rMat4[ 1 ], b22 = rMat4[ 5 ], b23 = rMat4[ 9 ], b24 = rMat4[ 13 ];
+                    let b31 = rMat4[ 2 ], b32 = rMat4[ 6 ], b33 = rMat4[ 10 ], b34 = rMat4[ 14 ];
+                    let b41 = rMat4[ 3 ], b42 = rMat4[ 7 ], b43 = rMat4[ 11 ], b44 = rMat4[ 15 ];
+
+                    lMat4[ 0 ] = a11 * b11 + a12 * b21 + a13 * b31 + a14 * b41;
+                    lMat4[ 4 ] = a11 * b12 + a12 * b22 + a13 * b32 + a14 * b42;
+                    lMat4[ 8 ] = a11 * b13 + a12 * b23 + a13 * b33 + a14 * b43;
+                    lMat4[ 12 ] = a11 * b14 + a12 * b24 + a13 * b34 + a14 * b44;
+
+                    lMat4[ 1 ] = a21 * b11 + a22 * b21 + a23 * b31 + a24 * b41;
+                    lMat4[ 5 ] = a21 * b12 + a22 * b22 + a23 * b32 + a24 * b42;
+                    lMat4[ 9 ] = a21 * b13 + a22 * b23 + a23 * b33 + a24 * b43;
+                    lMat4[ 13 ] = a21 * b14 + a22 * b24 + a23 * b34 + a24 * b44;
+
+                    lMat4[ 2 ] = a31 * b11 + a32 * b21 + a33 * b31 + a34 * b41;
+                    lMat4[ 6 ] = a31 * b12 + a32 * b22 + a33 * b32 + a34 * b42;
+                    lMat4[ 10 ] = a31 * b13 + a32 * b23 + a33 * b33 + a34 * b43;
+                    lMat4[ 14 ] = a31 * b14 + a32 * b24 + a33 * b34 + a34 * b44;
+
+                    lMat4[ 3 ] = a41 * b11 + a42 * b21 + a43 * b31 + a44 * b41;
+                    lMat4[ 7 ] = a41 * b12 + a42 * b22 + a43 * b32 + a44 * b42;
+                    lMat4[ 11 ] = a41 * b13 + a42 * b23 + a43 * b33 + a44 * b43;
+                    lMat4[ 15 ] = a41 * b14 + a42 * b24 + a43 * b34 + a44 * b44;
+
+
+                }
+
+
+            },
+
+            euler:{
+
+                toMat4:function ( euler ) {
+
+                    let mat4 = [
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                    ];
+                    let x = euler.cell[0], y = euler.cell[1], z = euler.cell[2];
+                    let a = Math.cos( x ), b = Math.sin( x );
+                    let c = Math.cos( y ), d = Math.sin( y );
+                    let e = Math.cos( z ), f = Math.sin( z );
+
+
+                    if( euler.order === 'ZYX')
+                    {
+                        let ae = a * e, af = a * f, be = b * e, bf = b * f;
+
+                        mat4[ 0 ] = c * e;
+                        mat4[ 4 ] = be * d - af;
+                        mat4[ 8 ] = ae * d + bf;
+
+                        mat4[ 1 ] = c * f;
+                        mat4[ 5 ] = bf * d + ae;
+                        mat4[ 9 ] = af * d - be;
+
+                        mat4[ 2 ] = - d;
+                        mat4[ 6 ] = b * c;
+                        mat4[ 10 ] = a * c;
+                    }
+
+                   return mat4;
                 }
 
 
@@ -195,6 +278,13 @@
 
                         return ia.thinkMath.mat4.rotate( mat4 , vec , rad );
 
+                    },
+                    lookAbout:function (  rMat4  ) {
+
+                        let lMat4 = ia.eyes.mat4;
+
+                        return ia.thinkMath.mat4.multiply( lMat4,rMat4 );
+
                     }
 
             },
@@ -233,6 +323,8 @@
                     },
 
             },
+
+
 
         };
 
