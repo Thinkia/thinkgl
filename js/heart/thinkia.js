@@ -231,6 +231,49 @@
                 }
 
 
+            },
+
+            vec3:{
+                // 三角形面积
+                triangleArea : function ( pointA,pointB,pointC ) {
+
+                    let area = -1;
+                    let side = [];
+
+                    side[0] = Math.sqrt( Math.pow(pointA[0] -pointB[0],2) +Math.pow(pointA[1] -pointB[1],2) +Math.pow(pointA[2] -pointB[2],2) );
+                    side[1] = Math.sqrt( Math.pow(pointB[0] -pointC[0],2) +Math.pow(pointB[1] -pointC[1],2) +Math.pow(pointB[2] -pointC[2],2) );
+                    side[2] = Math.sqrt( Math.pow(pointC[0] -pointA[0],2) +Math.pow(pointC[1] -pointA[1],2) +Math.pow(pointC[2] -pointA[2],2) );
+                    // 不能构成三角形
+                    if( side[0] +side[1] <= side[2] ||side[1] +side[2] <= side[0] ||side[2] +side[0] <= side[1] )  return area;
+
+                    // 海伦公式： s =sqr(p*(p-a)(p-b)(p-c));
+                    let p = ( side[0]+side[1]+side[2] )/2.0;
+
+                    area = Math.sqrt(p*( p - side[0] )*( p-side[1] )* ( p-side[2] ));
+
+                    return area
+
+                },
+                // 平面方程   Ax+By+Cz+D =0
+                planeEquation:function ( pointA,pointB,pointC ) {
+
+                    let PE= {
+                            A:1,
+                            B:0,
+                            C:0,
+                            D:0,
+                    };
+                    // 待定系数法
+                    PE.A = ( pointC[1] - pointA[1] )*( pointC[2] - pointA[2] ) - ( pointB[2] - pointA[2])*( pointC[1] - pointA[1] );
+                    PE.B = ( pointC[0] - pointA[0] )*( pointB[2] - pointA[2] ) - ( pointB[0] - pointA[0])*( pointC[2] - pointA[2] );
+                    PE.C = ( pointB[1] - pointA[0] )*( pointC[2] - pointA[1] ) - ( pointC[0] - pointA[0])*( pointB[1] - pointA[1] );
+
+                    PE.D = -( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
+
+                    return PE ;
+                },
+
+
             }
 
 
@@ -272,11 +315,11 @@
                         ia.action.eyes.openEyes( fov,near,far,aspect );
                     },
 
-                    rotate:function ( vec , rad ) {
+                    rotate:function ( vec , rad ,needNor) {
 
                         let mat4 = ia.eyes.mat4;
 
-                        return ia.thinkMath.mat4.rotate( mat4 , vec , rad );
+                        return ia.thinkMath.mat4.rotate( mat4 , vec , rad ,needNor );
 
                     },
                     lookAbout:function (  rMat4  ) {
@@ -314,11 +357,11 @@
 
                     },
 
-                    rotate:function ( vec , rad ) {
+                    rotate:function ( vec , rad ,needNor ) {
 
                        let mat4 = ia.view.mat4;
 
-                       return ia.thinkMath.mat4.rotate( mat4 , vec , rad );
+                       return ia.thinkMath.mat4.rotate( mat4 , vec , rad,needNor );
 
                     },
                     lookAbout:function (  rMat4  ) {

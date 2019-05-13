@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/example/test/simpleCube.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/example/test/simpleCube.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/lookAboutIa/think-zh.md" afterPath="$PROJECT_DIR$/doc/lookAboutIa/think-zh.md" />
-      <change beforePath="$PROJECT_DIR$/example/test/lookIa.js" afterPath="$PROJECT_DIR$/example/test/lookIa.js" />
-      <change beforePath="$PROJECT_DIR$/js/soul/lookAboutIa.js" afterPath="$PROJECT_DIR$/js/soul/lookAboutIa.js" />
+      <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,30 +17,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="thinkia.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="thinkia.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="274" column="16" lean-forward="false" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
               <folding>
                 <element signature="e#688#2046#0" expanded="false" />
                 <element signature="e#885#1922#0" expanded="false" />
-                <element signature="e#2492#4824#0" expanded="false" />
-                <element signature="e#9614#9756#0" expanded="false" />
+                <element signature="e#2159#6987#0" expanded="false" />
+                <element signature="e#7008#8170#0" expanded="false" />
+                <element signature="e#11544#11686#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="holleIa.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/test/holleIa.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="432">
-                <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -53,13 +37,13 @@
         <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="23" />
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="think-zh.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="think-zh.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/lookAboutIa/think-zh.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -75,8 +59,8 @@
       <file leaf-file-name="simpleCube.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/simpleCube.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="378">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,8 +69,8 @@
       <file leaf-file-name="simpleCube.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/simpleCube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1704">
-              <caret line="82" column="31" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="31" />
+            <state relative-caret-position="-6377">
+              <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -96,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="365">
-              <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="33" />
+              <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="33" />
               <folding>
                 <element signature="n#!!block;n#initBuffers#0" expanded="false" />
               </folding>
@@ -108,7 +92,17 @@
         <entry file="file://$PROJECT_DIR$/example/test/rotateIa.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helloIa.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1377">
+              <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -118,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/example/test/lookIa.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -193,11 +187,11 @@
         <option value="$PROJECT_DIR$/example/test/lookIa.html" />
         <option value="$PROJECT_DIR$/blog/heat/rayIa.md" />
         <option value="$PROJECT_DIR$/example/test/simpleCube.html" />
-        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
         <option value="$PROJECT_DIR$/js/soul/lookAboutIa.js" />
-        <option value="$PROJECT_DIR$/example/test/simpleCube.js" />
         <option value="$PROJECT_DIR$/example/test/lookIa.js" />
         <option value="$PROJECT_DIR$/doc/lookAboutIa/think-zh.md" />
+        <option value="$PROJECT_DIR$/example/test/simpleCube.js" />
+        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
       </list>
     </option>
   </component>
@@ -214,8 +208,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-30" />
+    <option name="y" value="53" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -333,7 +327,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.lookIa.html">
+  <component name="RunManager" selected="JavaScript Debug.simpleCube.html">
     <configuration name="helloIa.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/test/helloIa.html" />
     <configuration name="lookIa.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/test/lookIa.html" />
     <configuration name="rotateIa.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/test/rotateIa.html" />
@@ -348,8 +342,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.lookIa.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.simpleCube.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.simpleCube.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.lookIa.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.walkIa.html" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.rotateIa.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.helloIa.html" />
@@ -374,12 +368,12 @@
       <workItem from="1557368927124" duration="14955000" />
       <workItem from="1557450519413" duration="15295000" />
       <workItem from="1557541227795" duration="13770000" />
-      <workItem from="1557710814603" duration="9989000" />
+      <workItem from="1557710814603" duration="17252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82185000" />
+    <option name="totallyTimeSpent" value="89448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,7 +395,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.102285095" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2742111" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23939064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -481,7 +475,7 @@
             <element signature="e#688#2046#0" expanded="false" />
             <element signature="e#885#1922#0" expanded="false" />
             <element signature="e#2492#4824#0" expanded="false" />
-            <element signature="e#9614#9756#0" expanded="false" />
+            <element signature="e#11544#11686#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -524,6 +518,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339228">
           <caret line="12564" column="4" lean-forward="false" selection-start-line="12564" selection-start-column="4" selection-end-line="12564" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -580,7 +575,7 @@
             <element signature="e#688#2046#0" expanded="false" />
             <element signature="e#885#1922#0" expanded="false" />
             <element signature="e#2492#4824#0" expanded="false" />
-            <element signature="e#9614#9756#0" expanded="false" />
+            <element signature="e#11544#11686#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,6 +626,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337014">
           <caret line="12482" column="4" lean-forward="false" selection-start-line="12482" selection-start-column="4" selection-end-line="12482" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +648,7 @@
             <element signature="e#688#2046#0" expanded="false" />
             <element signature="e#885#1922#0" expanded="false" />
             <element signature="e#2492#4824#0" expanded="false" />
-            <element signature="e#9614#9756#0" expanded="false" />
+            <element signature="e#11544#11686#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -716,6 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337014">
           <caret line="12482" column="4" lean-forward="false" selection-start-line="12482" selection-start-column="4" selection-end-line="12482" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,13 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338877">
           <caret line="12564" column="4" lean-forward="false" selection-start-line="12564" selection-start-column="4" selection-end-line="12564" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5886">
-          <caret line="218" column="38" lean-forward="false" selection-start-line="218" selection-start-column="38" selection-end-line="218" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -811,8 +801,26 @@
     <entry file="file://$PROJECT_DIR$/example/test/rotateIa.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/lookIa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#initBuffers#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -824,61 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
-          <folding>
-            <element signature="e#688#2046#0" expanded="false" />
-            <element signature="e#885#1922#0" expanded="false" />
-            <element signature="e#2492#4824#0" expanded="false" />
-            <element signature="e#9614#9756#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/simpleCube.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/lookIa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/simpleCube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1704">
-          <caret line="82" column="31" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#initBuffers#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/lookAboutIa/think-zh.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -887,6 +840,52 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/simpleCube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6377">
+          <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/simpleCube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="274" column="16" lean-forward="false" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
+          <folding>
+            <element signature="e#688#2046#0" expanded="false" />
+            <element signature="e#885#1922#0" expanded="false" />
+            <element signature="e#2159#6987#0" expanded="false" />
+            <element signature="e#7008#8170#0" expanded="false" />
+            <element signature="e#11544#11686#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
