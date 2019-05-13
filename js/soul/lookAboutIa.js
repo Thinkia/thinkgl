@@ -5,7 +5,7 @@
  *
  * */
 
- function lookIa( canvas , ia , control =1 ) {
+ function lookControlIa( canvas , ia , control =1 ) {
 
         //  control =1  --> view       control = 2 --> eyes
 

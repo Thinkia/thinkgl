@@ -4,7 +4,7 @@
 + 旋转控制要么转动pMat, 要么转动mvMat;
 + 用户只能在二维屏幕上滑动鼠标
 
-#####封装函数 lookIa( canvas , ia , control =1 )
+#####封装函数 lookControlIa( canvas , ia , control =1 )
 
 + canvas : 用户要注册事件的渲染容器
 + ia : ia对象用于改变 pMat 和 mvMat,以及数学函数调用 

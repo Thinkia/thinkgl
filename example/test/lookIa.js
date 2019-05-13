@@ -78,7 +78,7 @@ function main() {
 
     // add lookIa   rotate view
 
-    let lookAbout = lookIa(canvas,ia);
+    let lookAbout = lookControlIa(canvas,ia);
     lookAbout.rotate.speed = 1.2;
 
     /*
