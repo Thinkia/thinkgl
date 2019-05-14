@@ -13,6 +13,8 @@
 
 + 平移旋转：https://thinkia.github.io/thinkgl/example/test/rotateIa.html
 
++ 动画支持：https://thinkia.github.io/thinkgl/example/test/walkIa.html
+
 + 视角控制：https://thinkia.github.io/thinkgl/example/test/simpleCube.html
 
 + 射线支持（F12 点击三角形）：https://thinkia.github.io/thinkgl/example/test/rayIa.html
