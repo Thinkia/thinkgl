@@ -266,19 +266,14 @@
                     // 待定系数法
                     PE.A = ( pointC[1] - pointA[1] )*( pointC[2] - pointA[2] ) - ( pointB[2] - pointA[2])*( pointC[1] - pointA[1] );
                     PE.B = ( pointC[0] - pointA[0] )*( pointB[2] - pointA[2] ) - ( pointB[0] - pointA[0])*( pointC[2] - pointA[2] );
-                    PE.C = ( pointB[1] - pointA[0] )*( pointC[2] - pointA[1] ) - ( pointC[0] - pointA[0])*( pointB[1] - pointA[1] );
+                    PE.C = ( pointB[0] - pointA[0] )*( pointC[1] - pointA[1] ) - ( pointC[0] - pointA[0])*( pointB[1] - pointA[1] );
 
                     PE.D = -( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
 
                     return PE ;
                 },
-
-
             }
-
-
         };
-
 
 
         // action
