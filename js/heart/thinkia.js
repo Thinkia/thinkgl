@@ -327,7 +327,7 @@
                     PE.B = ( pointC[0] - pointA[0] )*( pointB[2] - pointA[2] ) - ( pointB[0] - pointA[0])*( pointC[2] - pointA[2] );
                     PE.C = ( pointB[0] - pointA[0] )*( pointC[1] - pointA[1] ) - ( pointC[0] - pointA[0])*( pointB[1] - pointA[1] );
 
-                    PE.D = ( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
+                    PE.D = -( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
 
                     return PE ;
                 },
@@ -368,7 +368,7 @@
                     // 平行  与法向量垂直
                     if( Math.abs(den) <1e-5 )  return false ;
 
-                    let n = num/den ;
+                    let n = -num/den ;
 
                     for( let i=0;i<3;i++) pointD[i] = p1[i] + n*p1p2[i];
 
