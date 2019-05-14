@@ -286,6 +286,7 @@ function helloIaWorld( gl,programInfo,buffers,ia ) {
 
     }
 
+
 }
 
 // init Ia world

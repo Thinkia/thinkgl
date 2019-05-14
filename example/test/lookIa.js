@@ -74,7 +74,7 @@ function main() {
     // 初始化 透视矩阵
     ia.action.eyes.openEyes();
 
-    ia.action.view.jump( [ 0,0,-5 ]);
+    ia.action.view.jump( [ 0,0,-4 ]);
 
     // add lookIa   rotate view
 
@@ -221,6 +221,12 @@ function helloIaWorld( gl ,programInfo, buffers,ia ) {
         const vertexCount = 4;
         gl.drawArrays( gl.TRIANGLE_STRIP , offset, vertexCount );
     }
+
+    var pixels = new Uint8Array(gl.drawingBufferWidth * gl.drawingBufferHeight * 4);
+    gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+    console.log(pixels)
+
+    debugger;
 
 }
 

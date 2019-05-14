@@ -100,7 +100,7 @@
 
             mat4:{
                  // translation
-                 jump: function ( mat4,vec ) {
+                jump: function ( mat4,vec ) {
                          for(let i =0 ;i<4;i++)
                              mat4[12+i] = mat4[i] * vec[0] + mat4[i+4] * vec[1] + mat4[i+8] * vec[2] + mat4[i+12]
                  } ,
@@ -189,6 +189,57 @@
                     lMat4[ 15 ] = a41 * b14 + a42 * b24 + a43 * b34 + a44 * b44;
 
 
+                },
+
+                getInverse:function ( mat4 ) {
+                    // based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+
+                    let te = [
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1],
+                        me = mat4,
+                        n11 = me[ 0 ], n21 = me[ 1 ], n31 = me[ 2 ], n41 = me[ 3 ],
+                        n12 = me[ 4 ], n22 = me[ 5 ], n32 = me[ 6 ], n42 = me[ 7 ],
+                        n13 = me[ 8 ], n23 = me[ 9 ], n33 = me[ 10 ], n43 = me[ 11 ],
+                        n14 = me[ 12 ], n24 = me[ 13 ], n34 = me[ 14 ], n44 = me[ 15 ],
+
+                        t11 = n23 * n34 * n42 - n24 * n33 * n42 + n24 * n32 * n43 - n22 * n34 * n43 - n23 * n32 * n44 + n22 * n33 * n44,
+                        t12 = n14 * n33 * n42 - n13 * n34 * n42 - n14 * n32 * n43 + n12 * n34 * n43 + n13 * n32 * n44 - n12 * n33 * n44,
+                        t13 = n13 * n24 * n42 - n14 * n23 * n42 + n14 * n22 * n43 - n12 * n24 * n43 - n13 * n22 * n44 + n12 * n23 * n44,
+                        t14 = n14 * n23 * n32 - n13 * n24 * n32 - n14 * n22 * n33 + n12 * n24 * n33 + n13 * n22 * n34 - n12 * n23 * n34;
+
+                        let det = n11 * t11 + n21 * t12 + n31 * t13 + n41 * t14;
+
+                        if( det === 0 )
+                        {
+                            return te;
+                        }
+
+                    let detInv = 1 / det;
+
+                    te[ 0 ] = t11 * detInv;
+                    te[ 1 ] = ( n24 * n33 * n41 - n23 * n34 * n41 - n24 * n31 * n43 + n21 * n34 * n43 + n23 * n31 * n44 - n21 * n33 * n44 ) * detInv;
+                    te[ 2 ] = ( n22 * n34 * n41 - n24 * n32 * n41 + n24 * n31 * n42 - n21 * n34 * n42 - n22 * n31 * n44 + n21 * n32 * n44 ) * detInv;
+                    te[ 3 ] = ( n23 * n32 * n41 - n22 * n33 * n41 - n23 * n31 * n42 + n21 * n33 * n42 + n22 * n31 * n43 - n21 * n32 * n43 ) * detInv;
+
+                    te[ 4 ] = t12 * detInv;
+                    te[ 5 ] = ( n13 * n34 * n41 - n14 * n33 * n41 + n14 * n31 * n43 - n11 * n34 * n43 - n13 * n31 * n44 + n11 * n33 * n44 ) * detInv;
+                    te[ 6 ] = ( n14 * n32 * n41 - n12 * n34 * n41 - n14 * n31 * n42 + n11 * n34 * n42 + n12 * n31 * n44 - n11 * n32 * n44 ) * detInv;
+                    te[ 7 ] = ( n12 * n33 * n41 - n13 * n32 * n41 + n13 * n31 * n42 - n11 * n33 * n42 - n12 * n31 * n43 + n11 * n32 * n43 ) * detInv;
+
+                    te[ 8 ] = t13 * detInv;
+                    te[ 9 ] = ( n14 * n23 * n41 - n13 * n24 * n41 - n14 * n21 * n43 + n11 * n24 * n43 + n13 * n21 * n44 - n11 * n23 * n44 ) * detInv;
+                    te[ 10 ] = ( n12 * n24 * n41 - n14 * n22 * n41 + n14 * n21 * n42 - n11 * n24 * n42 - n12 * n21 * n44 + n11 * n22 * n44 ) * detInv;
+                    te[ 11 ] = ( n13 * n22 * n41 - n12 * n23 * n41 - n13 * n21 * n42 + n11 * n23 * n42 + n12 * n21 * n43 - n11 * n22 * n43 ) * detInv;
+
+                    te[ 12 ] = t14 * detInv;
+                    te[ 13 ] = ( n13 * n24 * n31 - n14 * n23 * n31 + n14 * n21 * n33 - n11 * n24 * n33 - n13 * n21 * n34 + n11 * n23 * n34 ) * detInv;
+                    te[ 14 ] = ( n14 * n22 * n31 - n12 * n24 * n31 - n14 * n21 * n32 + n11 * n24 * n32 + n12 * n21 * n34 - n11 * n22 * n34 ) * detInv;
+                    te[ 15 ] = ( n12 * n23 * n31 - n13 * n22 * n31 + n13 * n21 * n32 - n11 * n23 * n32 - n12 * n21 * n33 + n11 * n22 * n33 ) * detInv;
+
+                    return te;
                 }
 
 
@@ -237,7 +288,7 @@
                 // 三角形面积
                 triangleArea : function ( pointA,pointB,pointC ) {
 
-                    let area = -1;
+                    let area = 0 ;
                     let side = [];
 
                     side[0] = Math.sqrt( Math.pow(pointA[0] -pointB[0],2) +Math.pow(pointA[1] -pointB[1],2) +Math.pow(pointA[2] -pointB[2],2) );
@@ -272,6 +323,72 @@
 
                     return PE ;
                 },
+                // 已知三点求法向量
+                pNormal:function ( pointA,pointB,pointC ) {
+
+                    let vec = {
+                        x:1,
+                        y:0,
+                        z:0
+                    };
+                   let PE = ia.thinkMath.vec3.planeEquation( pointA,pointB,pointC );
+                   vec.x = PE.A;
+                   vec.y = PE.B;
+                   vec.z = PE.C;
+
+                   return vec;
+                },
+                // https://blog.csdn.net/smallflyingpig/article/details/51234711
+                /**
+                 *
+                 * @param p1   射线起始点
+                 * @param p2   射线终点
+                 * @param pointA 三角面片 顶点A
+                 * @param pointB 三角面片 顶点B
+                 * @param pointC 三角面片 顶点C
+                 * @returns {boolean}
+                 */
+
+                intersectionLinePlane:function ( p1,p2,pointA,pointB,pointC ) {
+
+                    let pointD =[];
+                    let p1p2 = [ p2[0]-p1[0],p2[1]-p1[1],p2[2]-p1[2] ];
+                    let PE = ia.thinkMath.vec3.planeEquation( pointA,pointB,pointC );
+
+                    let num = PE.A * p1[0] + PE.B * p1[1] + PE.C * p1[2] + PE.D ;
+                    let den = PE.A * p1p2[0] + PE.B * p1p2[1] + PE.C*p1p2[2];
+                    // 平行  与法向量垂直
+                    if( Math.abs(den) <1e-5 )  return false ;
+
+                    let n = num/den ;
+
+                    for( let i=0;i<3;i++) pointD[i] = p1[i] + n*p1p2[i];
+                    // ABC 面积
+                    let s0 = ia.thinkMath.vec3.triangleArea( pointA,pointB,pointC );
+                    // DAB 面积
+                    let s1 = ia.thinkMath.vec3.triangleArea( pointD,pointB,pointC );
+                    // DBC 面积
+                    let s2 = ia.thinkMath.vec3.triangleArea( pointA,pointD,pointC );
+                    // DCA 面积
+                    let s3 = ia.thinkMath.vec3.triangleArea( pointA,pointB,pointD);
+
+                    if( Math.abs( (s1+s2+s3 -s0)) < 1e-6 )
+                        return true;
+                    else
+                        return false;
+
+                },
+
+                applyMat4:function ( vec ,mat4 ) {
+
+                    let temVec = [vec[0],vec[1],vec[2] ];
+                    let w = 1 / ( mat4[ 3 ] * vec[0] + mat4[ 7 ] * vec[1] + mat4[ 11 ] * vec[2] + mat4[ 15 ] );
+                    for( let i=0;i<3;i++)
+                        vec[i] = ( mat4[ i ] * temVec[0] + mat4[ 4 +i ] * temVec[1] + mat4[ 8+i ] * temVec[2] + mat4[ 12+i ] ) * w;
+
+                    return vec ;
+                }
+                
             }
         };
 
