@@ -9,4 +9,11 @@
 
 + thinkgl 目前主要是为了重构公司built-in 项目子工程 （ VR看房 ） 编写 函数库；
 
-##### webgl -- en
+##### 已支持功能
+
++ 平移旋转：https://thinkia.github.io/thinkgl/example/test/rotateIa.html
+
++ 视角控制：https://thinkia.github.io/thinkgl/example/test/simpleCube.html
+
++ 射线支持（F12 点击三角形）：https://thinkia.github.io/thinkgl/example/test/rayIa.html
+  
