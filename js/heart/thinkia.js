@@ -18,6 +18,14 @@
                 0, 0, 1, 0,
                 0, 0, 0, 1
             ],
+            position:[0,0,0],
+            getPos:function () {
+                let pos =[]
+                pos[0] = ia.eyes.mat4[12];
+                pos[1] = ia.eyes.mat4[13];
+                pos[2] = ia.eyes.mat4[14];
+                return pos;
+            },
             euler : {
 
                 order:'ZYX',
@@ -27,7 +35,7 @@
             },
             isOpen : false,
 
-        }
+        };
 
 
         // view
@@ -40,7 +48,7 @@
                 0, 0, 0, 1
             ],
 
-        }
+        };
 
 
 
@@ -319,7 +327,7 @@
                     PE.B = ( pointC[0] - pointA[0] )*( pointB[2] - pointA[2] ) - ( pointB[0] - pointA[0])*( pointC[2] - pointA[2] );
                     PE.C = ( pointB[0] - pointA[0] )*( pointC[1] - pointA[1] ) - ( pointC[0] - pointA[0])*( pointB[1] - pointA[1] );
 
-                    PE.D = -( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
+                    PE.D = ( PE.A * pointA[0] + PE.B * pointA[1] + PE.C * pointA[2] );
 
                     return PE ;
                 },
@@ -363,6 +371,7 @@
                     let n = num/den ;
 
                     for( let i=0;i<3;i++) pointD[i] = p1[i] + n*p1p2[i];
+
                     // ABC 面积
                     let s0 = ia.thinkMath.vec3.triangleArea( pointA,pointB,pointC );
                     // DAB 面积
@@ -373,7 +382,11 @@
                     let s3 = ia.thinkMath.vec3.triangleArea( pointA,pointB,pointD);
 
                     if( Math.abs( (s1+s2+s3 -s0)) < 1e-6 )
+                    {
+                        console.log(`射线交点坐标：${pointD}` ) ;
                         return true;
+                    }
+
                     else
                         return false;
 

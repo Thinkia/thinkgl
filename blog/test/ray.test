@@ -1,0 +1,63 @@
+main ()
+
+
+function main() {
+
+    const canvas = document.querySelector('#glcanvas');
+
+    const gl = canvas.getContext('webgl2');
+
+    if(!gl){
+        console.error('Unable to initialize WebGL. Your browser or machine may not support webgl2.');
+        return ;
+    }
+
+    let pointA = [ 1,1,0 ];
+    let pointB = [ 0,0,0 ];
+    let pointC = [ 1,0,0 ];
+    let ori  = [ 0.5,0.5,0  ];
+    let target = [ 0.5,0.5, 1 ];
+    let ia = Ia();
+
+    ia.action.eyes.openEyes();
+
+    ia.action.view.jump( [ 0,0,-5 ]);
+
+    // 面积计算测试
+    console.log( ia.thinkMath.vec3.triangleArea( pointA,pointB,pointC ) );
+
+    // 平面方程测试
+    console.log( ia.thinkMath.vec3.planeEquation( pointA,pointB,pointC )) ;
+
+    // 交点测试
+
+    console.log( ia.thinkMath.vec3.intersectionLinePlane( ori,target,pointA,pointB,pointC ))
+
+    let pMat = ia.eyes.mat4;
+    let mvMat = ia.view.mat4;
+
+    canvas.addEventListener('click',( event )=>{
+
+        console.log('click');
+
+        let x =( event.clientX / window.innerWidth ) * 2 - 1;
+        let y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        let vec = [ x,y,0 ];
+
+        console.log(vec);
+
+        let origin = [pMat[12],pMat[13],pMat[14]];
+
+        let inversePMat = ia.thinkMath.mat4.getInverse( pMat );
+
+        ia.thinkMath.vec3.applyMat4( vec,inversePMat  );
+        console.log(vec)
+        ia.thinkMath.vec3.applyMat4( vec,mvMat );
+
+        console.log(vec)
+        debugger
+
+    })
+
+
+}
