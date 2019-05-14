@@ -126,12 +126,12 @@ function initBuffers( gl ){
 
     gl.bindBuffer( gl.ARRAY_BUFFER,positionBuffer );
 
-    // 绘制顶点   正方形
+    // 绘制顶点   三角形
 
     const positions = [
         1.0,  1.0,
         0.0,  0.0,
-        1.0, 0.0,
+        1.0,  0.0,
 
     ]
 
