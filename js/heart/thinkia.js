@@ -347,6 +347,7 @@
                    return vec;
                 },
                 // https://blog.csdn.net/smallflyingpig/article/details/51234711
+                // 该链接内容需要修改
                 /**
                  *
                  * @param p1   射线起始点
@@ -355,6 +356,7 @@
                  * @param pointB 三角面片 顶点B
                  * @param pointC 三角面片 顶点C
                  * @returns {boolean}
+                 *
                  */
 
                 intersectionLinePlane:function ( p1,p2,pointA,pointB,pointC ) {

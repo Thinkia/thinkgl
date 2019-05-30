@@ -98,19 +98,22 @@ function main() {
         let mvMat = ia.view.mat4;
 
         let origin = [0,0,0 ];
-
+        // 投影矩阵的逆
         let inversePMat = ia.thinkMath.mat4.getInverse( pMat );
 
+        //获取三维的映射方向
         ia.thinkMath.vec3.applyMat4( vec,inversePMat  );
 
-        // 初始顶点坐标
+        // 初始顶点坐标   绘制三角形的初始坐标
         let pointA=[ 1.0 , 1.0 , 0.0 ],
             pointB=[ 0.0 , 0.0 , 0.0 ],
             pointC=[ 1.0 , 0.0 , 0.0 ];
+        // 经过mv变换
         ia.thinkMath.vec3.applyMat4( pointA,mvMat );
         ia.thinkMath.vec3.applyMat4( pointB,mvMat );
         ia.thinkMath.vec3.applyMat4( pointC,mvMat );
 
+        // 返回有无交点      计算以origin为起始点，vec为终点的向量 和 pointABC三点组成的平面交点  ，若交点在三角形区域则返回true ,且打印交点坐标
         console.log( ia.thinkMath.vec3.intersectionLinePlane(origin,vec,pointA,pointB,pointC)  );
 
 
