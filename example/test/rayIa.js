@@ -101,7 +101,7 @@ function main() {
         // 投影矩阵的逆
         let inversePMat = ia.thinkMath.mat4.getInverse( pMat );
 
-        //获取三维的映射方向
+        //获取三维的映射坐标
         ia.thinkMath.vec3.applyMat4( vec,inversePMat  );
 
         // 初始顶点坐标   绘制三角形的初始坐标
