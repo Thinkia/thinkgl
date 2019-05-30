@@ -8,3 +8,17 @@ body{
     overflow: hidden;
 
 }
+
+.info{
+
+    position:fixed;
+    font-size:14px;
+    color:#fff;
+    top:10px;
+    left:40%;
+
+}
+
+.info a{
+    color:#fff;
+}
