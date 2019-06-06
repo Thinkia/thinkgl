@@ -119,6 +119,8 @@
 
                     // vec is normalized?
 
+                    //  如果传的是单位向量  needNor 可以设置为false;   在一些反复计算中可以减少计算量 优化程序;
+
                     if( needNor )
                     {
 
@@ -347,7 +349,7 @@
                    return vec;
                 },
                 // https://blog.csdn.net/smallflyingpig/article/details/51234711
-                // 该链接内容需要修改
+                // 该链接内容需要修正
                 /**
                  *
                  * @param p1   射线起始点

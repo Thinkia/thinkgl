@@ -19,7 +19,7 @@ function main() {
     let gl = canvas.getContext('webgl2');
 
     if (!gl) {
-        console.error('Unable to initialize WebGL. Your browser or machine may not support webgl2.')
+        console.error(' not support webgl2.');
         return;
     }
 
