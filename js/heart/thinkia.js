@@ -37,6 +37,221 @@
 
         };
 
+        // world
+        // 这里是封装常用的webgl绘制方法  直接用于 tutorial
+        ia.world={
+
+         gl:{
+
+         },
+         canvas:'',
+         initIaWorld:function (canvasId,vSrc ,fSrc ) {
+
+             let canvas = document.querySelector(canvasId);
+
+             // 获取webgl2 上下文
+             let gl = canvas.getContext('webgl2');
+
+             if (!gl) {
+                 console.error(' not support webgl2.');
+                 return;
+             }
+
+             // 保存gl 和 canvas
+             ia.world.gl = gl;
+
+             ia.world.canvas=canvas;
+
+             gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+             gl.clear(gl.COLOR_BUFFER_BIT);
+
+             // 顶点与片元着色
+             const vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
+             const fShader = ia.world.loadShader( gl,gl.FRAGMENT_SHADER,fSrc );
+
+             const shaderProgram = gl.createProgram();
+             gl.attachShader( shaderProgram, vShader );
+             gl.attachShader( shaderProgram, fShader );
+             gl.linkProgram( shaderProgram );
+
+             if(!gl.getProgramParameter( shaderProgram, gl.LINK_STATUS ))
+             {
+                 console.error(`error: ${gl.getProgramInfoLog( shaderProgram )}` );
+                 return ;
+             }
+
+             return shaderProgram;
+
+
+         },
+         loadShader:function( gl,type,src ){
+
+             const  shader = gl.createShader( type );
+
+             gl.shaderSource( shader , src );
+
+             // 编译
+
+             gl.compileShader( shader );
+
+             // 异常检测
+             if(!gl.getShaderParameter( shader , gl.COMPILE_STATUS ))
+             {
+                 console.error( `error: ${gl.getShaderInfoLog( shader )}`)
+                 gl.deleteShader( shader );
+                 return null ;
+             }
+
+             return shader ;
+
+         },
+         getGL:function () {
+
+             return ia.world.gl;
+
+         },
+         getCanvas:function () {
+
+             return ia.world.canvas;
+
+         },
+
+         vAttrib:{
+                numComponents : 1,
+                type : '',
+                normalize : false,
+                stride : 0,
+                offset : 0,
+
+            },
+
+         fAttrib:'',
+
+         buffer:{
+
+             attribute :{
+                 array: '',
+                 draw: '',
+                 positions:'',
+
+             },
+
+
+             positionBuffer:{
+
+               initBuffer:function (
+                            pos=[
+                                0.0,  0.0,
+                            ],
+                            array = ia.world.gl.ARRAY_BUFFER,
+
+                            draw  = ia.world.gl.STATIC_DRAW,
+
+                                      ) {
+
+
+                   let gl = ia.world.gl;
+
+                   let positionBuffer = gl.createBuffer();
+
+                   gl.bindBuffer( array, positionBuffer );
+
+                   // 顶点数组. 默认绘制顺序为 [0,1,2]  [1,2,3]  两个三角形 组成正方形
+
+                   let positions = pos;
+
+
+
+                   // 创建Float32 ，填充当前缓冲区
+
+                   gl.bufferData( array,
+                       new Float32Array(positions),
+                       draw );
+
+                   ia.world.buffer.attribute ={
+                       array: array,
+                       draw: draw,
+                       positions:pos,
+
+                   }
+
+                   return {
+                       position: positionBuffer,
+                   };
+
+               }
+
+
+            }
+
+
+
+         },
+
+         helloIaWorld:function ( programInfo, buffers ) {
+
+             let gl = ia.world.gl;
+
+             gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
+             gl.clearDepth(1.0);                 // 清除所有图层
+             gl.enable(gl.DEPTH_TEST);           // 开启深度测试
+             gl.depthFunc(gl.LEQUAL);            // 遮挡效果
+
+             // 清理canvas.
+
+             gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+
+             // u :uniform   pMat: 投影矩阵
+             let upMat = ia.eyes.mat4;
+
+             // u:uniform  mvMat : mv矩阵
+             let umvMat = ia.view.mat4;
+
+             let vAttrib = ia.world.vAttrib;
+
+             // 顶点属性.
+             {
+                 const numComponents = vAttrib.numComponents;
+                 const type = gl.FLOAT;
+                 const normalize = vAttrib.normalize;
+                 const stride = vAttrib.stride;
+                 const offset = vAttrib.offset;
+
+                 gl.bindBuffer( gl.ARRAY_BUFFER, buffers.position );
+                 gl.vertexAttribPointer(
+                     programInfo.attribLocations.vertexPosition,
+                     numComponents,
+                     type,
+                     normalize,
+                     stride,
+                     offset);
+                 gl.enableVertexAttribArray(
+                     programInfo.attribLocations.vertexPosition);
+             }
+
+             // 使用我们自定义的着色属性
+
+             gl.useProgram( programInfo.program );
+
+             // 设置 uniforms
+
+             gl.uniformMatrix4fv(
+                 programInfo.uniformLocations.projectionMatrix,
+                 false,
+                 upMat);
+             gl.uniformMatrix4fv(
+                 programInfo.uniformLocations.modelViewMatrix,
+                 false,
+                 umvMat);
+
+         }
+
+        };
+
+
+
 
         // view
         ia.view = {
@@ -52,7 +267,7 @@
 
 
 
-        // ia's soul
+        // ia's soul  动画工具
 
         ia.soul = {
 
@@ -102,7 +317,7 @@
 
         };
 
-        // thinkMath   http://www.songho.ca/opengl/gl_matrix.html
+        // thinkMath   http://www.songho.ca/opengl/gl_matrix.html     常用的数据类库
 
         ia.thinkMath = {
 
