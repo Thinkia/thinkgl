@@ -3,88 +3,53 @@
  *
  *  这里将使用ia 绘制工具类  ia.world 演示如何绘制一个点
  *
+ *  非常基础又非常重要！
+ *  如果会了绘制一个点， 那么很多个点就可以组成一条线；
+ *  很多条线和又可以组成 一个面；
+ *  很多个面可以组成三维集合体；
  *
  **/
 
- let ia = Ia();
+let ia = Ia();
 
- // 初始化透视矩阵
- ia.action.eyes.openEyes();
+let iaWorld = ia.world;
 
- // 观察的矩形 向 z轴的反方向跳跃了5个距离;
+ia.action.view.jump([0,0,-10])
 
- ia.action.view.jump( [0,0,-5] );
+let positions = [
+    0.0,0.0,
 
- // 绕向量[0,1,0] 自转45度
- ia.action.view.rotate( [0,1,0],45*Math.PI/180 );
+    1.0,1.0,
 
- // u :uniform   pMat: 投影矩阵
- const upMat = ia.eyes.mat4;
+    2.0,0.0
 
- // u:uniform  mvMat : mv矩阵
- const umvMat = ia.view.mat4;
+];
 
- main();
+let colors = [
+
+    1.0,0.0,0.0,1.0,   // 红
+
+    0.0,1.0,0.0,1.0,   // 绿
+
+    0.0,0.0,1.0,1.0   //  蓝
+
+]
+
+main();
 
  function main() {
 
-     // Vertex shader   顶点着色    顶点三维坐标以及大小
-     const vSrc = `
-        attribute vec4 avPos;
+     iaWorld.initIaWorld( );
 
-        uniform mat4 umvMat;
-        uniform mat4 upMat;
+     let buffers = iaWorld.buffer.positionBuffer.initBuffer( positions ,colors );
 
-        void main() {
-          gl_Position = upMat * umvMat * avPos;
-          gl_PointSize = 10.0;
-        }
-        `;
+     iaWorld.helloIaWorld( buffers );
 
-     // Fragment shader  片元着色
-     const fSrc = `
-            void main() {
-              gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
-            }
-        `;
+    // ia.action.view.rotate([0,1,0],45*Math.PI/180)
 
-     const canvasId = '#glcanvas';
 
-     //  初始化着色程序
 
-     const shaderProgram = ia.world.initIaWorld( canvasId, vSrc, fSrc );
-
-     let gl = ia.world.getGL();
-
-     // 着色程序基本属性
-
-     const programInfo = {
-         program: shaderProgram,
-         attribLocations: {
-             vertexPosition: gl.getAttribLocation( shaderProgram, 'avPos' ),
-         },
-         uniformLocations: {
-             projectionMatrix: gl.getUniformLocation( shaderProgram, 'upMat' ),
-             modelViewMatrix: gl.getUniformLocation( shaderProgram, 'umvMat' ),
-         },
-     };
-
-     let positions = [
-         1.0,0.0,
-         -1.0,0.0,
-     ];
-
-     const buffers = ia.world.buffer.positionBuffer.initBuffer( positions );
-
-     // 绘制并显示图像
-
-     ia.world.helloIaWorld( programInfo,buffers );
-
-     const offset = 0;
-     // 顶点数量
-     const vertexCount = 2;
-
-     gl.drawArrays( gl.POINTS, offset, vertexCount );
+     iaWorld.drawPoints();
 
  }
 

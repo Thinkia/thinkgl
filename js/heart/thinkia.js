@@ -41,11 +41,40 @@
         // 这里是封装常用的webgl绘制方法  直接用于 tutorial
         ia.world={
 
+         programInfo:{},
          gl:{
 
          },
+         program:{ },
          canvas:'',
-         initIaWorld:function (canvasId,vSrc ,fSrc ) {
+         initIaWorld:function (
+             vSrc=`
+                attribute vec4 avPos;
+                attribute vec4 avColor;
+                
+                uniform float uPointSize;
+                
+                uniform mat4 umvMat;
+                uniform mat4 upMat;
+        
+                varying lowp vec4 vColor;
+              
+                void main() {
+                  gl_Position = upMat * umvMat * avPos;
+                  gl_PointSize = uPointSize;
+                  vColor = avColor;
+                }
+                `,
+             fSrc=`
+                varying lowp vec4 vColor;
+                
+                void main() {
+                  gl_FragColor = vColor;
+                 
+                }
+            `,
+
+             canvasId='#glcanvas' ,avPos='avPos',mvMat='umvMat',pMat='upMat' ) {
 
              let canvas = document.querySelector(canvasId);
 
@@ -67,10 +96,10 @@
              gl.clear(gl.COLOR_BUFFER_BIT);
 
              // 顶点与片元着色
-             const vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
-             const fShader = ia.world.loadShader( gl,gl.FRAGMENT_SHADER,fSrc );
+             let vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
+             let fShader = ia.world.loadShader( gl,gl.FRAGMENT_SHADER,fSrc );
 
-             const shaderProgram = gl.createProgram();
+             let shaderProgram = gl.createProgram();
              gl.attachShader( shaderProgram, vShader );
              gl.attachShader( shaderProgram, fShader );
              gl.linkProgram( shaderProgram );
@@ -81,7 +110,19 @@
                  return ;
              }
 
-             return shaderProgram;
+
+             //
+             ia.world.programInfo = {
+                 program: shaderProgram,
+                 attribLocations: {
+                     vertexPosition: gl.getAttribLocation( shaderProgram, avPos ),
+                     vertexColor: gl.getAttribLocation(shaderProgram, 'avColor'),
+                 },
+                 uniformLocations: {
+                     projectionMatrix: gl.getUniformLocation( shaderProgram, pMat ),
+                     modelViewMatrix: gl.getUniformLocation( shaderProgram, mvMat ),
+                 },
+             };
 
 
          },
@@ -118,7 +159,7 @@
          },
 
          vAttrib:{
-                numComponents : 1,
+                numComponents : 2,
                 type : '',
                 normalize : false,
                 stride : 0,
@@ -133,23 +174,14 @@
              attribute :{
                  array: '',
                  draw: '',
-                 positions:'',
+                 positions:[],
 
              },
 
 
              positionBuffer:{
 
-               initBuffer:function (
-                            pos=[
-                                0.0,  0.0,
-                            ],
-                            array = ia.world.gl.ARRAY_BUFFER,
-
-                            draw  = ia.world.gl.STATIC_DRAW,
-
-                                      ) {
-
+               initBuffer:function ( pos=[0.0,0.0,],colors=[ 1.0, 0.0, 0.0, 1.0 ] , array = ia.world.gl.ARRAY_BUFFER, draw  = ia.world.gl.STATIC_DRAW,) {
 
                    let gl = ia.world.gl;
 
@@ -157,7 +189,6 @@
 
                    gl.bindBuffer( array, positionBuffer );
 
-                   // 顶点数组. 默认绘制顺序为 [0,1,2]  [1,2,3]  两个三角形 组成正方形
 
                    let positions = pos;
 
@@ -176,8 +207,13 @@
 
                    }
 
+                   let colorBuffer = gl.createBuffer();
+                   gl.bindBuffer( gl.ARRAY_BUFFER, colorBuffer );
+                   gl.bufferData( gl.ARRAY_BUFFER, new Float32Array( colors ), gl.STATIC_DRAW );
+
                    return {
                        position: positionBuffer,
+                       color:colorBuffer
                    };
 
                }
@@ -188,10 +224,12 @@
 
 
          },
-
-         helloIaWorld:function ( programInfo, buffers ) {
+         // 这里提供最基本的mvMat ，pMat和 vPos 配置
+         helloIaWorld:function ( buffers , ) {
 
              let gl = ia.world.gl;
+
+             let programInfo = ia.world.programInfo;
 
              gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
              gl.clearDepth(1.0);                 // 清除所有图层
@@ -201,7 +239,6 @@
              // 清理canvas.
 
              gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
-
 
              // u :uniform   pMat: 投影矩阵
              let upMat = ia.eyes.mat4;
@@ -213,11 +250,11 @@
 
              // 顶点属性.
              {
-                 const numComponents = vAttrib.numComponents;
-                 const type = gl.FLOAT;
-                 const normalize = vAttrib.normalize;
-                 const stride = vAttrib.stride;
-                 const offset = vAttrib.offset;
+                 let numComponents = vAttrib.numComponents;
+                 let type = gl.FLOAT;
+                 let normalize = vAttrib.normalize;
+                 let stride = vAttrib.stride;
+                 let offset = vAttrib.offset;
 
                  gl.bindBuffer( gl.ARRAY_BUFFER, buffers.position );
                  gl.vertexAttribPointer(
@@ -231,9 +268,34 @@
                      programInfo.attribLocations.vertexPosition);
              }
 
+             //着色属性
+
+             {
+                 let numComponents = 4;
+                 let type = gl.FLOAT;
+                 let normalize = false;
+                 let stride = 0;
+                 let offset = 0;
+                 gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
+                 gl.vertexAttribPointer(
+                     programInfo.attribLocations.vertexColor,
+                     numComponents,
+                     type,
+                     normalize,
+                     stride,
+                     offset);
+                 gl.enableVertexAttribArray(
+                     programInfo.attribLocations.vertexColor);
+             }
+
+
              // 使用我们自定义的着色属性
 
              gl.useProgram( programInfo.program );
+
+
+             ia.world.program = programInfo.program;
+
 
              // 设置 uniforms
 
@@ -245,6 +307,28 @@
                  programInfo.uniformLocations.modelViewMatrix,
                  false,
                  umvMat);
+
+         },
+
+         // 画点   num 一般为2或者3   vertexCount 为要绘制的顶点数
+
+         drawPoints:function ( size =10, num=2, vertexCount ,name='uPointSize' ) {
+
+
+             let gl = ia.world.gl;
+             let vCount ;
+             vCount = ia.world.buffer.attribute.positions.length/num;
+             if( vertexCount )
+                 vCount =vertexCount;
+
+             let offset = 0;
+             // 顶点数量
+
+             let uPointSize = gl.getUniformLocation( ia.world.program,name );
+
+             gl.uniform1f( uPointSize ,size);
+
+             gl.drawArrays( gl.POINTS, offset, vCount );
 
          }
 
@@ -720,6 +804,14 @@
 
 
         };
+
+
+        // 初始化透视矩阵
+        ia.action.eyes.openEyes();
+
+        // 观察的矩形 向 z轴的反方向跳跃了5个距离;
+
+        ia.action.view.jump( [0,0,-5] );
 
         return ia;
 

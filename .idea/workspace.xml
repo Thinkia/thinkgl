@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/example/tutorial/point/point_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/tutorial/point/point_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/tutorial/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/test/lookIa.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/lookIa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/point/point_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/point/point_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,20 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/rayIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="1225">
               <caret line="49" column="32" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/tutorial/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="100">
-                <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -53,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="350">
+              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -62,11 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding>
-                <element signature="e#1043#1402#0" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -74,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="4475">
               <caret line="188" column="5" lean-forward="true" selection-start-line="111" selection-start-column="3" selection-end-line="188" selection-end-column="5" />
               <folding>
                 <element signature="e#933#1283#0" />
@@ -88,20 +70,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="25">
+              <caret line="712" column="8" selection-start-line="712" selection-start-column="8" selection-end-line="712" selection-end-column="8" />
               <folding>
                 <element signature="e#144#691#0" />
-                <element signature="e#997#1067#0" />
-                <element signature="e#2037#2063#0" />
-                <element signature="e#897#923#0" />
-                <element signature="e#1409#1435#0" />
-                <element signature="e#3070#4139#0" />
-                <element signature="e#2795#2955#0" />
-                <element signature="e#729#908#0" />
-                <element signature="e#953#2311#0" />
-                <element signature="e#2404#16665#0" />
-                <element signature="e#13138#13893#0" />
+                <element signature="e#4214#5954#0" />
               </folding>
             </state>
           </provider>
@@ -110,8 +83,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="1775">
               <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="81" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -119,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="16417" column="4" selection-start-line="16417" selection-start-column="4" selection-end-line="16417" selection-end-column="4" />
+            <state relative-caret-position="224">
+              <caret line="16398" column="13" selection-start-line="16398" selection-start-column="4" selection-end-line="16398" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -128,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="29" />
+            <state relative-caret-position="4675">
+              <caret line="187" column="29" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -165,6 +147,12 @@
       <find>open</find>
       <find>loadShader</find>
       <find>修正</find>
+      <find>offset</find>
+      <find>shaderP</find>
+      <find>location: WebGLUniformLocation | null, x: GLfloat</find>
+      <find>uniform1f</find>
+      <find>use</find>
+      <find>vCOLOR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,8 +206,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-54" />
-    <option name="y" value="135" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -228,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +268,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,7 +277,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ThreeJs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vtPro" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -371,12 +359,13 @@
       <workItem from="1559266217519" duration="1199000" />
       <workItem from="1559524174480" duration="1210000" />
       <workItem from="1559698020393" duration="2870000" />
-      <workItem from="1559784736572" duration="10125000" />
+      <workItem from="1559784736572" duration="10608000" />
+      <workItem from="1560130080532" duration="9986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146339000" />
+    <option name="totallyTimeSpent" value="156808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +392,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.31019524" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.15726681" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18221258" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -564,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/test/simpleCube.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -618,28 +600,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/test/rayIa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="1225">
           <caret line="49" column="32" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="16417" column="4" selection-start-line="16417" selection-start-column="4" selection-end-line="16417" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="81" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="4475">
           <caret line="188" column="5" lean-forward="true" selection-start-line="111" selection-start-column="3" selection-end-line="188" selection-end-column="5" />
           <folding>
             <element signature="e#933#1283#0" />
@@ -649,47 +617,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
+    <entry file="file://$PROJECT_DIR$/js/soul/lookAboutIa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="1775">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="81" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="29" />
+        <state relative-caret-position="4675">
+          <caret line="187" column="29" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16398" column="13" selection-start-line="16398" selection-start-column="4" selection-end-line="16398" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        <state relative-caret-position="25">
+          <caret line="712" column="8" selection-start-line="712" selection-start-column="8" selection-end-line="712" selection-end-column="8" />
           <folding>
             <element signature="e#144#691#0" />
-            <element signature="e#997#1067#0" />
-            <element signature="e#2037#2063#0" />
-            <element signature="e#897#923#0" />
-            <element signature="e#1409#1435#0" />
-            <element signature="e#3070#4139#0" />
-            <element signature="e#2795#2955#0" />
-            <element signature="e#729#908#0" />
-            <element signature="e#953#2311#0" />
-            <element signature="e#2404#16665#0" />
-            <element signature="e#13138#13893#0" />
+            <element signature="e#4214#5954#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#1043#1402#0" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
