@@ -312,16 +312,13 @@
 
          // 画点   num 一般为2或者3   vertexCount 为要绘制的顶点数
 
-         drawPoints:function ( size =10, num=2, vertexCount ,name='uPointSize' ) {
+         drawPoints:function ( size =10, offset=0, vertexCount ,num=2,name='uPointSize' ) {
 
 
              let gl = ia.world.gl;
              let vCount ;
-             vCount = ia.world.buffer.attribute.positions.length/num;
-             if( vertexCount )
-                 vCount =vertexCount;
+             vCount =vertexCount?vertexCount: ia.world.buffer.attribute.positions.length/num;
 
-             let offset = 0;
              // 顶点数量
 
              let uPointSize = gl.getUniformLocation( ia.world.program,name );
@@ -329,6 +326,42 @@
              gl.uniform1f( uPointSize ,size);
 
              gl.drawArrays( gl.POINTS, offset, vCount );
+
+         },
+
+            /**
+             *
+             * @param way
+             *
+             *  1  --> LINES  绘制线段 两个一组
+             *  2  --> LINE_STRIP 绘制线段 依次连接
+             *  3  --> LINE_LOOP 绘制线段 依次连接 首尾相连
+             *
+             */
+         drawLines:function ( way=1,offset=0,vertexCount,num=2 ) {
+
+             let gl = ia.world.gl;
+
+             let vCount;
+
+             vCount =vertexCount?vertexCount: ia.world.buffer.attribute.positions.length/num;
+
+             switch ( way ) {
+                 case 1: {
+                     gl.drawArrays(gl.LINES, offset, vCount);
+                     break;
+                 }
+                 case 2:{
+                     gl.drawArrays(gl.LINE_STRIP, offset, vCount);
+                     break;
+                 }
+                 case 3:{
+                     gl.drawArrays(gl.LINE_LOOP, offset, vCount);
+                     break;
+                 }
+                 default: console.log(' deving ');
+             }
+
 
          }
 
