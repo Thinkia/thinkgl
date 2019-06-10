@@ -19,15 +19,15 @@ let positions =[0.0,0.0];
 
 let colors = [ 1.0,0.0,0.0,1.0];   //  red
 
-let r = 1;
+let r = 1.0;
 
 // 把圆分成n份
 
 for (let i = 0; i <= n; i++) {
 
     let theta = i * 2 * Math.PI /n;
-    let x = r * Math.sin(theta);
-    let y = r * Math.cos(theta);
+    let x = r * Math.sin(theta) ;
+    let y = r * Math.cos(theta) ;
 
     positions.push(x, y);
 

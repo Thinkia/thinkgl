@@ -225,7 +225,7 @@
 
          },
          // 这里提供最基本的mvMat ，pMat和 vPos 配置
-         helloIaWorld:function ( buffers , ) {
+         helloIaWorld:function ( buffers  ) {
 
              let gl = ia.world.gl;
 
@@ -288,14 +288,11 @@
                      programInfo.attribLocations.vertexColor);
              }
 
-
              // 使用我们自定义的着色属性
 
              gl.useProgram( programInfo.program );
 
-
              ia.world.program = programInfo.program;
-
 
              // 设置 uniforms
 
@@ -312,7 +309,7 @@
 
          // 画点   num 一般为2或者3   vertexCount 为要绘制的顶点数
 
-         drawPoints:function ( size =10, offset=0, vertexCount ,num=2,name='uPointSize' ) {
+         drawPoints:function ( size =10, offset=0, vertexCount ,num=ia.world.vAttrib.numComponents,name='uPointSize' ) {
 
 
              let gl = ia.world.gl;
@@ -338,7 +335,7 @@
              *  3  --> LINE_LOOP 绘制线段 依次连接 首尾相连
              *
              */
-         drawLines:function ( way=1,num=2,offset=0,vertexCount ) {
+         drawLines:function ( way=1,offset=0,vertexCount,num=ia.world.vAttrib.numComponents ) {
 
              let gl = ia.world.gl;
 
@@ -380,7 +377,7 @@
              *
              */
 
-         drawTriangle:function ( way=2,num=2,offset=0,vertexCount) {
+         drawTriangle:function ( way=2,offset=0,vertexCount,num=ia.world.vAttrib.numComponents) {
 
              let gl = ia.world.gl;
 
