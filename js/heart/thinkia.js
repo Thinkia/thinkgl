@@ -48,6 +48,7 @@
          program:{ },
          canvas:'',
          initIaWorld:function (
+             needClear=true,
              vSrc=`
                 attribute vec4 avPos;
                 attribute vec4 avColor;
@@ -91,10 +92,12 @@
 
              ia.world.canvas=canvas;
 
-             gl.clearColor(0.0, 0.0, 0.0, 1.0);
+             if(needClear)
+             {
+                 gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
-             gl.clear(gl.COLOR_BUFFER_BIT);
-
+                 gl.clear(gl.COLOR_BUFFER_BIT);
+             }
              // 顶点与片元着色
              let vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
              let fShader = ia.world.loadShader( gl,gl.FRAGMENT_SHADER,fSrc );
@@ -225,21 +228,23 @@
 
          },
          // 这里提供最基本的mvMat ，pMat和 vPos 配置
-         helloIaWorld:function ( buffers  ) {
+         helloIaWorld:function ( buffers ,needClear=true ) {
 
              let gl = ia.world.gl;
 
              let programInfo = ia.world.programInfo;
 
-             gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
-             gl.clearDepth(1.0);                 // 清除所有图层
-             gl.enable(gl.DEPTH_TEST);           // 开启深度测试
-             gl.depthFunc(gl.LEQUAL);            // 遮挡效果
+             if(needClear)
+             {
+                 gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
+                 gl.clearDepth(1.0);                 // 清除所有图层
+                 gl.enable(gl.DEPTH_TEST);           // 开启深度测试
+                 gl.depthFunc(gl.LEQUAL);            // 遮挡效果
 
-             // 清理canvas.
+                 // 清理canvas.
 
-             gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
-
+                 gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+             }
              // u :uniform   pMat: 投影矩阵
              let upMat = ia.eyes.mat4;
 
