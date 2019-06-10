@@ -338,7 +338,7 @@
              *  3  --> LINE_LOOP 绘制线段 依次连接 首尾相连
              *
              */
-         drawLines:function ( way=1,offset=0,vertexCount,num=2 ) {
+         drawLines:function ( way=1,num=2,offset=0,vertexCount ) {
 
              let gl = ia.world.gl;
 
@@ -362,6 +362,47 @@
                  default: console.log(' deving ');
              }
 
+
+         },
+
+            /**
+             *
+             * @param way
+             *  1 --> TRIANGLES        绘制三角形 三个一组
+             *  2 --> TRIANGLE_STRIP   绘制三角形 依次组成三角形
+             *  3 --> TRIANGLE_FAN     以第一个顶点为中心点，其他顶点作为边缘点依次绘制
+             *
+             * @param num
+             *
+             * @param offset
+             *
+             * @param vertexCount
+             *
+             */
+
+         drawTriangle:function ( way=2,num=2,offset=0,vertexCount) {
+
+             let gl = ia.world.gl;
+
+             let vCount;
+
+             vCount =vertexCount?vertexCount: ia.world.buffer.attribute.positions.length/num;
+
+             switch ( way ) {
+                 case 1: {
+                     gl.drawArrays(gl.TRIANGLES, offset, vCount);
+                     break;
+                 }
+                 case 2:{
+                     gl.drawArrays(gl.TRIANGLE_STRIP, offset, vCount);
+                     break;
+                 }
+                 case 3:{
+                     gl.drawArrays(gl.TRIANGLE_FAN, offset, vCount);
+                     break;
+                 }
+                 default: console.log(' deving ');
+             }
 
          }
 
