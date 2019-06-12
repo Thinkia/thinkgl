@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/example/tutorial/line/line_4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/tutorial/line/line_5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tutorial/line/line_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/line/line_3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tutorial/line/line_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/line/line_4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/line/line_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/line/line_5.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,17 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
-              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" lean-forward="true" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="433">
+              <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -49,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_3.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="42" selection-start-line="42" selection-end-line="43" selection-end-column="28" />
+              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -57,26 +47,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="375">
+              <caret line="15" lean-forward="true" selection-end-line="17" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/rayIa.js">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="152" column="9" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+            <state relative-caret-position="175">
+              <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="700" column="4" selection-start-line="700" selection-start-column="4" selection-end-line="700" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -98,15 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
               <caret line="25" selection-start-line="25" selection-end-line="35" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="17928" column="17" selection-start-line="17928" selection-start-column="17" selection-end-line="17928" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -157,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/heart/thinkMath.js" />
-        <option value="$PROJECT_DIR$/example/test/holleGl.html" />
         <option value="$PROJECT_DIR$/example/test/holle3D.html" />
         <option value="$PROJECT_DIR$/example/test/rotate3D.html" />
         <option value="$PROJECT_DIR$/blog/test/holle3D.md" />
@@ -208,6 +205,8 @@
         <option value="$PROJECT_DIR$/example/tutorial/line/line_4.html" />
         <option value="$PROJECT_DIR$/example/tutorial/line/line_3.js" />
         <option value="$PROJECT_DIR$/example/tutorial/line/line_4.js" />
+        <option value="$PROJECT_DIR$/example/tutorial/line/line_5.html" />
+        <option value="$PROJECT_DIR$/example/tutorial/line/line_5.js" />
       </list>
     </option>
   </component>
@@ -331,7 +330,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.line_4.html">
+  <component name="RunManager" selected="JavaScript Debug.line_5.html">
     <configuration name="line_2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/line/line_2.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -341,26 +340,26 @@
     <configuration name="line_4.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/line/line_4.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="triangle_3_square.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/triangle/triangle_3_square.html" useBuiltInWebServerPort="true">
+    <configuration name="line_5.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/line/line_5.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="triangle_4_circle.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/triangle/triangle_4_circle.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.triangle_3_square.html" />
       <item itemvalue="JavaScript Debug.triangle_4_circle.html" />
       <item itemvalue="JavaScript Debug.line_2.html" />
       <item itemvalue="JavaScript Debug.line_3.html" />
       <item itemvalue="JavaScript Debug.line_4.html" />
+      <item itemvalue="JavaScript Debug.line_5.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.line_5.html" />
         <item itemvalue="JavaScript Debug.line_4.html" />
         <item itemvalue="JavaScript Debug.line_3.html" />
         <item itemvalue="JavaScript Debug.line_2.html" />
         <item itemvalue="JavaScript Debug.triangle_4_circle.html" />
-        <item itemvalue="JavaScript Debug.triangle_3_square.html" />
       </list>
     </recent_temporary>
   </component>
@@ -393,12 +392,12 @@
       <workItem from="1559784736572" duration="10608000" />
       <workItem from="1560130080532" duration="24422000" />
       <workItem from="1560217040786" duration="5687000" />
-      <workItem from="1560302927195" duration="7103000" />
+      <workItem from="1560302927195" duration="9924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184034000" />
+    <option name="totallyTimeSpent" value="186855000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -476,13 +475,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16497">
-          <caret line="624" column="14" selection-start-line="624" selection-start-column="14" selection-end-line="624" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -742,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/test/rayIa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -777,6 +762,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/triangle/triangle_3_square.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" lean-forward="true" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -790,28 +789,42 @@
     <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="42" selection-start-line="42" selection-end-line="43" selection-end-column="28" />
+          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/triangle/triangle_3_square.js">
+    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="433">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="175">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="700" column="4" selection-start-line="700" selection-start-column="4" selection-end-line="700" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
         </state>
       </provider>
     </entry>
