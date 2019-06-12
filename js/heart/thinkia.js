@@ -79,6 +79,7 @@
 
              let canvas = document.querySelector(canvasId);
 
+
              // 获取webgl2 上下文
              let gl = canvas.getContext('webgl2');
 

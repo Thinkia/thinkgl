@@ -1,7 +1,7 @@
 /**
  * 2019.6.12
  *
- *  爱心填充
+ *  爱心填充    增加视角控制
  *
  */
 
@@ -47,9 +47,19 @@ function main() {
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer( heart.positions ,heart.colors );
 
-    iaWorld.helloIaWorld( buffers );
 
-    iaWorld.drawTriangle(3);
+    // 增加视角控制
+    lookControlIa(iaWorld.canvas,ia);
+
+
+    render()
+
+    function render() {
+        iaWorld.helloIaWorld( buffers );
+
+        iaWorld.drawTriangle(3);
+        requestAnimationFrame( render );
+    }
 
 
 }
