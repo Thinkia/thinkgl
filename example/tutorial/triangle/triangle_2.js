@@ -1,7 +1,7 @@
 /**
  * 2019.6.10
  *
- * 这里演示用 连线的方式画三角形drawTriangle( way =1 )
+ * 这里演示用 方法drawTriangle( way =1 )画三角形
  *
  *  way==1 --> TRIANGLES        绘制三角形 三个一组        n/2
  *

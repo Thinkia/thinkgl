@@ -37,6 +37,42 @@
 
         };
 
+
+        // 记录一些常用 着色代码
+        ia.colorful={
+            simplePoint:{
+
+                vSrc:`
+                    attribute vec4 avPos;
+                    attribute vec4 avColor;
+                    
+                    uniform float uPointSize;
+                    
+                    uniform mat4 umvMat;
+                    uniform mat4 upMat;
+            
+                    varying lowp vec4 vColor;
+                  
+                    void main() {
+                      gl_Position = upMat * umvMat * avPos;
+                      gl_PointSize = uPointSize;
+                      vColor = avColor;
+                    }
+                    `,
+
+                fSrc:`
+                    varying lowp vec4 vColor;
+                    
+                    void main() {
+                      gl_FragColor = vColor;
+                     
+                    }
+                `
+
+            }
+
+
+        };
         // world
         // 这里是封装常用的webgl绘制方法  直接用于 tutorial
         ia.world={
@@ -47,33 +83,22 @@
          },
          program:{ },
          canvas:'',
+            /**
+             *
+             * @param needClear    是否清理canvas
+             * @param vSrc         顶点着色src
+             * @param fSrc         片元着色src
+             * @param canvasId
+             * @param avPos        顶点坐标
+             * @param mvMat        模型视口矩阵
+             * @param pMat         投影矩阵
+             *
+             *
+             */
          initIaWorld:function (
              needClear=true,
-             vSrc=`
-                attribute vec4 avPos;
-                attribute vec4 avColor;
-                
-                uniform float uPointSize;
-                
-                uniform mat4 umvMat;
-                uniform mat4 upMat;
-        
-                varying lowp vec4 vColor;
-              
-                void main() {
-                  gl_Position = upMat * umvMat * avPos;
-                  gl_PointSize = uPointSize;
-                  vColor = avColor;
-                }
-                `,
-             fSrc=`
-                varying lowp vec4 vColor;
-                
-                void main() {
-                  gl_FragColor = vColor;
-                 
-                }
-            `,
+             vSrc=ia.colorful.simplePoint.vSrc,
+             fSrc=ia.colorful.simplePoint.fSrc,
 
              canvasId='#glcanvas' ,avPos='avPos',mvMat='umvMat',pMat='upMat' ) {
 
@@ -422,7 +447,6 @@
 
 
 
-
         // view
         ia.view = {
             // mvMat
@@ -487,7 +511,7 @@
 
         };
 
-        // thinkMath   http://www.songho.ca/opengl/gl_matrix.html     常用的数据类库
+        // thinkMath   http://www.songho.ca/opengl/gl_matrix.html     常用的数学类库
 
         ia.thinkMath = {
 
@@ -799,6 +823,7 @@
         ia.action = {
 
                 eyes:{
+                    // 关于透视投影的理解可以参阅下面两个链接
                     // https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl/28301213#28301213
                     // http://www.songho.ca/opengl/gl_projectionmatrix.html
                     openEyes:function(
