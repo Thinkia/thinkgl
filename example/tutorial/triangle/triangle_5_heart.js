@@ -1,7 +1,7 @@
 /**
  * 2019.6.12
  *
- *  爱心填充    增加视角控制
+ *  桃心爱心填充    增加视角控制
  *
  */
 
@@ -14,25 +14,22 @@ let heart ={
     colors:[ 1.0,0.0,0.0,1.0 ]
 }
 
-// 爱心顶点数   越多越饱满
-let n = 999;
 
-// 爱心缩放系数
-let a = 0.5;
+let n =99;
 
-// 心尖系数
+let a = 0.1;
 
-let b =1.2;
+// 桃心方程
 
 for ( let i =1;i<n;i++)
 {
     let theta = i *2.0 * Math.PI /n;
 
-    let x = a *( 2*Math.sin( theta ) - Math.sin(2*theta ));
+    let x = 16*Math.pow(Math.sin(theta),3);
 
-    let y= a *( 2*Math.cos( theta ) - b*Math.cos(2*theta ));
+    let y = 13*Math.cos(theta) - 5*Math.cos(2*theta)-2*Math.cos(3*theta) -Math.cos(4*theta);
 
-    heart.positions.push(x,y);
+    heart.positions.push(a*x,a*y);
 
     heart.colors.push(1.0,0.0,0.0,1.0);
 
@@ -49,7 +46,7 @@ function main() {
 
 
     // 增加视角控制
-    lookControlIa(iaWorld.canvas,ia);
+    lookControlIa(iaWorld.canvas,ia,);
 
 
     render()

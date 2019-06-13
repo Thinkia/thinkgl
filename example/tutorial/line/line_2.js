@@ -3,17 +3,17 @@
  *
  * 这里演示用  LINES 、LIN_STROP、LIN_LOOP  画线的方法
  *
- *  iaWorld.drawLines( num =1 )
- *  1  --> LINES  绘制线段 两个一组
+ *  iaWorld.drawLines( 1 )
+ *  way==1  --> LINES  绘制线段 两个一组
  *
  *  比如有4个顶点就有两组线    01  23
  *
  *
- *  2  --> LINE_STRIP 绘制线段 依次连接
+ *  way==2  --> LINE_STRIP 绘制线段 依次连接
  *
  *  比如有4个顶点就有三组线   01  12  23
  *
- *  3  --> LINE_LOOP 绘制线段 依次连接 首尾相连
+ *  way==3  --> LINE_LOOP 绘制线段 依次连接 首尾相连
  *
  *  比如有4个顶点就有四组线   01  12  23  30
 

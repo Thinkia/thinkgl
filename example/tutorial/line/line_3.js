@@ -38,7 +38,7 @@ function main() {
 
         // 绕向量[0,0,-1] 每帧旋转 2度     60f/s
 
-        ia.action.view.rotate([0,0,-1],0.5*Math.PI/180);
+        ia.action.view.rotate([0,0,-1],2*Math.PI/180);
 
         iaWorld.helloIaWorld( buffers );
         iaWorld.drawLines();
