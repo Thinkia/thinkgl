@@ -3,7 +3,7 @@
  *
  * 这里演示  用线和三角形绘制一个立方体
  *
- * 值得注意的是 我们的顶点组成要设置为3   iaWorld.vAttrib.numComponents
+ * 值得注意的是 我们的顶点组成要设置为3   iaWorld.vAttrib.numComponents=3
  *
  *
  */
@@ -12,10 +12,10 @@ let ia = Ia();
 
 let iaWorld = ia.world;
 
-ia.action.view.jump([0,0,-5])
+ia.action.view.jump([0,0,-5]);
 
 
-iaWorld.vAttrib.numComponents =3
+iaWorld.vAttrib.numComponents =3;
 
 let positions = [
 
@@ -93,11 +93,12 @@ function main() {
         if( times<halfTimes )
             iaWorld.drawLines(3);
         else
-            iaWorld.drawTriangle(3)
+            iaWorld.drawTriangle(3);
 
         if(times>maxTimes) times=0;
 
         requestAnimationFrame( render );
+
     }
 
 

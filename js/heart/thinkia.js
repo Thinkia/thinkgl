@@ -171,7 +171,14 @@
 
             },
 
-         fAttrib:'',
+         fAttrib:{
+
+                 numComponents : 4,
+                 type : '',
+                 normalize : false,
+                 stride : 0,
+                 offset : 0,
+         },
 
          buffer:{
 
@@ -276,8 +283,10 @@
 
              //着色属性
 
+             let fAttrib = ia.world.fAttrib;
+
              {
-                 let numComponents = 4;
+                 let numComponents = fAttrib.numComponents;
                  let type = gl.FLOAT;
                  let normalize = false;
                  let stride = 0;
