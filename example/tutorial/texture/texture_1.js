@@ -12,7 +12,6 @@ let iaWorld = ia.world;
 // 平移
 ia.action.view.jump([-0.5,-0.5,2]);
 
-
 let square = {
 
     //顶点坐标
@@ -22,6 +21,7 @@ let square = {
         1.0,  1.0, 0.0,
         1.0,  0.0, 0.0,
         0.0,  0.0, 0.0,
+
     ],
 
     // 纹理坐标
@@ -33,7 +33,7 @@ let square = {
         0.0,  0.0,
 
     ],
-    // 顶点索引
+    // 三角面片顶点索引
     indices:[
         0,  1,  2,      0,  2,  3,
     ]
@@ -52,9 +52,24 @@ function main() {
 
     let buffers = iaWorld.buffer.textureBuffer.initBuffer( square.positions ,square.coord,square.indices );
 
+    // 纹理加载完毕之后渲染
+
     iaWorld.texture.loadTexure( './img/texture1.png',(texture)=>{
+
+        render();
+
+        function render() {
+
             iaWorld.helloIaWorld(buffers,true,texture);
             iaWorld.drawElements();
-        });
+            requestAnimationFrame(render)
+        }
+
+
+    });
+
+
+
+
 
 }

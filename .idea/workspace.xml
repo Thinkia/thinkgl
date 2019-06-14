@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/img/texture1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/texture_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tutorial/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="441" column="34" selection-start-line="441" selection-start-column="34" selection-end-line="441" selection-end-column="34" />
+            <state relative-caret-position="431">
+              <caret line="438" selection-start-line="438" selection-end-line="438" />
               <folding>
                 <element signature="e#144#691#0" />
                 <element signature="e#785#1620#0" />
@@ -81,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+            <state relative-caret-position="435">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -215,8 +211,8 @@
         <option value="$PROJECT_DIR$/example/tutorial/triangle/triangle_1.js" />
         <option value="$PROJECT_DIR$/example/tutorial/readme.md" />
         <option value="$PROJECT_DIR$/example/tutorial/texture/texture_1.html" />
-        <option value="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" />
         <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
+        <option value="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" />
       </list>
     </option>
   </component>
@@ -429,12 +425,12 @@
       <workItem from="1560217040786" duration="5687000" />
       <workItem from="1560302927195" duration="14818000" />
       <workItem from="1560389644262" duration="14379000" />
-      <workItem from="1560475279538" duration="21272000" />
+      <workItem from="1560475279538" duration="21723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227400000" />
+    <option name="totallyTimeSpent" value="227851000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,11 +445,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16859852" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16859852" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49947312" visible="true" weight="0.077006504" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49947312" weight="0.36334056" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -461,8 +457,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.7918862" weight="0.03253796" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" weight="0.31127983" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" visible="true" weight="0.077006504" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49683878" visible="true" weight="0.31127983" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50316125" side_tool="true" visible="true" weight="0.31127983" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -861,17 +857,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="441" column="34" selection-start-line="441" selection-start-column="34" selection-end-line="441" selection-end-column="34" />
+        <state relative-caret-position="431">
+          <caret line="438" selection-start-line="438" selection-end-line="438" />
           <folding>
             <element signature="e#144#691#0" />
             <element signature="e#785#1620#0" />
@@ -883,6 +872,13 @@
             <element signature="e#9844#10066#0" />
             <element signature="e#10161#10844#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
         </state>
       </provider>
     </entry>
