@@ -40,6 +40,8 @@
 
         // 记录一些常用 着色代码
         ia.colorful={
+
+            curVF:0,
             simplePoint:{
 
                 vSrc:`
@@ -51,7 +53,7 @@
                     uniform mat4 umvMat;
                     uniform mat4 upMat;
             
-                    varying lowp vec4 vColor;
+                    varying highp vec4 vColor;
                   
                     void main() {
                       gl_Position = upMat * umvMat * avPos;
@@ -61,7 +63,7 @@
                     `,
 
                 fSrc:`
-                    varying lowp vec4 vColor;
+                    varying highp vec4 vColor;
                     
                     void main() {
                       gl_FragColor = vColor;
@@ -69,9 +71,43 @@
                     }
                 `
 
+            },
+            texture:{
+
+                vSrc:`attribute vec4 avPos;
+                    attribute vec2 aTextureCoord;
+                
+                    uniform mat4 umvMat;
+                    uniform mat4 upMat;
+                
+                    varying highp vec2 vTextureCoord;
+                
+                    void main(void) {
+                      gl_Position = upMat * umvMat * avPos;
+                      vTextureCoord = aTextureCoord;
+                   
+                   }`,
+
+                fSrc:`
+                    varying highp vec2 vTextureCoord;
+
+                    uniform sampler2D uSampler;
+                
+                    void main(void) {
+                      gl_FragColor = texture2D(uSampler, vTextureCoord);
+                    }
+                `,
+
+
+            },
+            useTexture:function () {
+                ia.colorful.curVF =1;
+
+                ia.world.vAttrib.numComponents = 3;
+
+                ia.world.fAttrib.numComponents = 2;
+
             }
-
-
         };
         // world
         // 这里是封装常用的webgl绘制方法  直接用于 tutorial
@@ -81,6 +117,85 @@
          gl:{
 
          },
+         expand:{
+
+             // 纹理代码
+
+             helloIaWorldExpand:{
+                 texture: function ( texture ) {
+
+                     let gl =ia.world.gl;
+                     gl.activeTexture(gl.TEXTURE0);
+
+                     // Bind the texture to texture unit 0
+                     gl.bindTexture(gl.TEXTURE_2D, texture);
+
+                     // Tell the shader we bound the texture to texture unit 0
+                     gl.uniform1i(ia.world.programInfo.uniformLocations.uSampler, 0);
+
+                      gl.drawElements(gl.TRIANGLES,4,gl.UNSIGNED_SHORT,0);
+
+                 }
+             },
+
+
+         },
+
+         texture:{
+
+             loadTexure:function ( url ,onload=function () {
+
+             } ) {
+
+                 let gl = ia.world.gl;
+                 let texture = gl.createTexture();
+                 gl.bindTexture(gl.TEXTURE_2D, texture);
+
+                 let level = 0;
+                 let internalFormat = gl.RGBA;
+                 let width = 1;
+                 let height = 1;
+                 let border = 0;
+                 let srcFormat = gl.RGBA;
+                 let srcType = gl.UNSIGNED_BYTE;
+                 let pixel = new Uint8Array([0, 0, 255, 255]);  // opaque blue
+                 gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
+                     width, height, border, srcFormat, srcType,
+                     pixel);
+
+                 let image = new Image();
+                 image.onload = function() {
+                     gl.bindTexture(gl.TEXTURE_2D, texture);
+                     gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
+                         srcFormat, srcType, image);
+
+                     // 图片的宽高是否为2的指数次幂;
+                     if (ia.world.texture.isPowerOf2(image.width) && ia.world.texture.isPowerOf2(image.height)) {
+
+                         gl.generateMipmap(gl.TEXTURE_2D);
+                     } else {
+                         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                     }
+
+
+                     onload(texture);
+                 };
+                 image.src = url;
+
+
+                return texture;
+
+             },
+             // 是否为2的指数次幂
+             isPowerOf2:function (value) {
+
+                 return (value & (value - 1)) == 0;
+             }
+
+         },
+
          program:{ },
          canvas:'',
             /**
@@ -97,13 +212,34 @@
              */
          initIaWorld:function (
              needClear=true,
-             vSrc=ia.colorful.simplePoint.vSrc,
-             fSrc=ia.colorful.simplePoint.fSrc,
+             complete=function(){
+             },
 
-             canvasId='#glcanvas' ,avPos='avPos',mvMat='umvMat',pMat='upMat' ) {
+             canvasId='#glcanvas'  ) {
+
+             let vSrc ;
+             let fSrc;
+
+             switch ( ia.colorful.curVF ) {
+                 case 0:{
+
+                     vSrc = ia.colorful.simplePoint.vSrc;
+                     fSrc = ia.colorful.simplePoint.fSrc;
+                     break;
+                 }
+                 case 1:{
+
+                     vSrc = ia.colorful.texture.vSrc;
+                     fSrc = ia.colorful.texture.fSrc;
+                     break;
+                 }
+
+                 default : console.log(' deving ')
+
+             }
+
 
              let canvas = document.querySelector(canvasId);
-
 
              // 获取webgl2 上下文
              let gl = canvas.getContext('webgl2');
@@ -124,6 +260,8 @@
 
                  gl.clear(gl.COLOR_BUFFER_BIT);
              }
+
+
              // 顶点与片元着色
              let vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
              let fShader = ia.world.loadShader( gl,gl.FRAGMENT_SHADER,fSrc );
@@ -141,18 +279,48 @@
 
 
              //
-             ia.world.programInfo = {
-                 program: shaderProgram,
-                 attribLocations: {
-                     vertexPosition: gl.getAttribLocation( shaderProgram, avPos ),
-                     vertexColor: gl.getAttribLocation(shaderProgram, 'avColor'),
-                 },
-                 uniformLocations: {
-                     projectionMatrix: gl.getUniformLocation( shaderProgram, pMat ),
-                     modelViewMatrix: gl.getUniformLocation( shaderProgram, mvMat ),
-                 },
-             };
 
+             switch ( ia.colorful.curVF ) {
+                 // 使用simplePoint 着色
+                 case  0:{
+                     ia.world.programInfo = {
+                         program: shaderProgram,
+                         attribLocations: {
+                             vertexPosition: gl.getAttribLocation( shaderProgram, 'avPos' ),
+                             vertexColor: gl.getAttribLocation(shaderProgram, 'avColor'),
+                         },
+                         uniformLocations: {
+                             projectionMatrix: gl.getUniformLocation( shaderProgram, 'upMat' ),
+                             modelViewMatrix: gl.getUniformLocation( shaderProgram, 'umvMat' ),
+                         },
+                     };
+
+                     break;
+                 }
+
+                 // 使用texture着色
+                 case 1:{
+                     ia.world.programInfo = {
+                         program: shaderProgram,
+                         attribLocations: {
+                             vertexPosition: gl.getAttribLocation(shaderProgram, 'avPos'),
+                             textureCoord: gl.getAttribLocation(shaderProgram, 'aTextureCoord'),
+                         },
+                         uniformLocations: {
+                             projectionMatrix: gl.getUniformLocation(shaderProgram, 'upMat'),
+                             modelViewMatrix: gl.getUniformLocation(shaderProgram, 'umvMat'),
+                             uSampler: gl.getUniformLocation(shaderProgram, 'uSampler'),
+                         },
+                     };
+                        break;
+                 }
+                 default :console.log('deving ')
+
+             }
+
+
+
+             complete();
 
          },
          loadShader:function( gl,type,src ){
@@ -229,7 +397,6 @@
                    let positions = pos;
 
 
-
                    // 创建Float32 ，填充当前缓冲区
 
                    gl.bufferData( array,
@@ -237,11 +404,9 @@
                        draw );
 
                    ia.world.buffer.attribute ={
-                       array: array,
-                       draw: draw,
                        positions:pos,
 
-                   }
+                   };
 
                    let colorBuffer = gl.createBuffer();
                    gl.bindBuffer( gl.ARRAY_BUFFER, colorBuffer );
@@ -255,13 +420,67 @@
                }
 
 
-            }
+            },
+
+             textureBuffer:{
+
+               initBuffer:function ( pos=[],coord=[],index=[] ) {
+
+                   let gl = ia.world.gl;
+                   let positionBuffer = gl.createBuffer();
+                   gl.bindBuffer( gl.ARRAY_BUFFER, positionBuffer );
+
+                   // 顶点坐标
+                   let positions = pos;
+                   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+                   let textureCoordBuffer = gl.createBuffer();
+                   gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordBuffer);
+
+                   // 纹理坐标    uv反序
+                   let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
+
+                   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
+                       gl.STATIC_DRAW);
+
+                   // 顶点索引
+                   let indexBuffer = gl.createBuffer();
+                   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+
+                   let indices = index;
+                   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,
+                       new Uint16Array(indices), gl.STATIC_DRAW);
+
+                   ia.world.buffer.attribute ={
+                       positions:pos,
+                       textureCoord:coord,
+                       indices:index
+
+                   };
+
+
+                   return {
+                       position: positionBuffer,
+                       textureCoord: textureCoordBuffer,
+                       indices: indexBuffer,
+                   };
+
+               },
+
+               uvReverse:function ( array =[] ) {
+
+                   let temp =[];
+                   for(let i=0;i<array.length;i++) i%2==0 ? temp[i] =array[array.length-i-2]: temp[i] =array[array.length-i];
+                   return temp;
+
+               }
+             }
 
 
 
          },
          // 这里提供最基本的mvMat ，pMat和 vPos 配置
-         helloIaWorld:function ( buffers ,needClear=true ) {
+         helloIaWorld:function ( buffers ,needClear=true,texture) {
 
              let gl = ia.world.gl;
 
@@ -286,7 +505,20 @@
 
              let vAttrib = ia.world.vAttrib;
 
-             // 顶点属性.
+             gl.useProgram(programInfo.program);
+
+             // Set the shader uniforms
+
+             gl.uniformMatrix4fv(
+                 programInfo.uniformLocations.projectionMatrix,
+                 false,
+                 upMat);
+             gl.uniformMatrix4fv(
+                 programInfo.uniformLocations.modelViewMatrix,
+                 false,
+                 umvMat);
+             ia.world.program = programInfo.program;
+
              {
                  let numComponents = vAttrib.numComponents;
                  let type = gl.FLOAT;
@@ -306,44 +538,65 @@
                      programInfo.attribLocations.vertexPosition);
              }
 
-             //着色属性
 
              let fAttrib = ia.world.fAttrib;
 
-             {
-                 let numComponents = fAttrib.numComponents;
-                 let type = gl.FLOAT;
-                 let normalize = false;
-                 let stride = 0;
-                 let offset = 0;
-                 gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
-                 gl.vertexAttribPointer(
-                     programInfo.attribLocations.vertexColor,
-                     numComponents,
-                     type,
-                     normalize,
-                     stride,
-                     offset);
-                 gl.enableVertexAttribArray(
-                     programInfo.attribLocations.vertexColor);
+
+             // 片元
+             let numComponents = fAttrib.numComponents;
+             let type = gl.FLOAT;
+             let normalize = fAttrib.normalize;
+             let stride = fAttrib.stride;
+             let offset = fAttrib.offset;
+
+
+             switch ( ia.colorful.curVF) {
+                 case 0:{
+                     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
+                     gl.vertexAttribPointer(
+                         programInfo.attribLocations.vertexColor,
+                         numComponents,
+                         type,
+                         normalize,
+                         stride,
+                         offset);
+                     gl.enableVertexAttribArray(
+                         programInfo.attribLocations.vertexColor);
+                     break;
+                 }
+                 case 1:{
+
+                     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.textureCoord);
+                     gl.vertexAttribPointer(
+                         programInfo.attribLocations.textureCoord,
+                         numComponents,
+                         type,
+                         normalize,
+                         stride,
+                         offset);
+                     gl.enableVertexAttribArray(
+                         programInfo.attribLocations.textureCoord);
+
+                     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers.indices);
+
+                     // Specify the texture to map onto the faces.
+
+                     // Tell WebGL we want to affect texture unit 0
+                     gl.activeTexture(gl.TEXTURE0);
+
+                     // Bind the texture to texture unit 0
+                     gl.bindTexture(gl.TEXTURE_2D, texture);
+
+                     // Tell the shader we bound the texture to texture unit 0
+                     gl.uniform1i(programInfo.uniformLocations.uSampler, 0);
+
+                     break;
+                 }
+
+                 default : console.log( 'deving ')
              }
 
-             // 使用我们自定义的着色属性
 
-             gl.useProgram( programInfo.program );
-
-             ia.world.program = programInfo.program;
-
-             // 设置 uniforms
-
-             gl.uniformMatrix4fv(
-                 programInfo.uniformLocations.projectionMatrix,
-                 false,
-                 upMat);
-             gl.uniformMatrix4fv(
-                 programInfo.uniformLocations.modelViewMatrix,
-                 false,
-                 umvMat);
 
          },
 
@@ -405,7 +658,7 @@
             /**
              *
              * @param way
-             *  1 --> TRIANGLES        绘制三角形 三个一组
+             *  1 --> TRIANGLES        绘制三角形 三个顶点一组
              *  2 --> TRIANGLE_STRIP   绘制三角形 依次组成三角形
              *  3 --> TRIANGLE_FAN     以第一个顶点为中心点，其他顶点作为边缘点依次绘制
              *
@@ -440,6 +693,15 @@
                  }
                  default: console.log(' deving ');
              }
+
+         },
+
+         drawElements(mode=ia.world.gl.TRIANGLES, count=ia.world.buffer.attribute.indices.length, type=ia.world.gl.UNSIGNED_SHORT, offset=0) {
+
+             let gl = ia.world.gl;
+
+             gl.drawElements(mode,count,type,offset);
+
 
          }
 
