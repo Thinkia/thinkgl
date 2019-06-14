@@ -443,6 +443,8 @@
                    gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordBuffer);
 
                    // 纹理坐标    uv反序    值得注意的是webgl 的三维坐标 y是屏幕朝上的，   而屏幕二维坐标的y 是朝下的
+
+
                    let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
 
                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
@@ -462,7 +464,6 @@
                        indices:index
 
                    };
-
 
                    return {
                        position: positionBuffer,
@@ -485,7 +486,7 @@
 
          },
          // 这里提供最基本的mvMat ，pMat和 vPos 配置
-         helloIaWorld:function ( buffers ,needClear=true,texture) {
+         helloIaWorld:function ( buffers ,needClear=true) {
 
              let gl = ia.world.gl;
 
@@ -547,7 +548,8 @@
              let fAttrib = ia.world.fAttrib;
 
 
-             // 片元
+             // 片元着色
+             // todo colors 和 纹理取的rgba 是一样的吗？  这里我把纹理颜色 归在colors 里面  2019。6.14  --thinkia
              let numComponents = fAttrib.numComponents;
              let type = gl.FLOAT;
              let normalize = fAttrib.normalize;
