@@ -60,6 +60,8 @@ function main() {
 
         function render() {
 
+
+
             iaWorld.helloIaWorld(buffers,true,texture);
             iaWorld.drawElements();
             requestAnimationFrame(render)

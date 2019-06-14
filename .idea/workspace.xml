@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/img/sky.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/texture/img/texture1.png" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/texture/img/texture1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/texture/texture_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,21 +22,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="438" selection-start-line="438" selection-end-line="438" />
+            <state relative-caret-position="309">
+              <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
               <folding>
                 <element signature="e#144#691#0" />
                 <element signature="e#785#1620#0" />
                 <element signature="e#1798#2147#0" />
                 <element signature="e#10236#11341#0" />
-                <element signature="e#13068#19819#0" />
                 <element signature="e#6763#7133#0" />
+                <element signature="e#14660#15359#0" />
                 <element signature="e#9453#9829#0" />
                 <element signature="e#9844#10066#0" />
                 <element signature="e#10161#10844#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/texture/img/texture1.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -64,15 +72,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/tutorial/texture/img/texture1.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="300">
+              <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -80,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="275">
+              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -98,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="16314" column="4" selection-start-line="16314" selection-start-column="4" selection-end-line="16314" selection-end-column="4" />
+            <state relative-caret-position="179">
+              <caret line="16322" column="4" selection-start-line="16322" selection-start-column="4" selection-end-line="16322" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -223,8 +226,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-258" />
+    <option name="y" value="336" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -425,12 +428,12 @@
       <workItem from="1560217040786" duration="5687000" />
       <workItem from="1560302927195" duration="14818000" />
       <workItem from="1560389644262" duration="14379000" />
-      <workItem from="1560475279538" duration="21723000" />
+      <workItem from="1560475279538" duration="25295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227851000" />
+    <option name="totallyTimeSpent" value="231423000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -445,7 +448,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16859852" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16859852" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -456,9 +459,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.7918862" weight="0.03253796" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49683878" visible="true" weight="0.31127983" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50316125" side_tool="true" visible="true" weight="0.31127983" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.79083246" weight="0.3449024" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49367756" visible="true" weight="0.31127983" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50632244" side_tool="true" visible="true" weight="0.31127983" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -826,13 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
@@ -847,27 +843,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/img/texture1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="16314" column="4" selection-start-line="16314" selection-start-column="4" selection-end-line="16314" selection-end-column="4" />
+        <state relative-caret-position="179">
+          <caret line="16322" column="4" selection-start-line="16322" selection-start-column="4" selection-end-line="16322" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="438" selection-start-line="438" selection-end-line="438" />
+        <state relative-caret-position="309">
+          <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
           <folding>
             <element signature="e#144#691#0" />
             <element signature="e#785#1620#0" />
             <element signature="e#1798#2147#0" />
             <element signature="e#10236#11341#0" />
-            <element signature="e#13068#19819#0" />
             <element signature="e#6763#7133#0" />
+            <element signature="e#14660#15359#0" />
             <element signature="e#9453#9829#0" />
             <element signature="e#9844#10066#0" />
             <element signature="e#10161#10844#0" />
@@ -875,10 +868,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/texture/img/texture1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/texture/texture_1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="275">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="47" />
         </state>
       </provider>
     </entry>

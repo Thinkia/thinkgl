@@ -159,6 +159,8 @@
                  let srcFormat = gl.RGBA;
                  let srcType = gl.UNSIGNED_BYTE;
                  let pixel = new Uint8Array([0, 0, 255, 255]);  // opaque blue
+
+
                  gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
                      width, height, border, srcFormat, srcType,
                      pixel);
@@ -166,6 +168,9 @@
                  let image = new Image();
                  image.onload = function() {
                      gl.bindTexture(gl.TEXTURE_2D, texture);
+
+                     //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+
                      gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
                          srcFormat, srcType, image);
 
@@ -437,7 +442,7 @@
                    let textureCoordBuffer = gl.createBuffer();
                    gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordBuffer);
 
-                   // 纹理坐标    uv反序
+                   // 纹理坐标    uv反序    值得注意的是webgl 的三维坐标 y是屏幕朝上的，   而屏幕二维坐标的y 是朝下的
                    let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
 
                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
@@ -579,15 +584,7 @@
 
                      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers.indices);
 
-                     // Specify the texture to map onto the faces.
 
-                     // Tell WebGL we want to affect texture unit 0
-                     gl.activeTexture(gl.TEXTURE0);
-
-                     // Bind the texture to texture unit 0
-                     gl.bindTexture(gl.TEXTURE_2D, texture);
-
-                     // Tell the shader we bound the texture to texture unit 0
                      gl.uniform1i(programInfo.uniformLocations.uSampler, 0);
 
                      break;
