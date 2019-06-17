@@ -45,10 +45,8 @@ function main() {
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer( heart.positions ,heart.colors );
 
-
     // 增加视角控制
     lookControlIa(iaWorld.canvas,ia,);
-
 
     render()
 

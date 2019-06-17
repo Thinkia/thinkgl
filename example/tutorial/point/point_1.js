@@ -45,10 +45,6 @@ main();
 
      iaWorld.helloIaWorld( buffers );
 
-    // ia.action.view.rotate([0,1,0],45*Math.PI/180)
-
-
-
      iaWorld.drawPoints();
 
  }

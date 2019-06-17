@@ -100,11 +100,24 @@
 
 
             },
+
+            useSimplePoint:function( num=2 ){
+                ia.colorful.curVF =0;
+
+                // 顶点组   2 --二维组    3--三维组
+                ia.world.vAttrib.numComponents = num;
+
+                //rgba
+                ia.world.fAttrib.numComponents = 4;
+
+            },
             useTexture:function () {
+
                 ia.colorful.curVF =1;
 
                 ia.world.vAttrib.numComponents = 3;
 
+                // 纹理坐标
                 ia.world.fAttrib.numComponents = 2;
 
             }
@@ -169,7 +182,8 @@
                  image.onload = function() {
                      gl.bindTexture(gl.TEXTURE_2D, texture);
 
-                     //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                     //todo  用线性效果反而更差？  2019.6.14 --thinkia
+                   //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
 
                      gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
                          srcFormat, srcType, image);

@@ -125,7 +125,7 @@ function main() {
         ia_circle.world.helloIaWorld( buffers);
         ia_circle.world.drawLines( );
 
-        // 时针
+        // 时针     正常值应该为3600秒  这里取的是360秒
         ia_line1.action.view.rotate([0,0,-1],Math.PI/(3 * 60 *360));
 
         ia_line1.world.helloIaWorld( buffers1, false);
