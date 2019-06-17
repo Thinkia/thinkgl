@@ -54,17 +54,17 @@ function main() {
 
     // 纹理加载完毕之后渲染
 
-    iaWorld.texture.loadTexure( './img/texture1.png',(texture)=>{
+    iaWorld.texture.loadTexure( './img/texture1.png',()=>{
 
         render();
 
         function render() {
 
             // todo  为什么纹理在动画渲染的时候会有  严重缺损效果？   2019.6.14  --thinkia
-            //ia.action.view.rotate([0,-1,0],Math.PI/180);
+           // ia.action.view.rotate([0,1,0],Math.PI/180);
 
-            iaWorld.helloIaWorld(buffers,true,texture);
-            iaWorld.drawElements();
+            iaWorld.helloIaWorld(buffers);
+            iaWorld.drawTexture();
             requestAnimationFrame(render)
         }
 

@@ -182,6 +182,9 @@
                  image.onload = function() {
                      gl.bindTexture(gl.TEXTURE_2D, texture);
 
+                     // 翻转 Y 轴
+                     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+
                      //todo  用线性效果反而更差？  2019.6.14 --thinkia
                    //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
 
@@ -459,7 +462,8 @@
                    // 纹理坐标    uv反序    值得注意的是webgl 的三维坐标 y是屏幕朝上的，   而屏幕二维坐标的y 是朝下的
 
 
-                   let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
+                  // let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
+                   let textureCoordinates =  coord;
 
                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
                        gl.STATIC_DRAW);
@@ -731,12 +735,11 @@
 
          },
 
-         drawElements(mode=ia.world.gl.TRIANGLES, count=ia.world.buffer.attribute.indices.length, type=ia.world.gl.UNSIGNED_SHORT, offset=0) {
+         drawTexture(mode=ia.world.gl.TRIANGLES, count=ia.world.buffer.attribute.indices.length, type=ia.world.gl.UNSIGNED_SHORT, offset=0) {
 
              let gl = ia.world.gl;
 
              gl.drawElements(mode,count,type,offset);
-
 
          }
 
