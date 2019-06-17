@@ -613,18 +613,40 @@
 
          },
 
+         clearColor:function(){
+             let gl = ia.world.gl;
+
+             gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
+             gl.clearDepth(1.0);         // 清除所有图层
+             gl.enable(gl.DEPTH_TEST);           // 开启深度测试
+             gl.depthFunc(gl.LEQUAL);            // 遮挡效果
+
+             // 清理canvas.
+
+             gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+         },
+
          // 画点   num 一般为2或者3   vertexCount 为要绘制的顶点数
 
-         drawPoints:function ( size =10, offset=0, vertexCount ,num=ia.world.vAttrib.numComponents,name='uPointSize' ) {
+         drawPoints:function ( size =10, offset=0,count ) {
 
-
+             let num=ia.world.vAttrib.numComponents;
              let gl = ia.world.gl;
-             let vCount ;
-             vCount =vertexCount?vertexCount: ia.world.buffer.attribute.positions.length/num;
+
+             let vCount;
+
+             count? vCount =count :vCount =ia.world.buffer.attribute.positions.length/num -offset;
+
+             if( offset+vCount>ia.world.buffer.attribute.positions.length/num )
+             {
+                 console.log(' no vertices ')
+                 return
+             }
+
 
              // 顶点数量
 
-             let uPointSize = gl.getUniformLocation( ia.world.program,name );
+             let uPointSize = gl.getUniformLocation( ia.world.program,'uPointSize' );
 
              gl.uniform1f( uPointSize ,size);
 
