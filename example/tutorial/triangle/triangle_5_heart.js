@@ -11,7 +11,7 @@ let ia = Ia();
 let iaWorld = ia.world;
 
 let heart ={
-    positions:[0.0,0.0],
+    positions:[ 0.0,0.0 ],
     colors:[ 1.0,0.0,0.0,1.0 ]
 }
 

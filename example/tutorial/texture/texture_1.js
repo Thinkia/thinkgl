@@ -61,7 +61,7 @@ function main() {
         function render() {
 
             // todo  为什么纹理在动画渲染的时候会有  严重缺损效果？   2019.6.14  --thinkia
-           // ia.action.view.rotate([0,1,0],Math.PI/180);
+            ia.action.view.rotate([0,1,0],Math.PI/180);
 
             iaWorld.helloIaWorld(buffers);
             iaWorld.drawTexture();
