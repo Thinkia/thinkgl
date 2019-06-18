@@ -46,7 +46,7 @@ function main() {
     // 先绘制第0个点 并且大小为5
     iaWorld.drawPoints(5,0,1);
 
-    // 再绘制第23个点，并且大小为10
+    // 再绘制第2、3个点，并且大小为10
     iaWorld.drawPoints(10,2,2);
 
 }

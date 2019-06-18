@@ -37,7 +37,26 @@
 
         };
 
+        // view
+        ia.view = {
+            // mvMat
+            mat4:[
+                1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1
+            ],
+            getPos:function () {
+                let pos =[];
+                pos[0] = ia.view.mat4[12];
+                pos[1] = ia.view.mat4[13];
+                pos[2] = ia.view.mat4[14];
+                return pos;
 
+
+            }
+
+        };
         // 记录一些常用 着色代码
         ia.colorful={
 
@@ -747,17 +766,7 @@
 
 
 
-        // view
-        ia.view = {
-            // mvMat
-             mat4:[
-                1, 0, 0, 0,
-                0, 1, 0, 0,
-                0, 0, 1, 0,
-                0, 0, 0, 1
-            ],
 
-        };
 
 
 
