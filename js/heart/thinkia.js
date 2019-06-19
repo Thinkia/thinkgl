@@ -204,11 +204,9 @@
                      // 翻转 Y 轴
                      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
 
-                     //todo  用线性效果反而更差？  2019.6.14 --thinkia
-                   //gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-
                      gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
                          srcFormat, srcType, image);
+
 
                      // 图片的宽高是否为2的指数次幂;
                      if (ia.world.texture.isPowerOf2(image.width) && ia.world.texture.isPowerOf2(image.height)) {
@@ -218,8 +216,8 @@
                          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
                          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
                          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-                     }
 
+                     }
 
                      onload(texture);
                  };
@@ -281,6 +279,10 @@
 
 
              let canvas = document.querySelector(canvasId);
+
+             // inportant!    必须指定canvas 大小 ，  否则 图形渲染锯齿感非常严重!!!!!!!!!!!    2019.6.19
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
 
              // 获取webgl2 上下文
              let gl = canvas.getContext('webgl2');
@@ -478,8 +480,7 @@
                    let textureCoordBuffer = gl.createBuffer();
                    gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordBuffer);
 
-                   // 纹理坐标    uv反序    值得注意的是webgl 的三维坐标 y是屏幕朝上的，   而屏幕二维坐标的y 是朝下的
-
+                   // todo 纹理坐标    uv反序    值得注意的是webgl 的三维坐标 y是屏幕朝上的，   而屏幕二维坐标的y 是朝下的
 
                   // let textureCoordinates = ia.world.buffer.textureBuffer.uvReverse( coord);
                    let textureCoordinates =  coord;
@@ -487,7 +488,7 @@
                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
                        gl.STATIC_DRAW);
 
-                   // 顶点索引
+                   // 顶点buffer
                    let indexBuffer = gl.createBuffer();
                    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
 
@@ -510,6 +511,7 @@
 
                },
 
+               // todo  反转uv  以达到 图片转正效果，  准备弃用   2019.6.18   --thinkia
                uvReverse:function ( array =[] ) {
 
                    let temp =[];
@@ -586,7 +588,7 @@
 
 
              // 片元着色
-             // todo colors 和 纹理取的rgba 是一样的吗？  这里我把纹理颜色 归在colors 里面  2019。6.14  --thinkia
+             // todo colors 和 纹理取的rgba 是一样的吗？  这里我把纹理颜色 归在colors 里面  2019.6.14  --thinkia
              let numComponents = fAttrib.numComponents;
              let type = gl.FLOAT;
              let normalize = fAttrib.normalize;
