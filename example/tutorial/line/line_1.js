@@ -54,6 +54,9 @@ main();
 
 function main() {
 
+    // 不指定canvas 宽高
+    iaWorld.render.initCanvasPx = false;
+
     iaWorld.initIaWorld( );
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer( positions ,colors );

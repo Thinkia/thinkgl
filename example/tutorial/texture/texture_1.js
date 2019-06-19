@@ -40,11 +40,10 @@ let square = {
 
 };
 
-var cubeRotation = 0.0;
-
 main();
 
 function main() {
+
 
     // 使用texture着色
     ia.colorful.useTexture() ;

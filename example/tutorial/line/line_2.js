@@ -44,6 +44,7 @@ main();
 
 function main() {
 
+
     iaWorld.initIaWorld( );
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer( positions ,colors );

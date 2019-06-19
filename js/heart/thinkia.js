@@ -145,6 +145,11 @@
         // 这里是封装常用的webgl绘制方法  直接用于 tutorial
         ia.world={
 
+         render:{
+             // 是否指定 canvas 的宽高     默认开启
+             initCanvasPx:true,
+
+         },
          programInfo:{},
          gl:{
 
@@ -207,7 +212,6 @@
                      gl.texImage2D(gl.TEXTURE_2D, level, internalFormat,
                          srcFormat, srcType, image);
 
-
                      // 图片的宽高是否为2的指数次幂;
                      if (ia.world.texture.isPowerOf2(image.width) && ia.world.texture.isPowerOf2(image.height)) {
 
@@ -251,6 +255,7 @@
              */
          initIaWorld:function (
              needClear=true,
+             initCanvas=true,
              complete=function(){
              },
 
@@ -280,10 +285,14 @@
 
              let canvas = document.querySelector(canvasId);
 
-             // inportant!    必须指定canvas 大小 ，  否则 图形渲染锯齿感非常严重!!!!!!!!!!!    2019.6.19
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
+             // inportant!    图片必须指定canvas 大小 ，  否则 图形渲染锯齿感非常严重!!!!!!!!!!!    2019.6.19
 
+                debugger;
+                if(ia.world.render.initCanvasPx)
+                {
+                    canvas.width = window.innerWidth
+                    canvas.height = window.innerHeight
+                }
              // 获取webgl2 上下文
              let gl = canvas.getContext('webgl2');
 
