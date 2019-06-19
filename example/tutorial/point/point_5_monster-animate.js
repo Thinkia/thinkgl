@@ -33,7 +33,7 @@ let times = 0;
 let maxTimes = 2;
 
 // 资源路径
-let monster_url = './src/monster.json'
+let monster_url = '../src/monster.json'
 
 iaWorld.jsonObj.loadJson(monster_url,( data )=>
 {

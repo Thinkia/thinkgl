@@ -24,7 +24,7 @@ let monster = {
 
 }
 
-let monster_url = './src/monster.json'
+let monster_url = '../src/monster.json'
 
 iaWorld.jsonObj.loadJson(monster_url,( data )=>
 {
