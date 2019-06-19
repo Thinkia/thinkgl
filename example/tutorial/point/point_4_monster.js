@@ -2,7 +2,7 @@
  *
  *  这里演示加载一个怪兽点云模型    2019.6.19
  *
- *  两天前使用three.js的时候曾用过该数据  https://thinkia.github.io/ThreeJs/demos/monster_lv1.html
+ *  两年前使用three.js的时候曾用过该数据  https://thinkia.github.io/ThreeJs/demos/monster_lv1.html
  *
  *  资源来自 http://www.3drt.com/downloads.htm
  *

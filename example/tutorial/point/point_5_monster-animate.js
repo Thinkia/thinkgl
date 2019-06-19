@@ -2,7 +2,8 @@
  *
  *  演示加载一个怪兽点云模型 循环动画    2019.6.19
 
- *   关于 动画函数这里只做了浅封装， 这里只是为了演示功能，暂时未加入  thinkia.js
+ *  关于 动画函数这里只做了浅封装， 这里只是为了演示功能，暂时未加入  thinkia.js
+ *
  *
  *
  */
@@ -34,8 +35,9 @@ let maxTimes = 2;
 
 // 资源路径
 let monster_url = '../src/monster.json'
+let buffers;
 
-iaWorld.jsonObj.loadJson(monster_url,( data )=>
+iaWorld.jsonObj.loadJson( monster_url,( data )=>
 {
 
     maxFrame = data.morphTargets.length;
@@ -48,9 +50,9 @@ iaWorld.jsonObj.loadJson(monster_url,( data )=>
     // 增加视角控制
     lookControlIa(iaWorld.canvas,ia);
 
-    let buffers;
 
     curMonster();
+    render();
 
     function curMonster( )
     {
@@ -61,14 +63,15 @@ iaWorld.jsonObj.loadJson(monster_url,( data )=>
             monster.positions[i] = data.morphTargets[curFrame].vertices[i];
         }
 
-        monster.colors=[];
-
         // 坐标缩小100
         for (let i= 0;i<monster.positions.length;i++) {
 
             monster.positions[i]/=100.0;
 
         }
+
+        // 清空颜色数组
+        monster.colors=[];
 
         // 初始化颜色值  均为红色
         for(let i=0;i<monster.positions.length/3;i++) {
@@ -77,25 +80,27 @@ iaWorld.jsonObj.loadJson(monster_url,( data )=>
 
         }
 
-         buffers = iaWorld.buffer.positionBuffer.initBuffer( monster.positions ,monster.colors );
+        buffers = iaWorld.buffer.positionBuffer.initBuffer( monster.positions ,monster.colors );
 
     }
 
-    render();
-
     function render() {
+
         times++;
         if(times>maxTimes)
         {
             times=0;
-            curFrame++;
 
             // 释放buffer;
             iaWorld.gl.deleteBuffer(buffers.colors);
             iaWorld.gl.deleteBuffer(buffers.position);
+
+            // 下一帧数据
+            curFrame++;
             curMonster();
             if(curFrame==maxFrame-1)
             {
+                //循环
                 curFrame=0;
             }
 
@@ -107,7 +112,6 @@ iaWorld.jsonObj.loadJson(monster_url,( data )=>
 
         requestAnimationFrame(render);
     }
-
 
 })
 
