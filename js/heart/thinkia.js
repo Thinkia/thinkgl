@@ -238,7 +238,19 @@
              }
 
          },
+         jsonObj:{
+             loadJson:function ( url,onload=function () {
+             }) {
 
+                 fetch( url)
+                     .then( response => response.json())
+                     .then( data =>{
+
+                         onload(data);
+
+                     })
+             }
+         },
          program:{ },
          canvas:'',
             /**
@@ -255,7 +267,6 @@
              */
          initIaWorld:function (
              needClear=true,
-             initCanvas=true,
              complete=function(){
              },
 
@@ -286,8 +297,7 @@
              let canvas = document.querySelector(canvasId);
 
              // inportant!    图片必须指定canvas 大小 ，  否则 图形渲染锯齿感非常严重!!!!!!!!!!!    2019.6.19
-
-                debugger;
+              // todo   但是 为什么  不指定canvas 宽高 渲染的模式 会不一样呢？  2109.6.19 thinkia
                 if(ia.world.render.initCanvasPx)
                 {
                     canvas.width = window.innerWidth
@@ -329,7 +339,6 @@
                  return ;
              }
 
-
              //
 
              switch ( ia.colorful.curVF ) {
@@ -369,8 +378,6 @@
                  default :console.log('deving ')
 
              }
-
-
 
              complete();
 

@@ -54,7 +54,6 @@ function main() {
 
     // 纹理加载完毕之后渲染
 
-
     iaWorld.texture.loadTexure( './img/texture1.png',(texture)=>{
 
         render();
@@ -62,7 +61,7 @@ function main() {
 
             // todo  为什么纹理在动画渲染的时候会有  严重缺损效果？   2019.6.14  --thinkia
             // 非掉帧问题 2019.6.19                       问题已解决， 必须指定canvas 的宽高
-            ia.action.view.rotate([0,1,1],1*Math.PI/180);
+            ia.action.view.rotate([0,1,0],1*Math.PI/180);
 
             iaWorld.helloIaWorld(buffers,true);
             iaWorld.drawTexture();
@@ -72,8 +71,5 @@ function main() {
         }
 
     });
-
-
-
 
 }
