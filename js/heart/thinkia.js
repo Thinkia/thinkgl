@@ -57,13 +57,24 @@
             }
 
         };
+
+
         // 记录一些常用 着色代码
         ia.colorful={
 
             curVF:0,
+
+            // 自定义着色
+            freeGL:{
+
+                vSrc:'',
+                fSrc:'',
+
+            },
             simplePoint:{
 
                 vSrc:`
+                               
                     attribute vec4 avPos;
                     attribute vec4 avColor;
                     
@@ -75,25 +86,32 @@
                     varying highp vec4 vColor;
                   
                     void main() {
+                                    
                       gl_Position = upMat * umvMat * avPos;
                       gl_PointSize = uPointSize;
                       vColor = avColor;
+                                          
                     }
                     `,
 
                 fSrc:`
+             
                     varying highp vec4 vColor;
                     
                     void main() {
+                                  
                       gl_FragColor = vColor;
-                     
+                                         
                     }
                 `
 
             },
             texture:{
 
-                vSrc:`attribute vec4 avPos;
+                vSrc:`
+                
+            
+                    attribute vec4 avPos;
                     attribute vec2 aTextureCoord;
                 
                     uniform mat4 umvMat;
@@ -102,25 +120,63 @@
                     varying highp vec2 vTextureCoord;
                 
                     void main(void) {
-                      gl_Position = upMat * umvMat * avPos;
-                      vTextureCoord = aTextureCoord;
+                    
+                    gl_Position = upMat * umvMat * avPos;
+                    vTextureCoord = aTextureCoord;
+                    
+                  
                    
                    }`,
 
                 fSrc:`
+                
+                    
                     varying highp vec2 vTextureCoord;
 
                     uniform sampler2D uSampler;
                 
                     void main(void) {
+                    
                       gl_FragColor = texture2D(uSampler, vTextureCoord);
+                
+                      
                     }
                 `,
 
 
             },
+            simpleLight:{
 
+                vSrc:`
+                    attribute vec4 avPos;
+                    attribute vec4 avColor;
+                    attribute vec3 avNormal;
+                    uniform vec3 uLightColor;
+                    uniform vec3 uLightDir;
+                    uniform mat4 umvMat;
+                    uniform mat4 upMat;
+                    varying vec4 vColor;
+                
+                    void main() {
+                        gl_Position = upMat * umvMat * avPos;
+                        // 标准化（把长度变为 1 ）
+                        vec3 normal = normalize(avNormal);
+                        float nDotL = max(dot(uLightDir, normal), 0.0);
+                        vec3 diffuse = uLightColor * avColor.rgb * nDotL;
+                        vColor = vec4(diffuse, avColor.a);
+                    }               
+                `,
+
+                fSrc:`          
+                    precision mediump float; 
+                    varying vec4 vColor;
+                    void main() {
+                       gl_FragColor = vColor;
+                    }           
+                `
+            },
             useSimplePoint:function( num=2 ){
+
                 ia.colorful.curVF =0;
 
                 // 顶点组   2 --二维组    3--三维组
@@ -130,14 +186,25 @@
                 ia.world.fAttrib.numComponents = 4;
 
             },
-            useTexture:function () {
+            useTexture:function ( num =3) {
 
                 ia.colorful.curVF =1;
 
-                ia.world.vAttrib.numComponents = 3;
+                ia.world.vAttrib.numComponents = num;
 
                 // 纹理坐标
                 ia.world.fAttrib.numComponents = 2;
+
+            },
+            useSimpleLight:function ( num =3) {
+
+                ia.colorful.curVF =2;
+
+                // 顶点组   2 --二维组    3--三维组
+                ia.world.vAttrib.numComponents = num;
+
+                //rgba
+                ia.world.fAttrib.numComponents = 4;
 
             }
         };
@@ -289,6 +356,13 @@
                      break;
                  }
 
+                 case 2:{
+                     vSrc = ia.colorful.simpleLight.vSrc;
+                     fSrc = ia.colorful.simpleLight.fSrc;
+                     break;
+
+                 }
+
                  default : console.log(' deving ')
 
              }
@@ -322,7 +396,6 @@
 
                  gl.clear(gl.COLOR_BUFFER_BIT);
              }
-
 
              // 顶点与片元着色
              let vShader = ia.world.loadShader( gl,gl.VERTEX_SHADER,vSrc );
@@ -375,6 +448,30 @@
                      };
                         break;
                  }
+
+                 case 2:{
+
+                     ia.world.programInfo = {
+                         program: shaderProgram,
+                         attribLocations: {
+                             vertexPosition: gl.getAttribLocation( shaderProgram, 'avPos' ),
+                             vertexColor: gl.getAttribLocation(shaderProgram, 'avColor'),
+                             vertexNormal:gl.getAttribLocation(shaderProgram,'avNormal'),
+
+                         },
+                         uniformLocations: {
+                             projectionMatrix: gl.getUniformLocation( shaderProgram, 'upMat' ),
+                             modelViewMatrix: gl.getUniformLocation( shaderProgram, 'umvMat' ),
+                             lightColor:gl.getUniformLocation(shaderProgram,'uLightColor'),
+                             lightDir:gl.getUniformLocation(shaderProgram,'uLightDir'),
+                         },
+                     };
+
+                     break;
+
+
+                 }
+
                  default :console.log('deving ')
 
              }
@@ -535,9 +632,66 @@
                    return temp;
 
                }
+             },
+
+             simpleLightBuffer:{
+                 initBuffer:function ( pos =[],colors=[],index=[],normals=[]) {
+
+
+                        let gl = ia.world.gl;
+
+                        // positions
+                        let positionBuffer = gl.createBuffer();
+
+                        gl.bindBuffer(gl.ARRAY_BUFFER,positionBuffer);
+
+                        let positions = pos;
+
+                        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+
+                        // colors
+                        let colorsBuffer = gl.createBuffer();
+
+                        gl.bindBuffer( gl.ARRAY_BUFFER,colorsBuffer );
+
+                        let color = colors;
+
+                        gl.bufferData(gl.ARRAY_BUFFER,new Float32Array( color),gl.STATIC_DRAW );
+
+                        // indices
+                        let indexBuffer = gl.createBuffer();
+                        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+
+
+                        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(index),gl.STATIC_DRAW );
+
+                        // normal
+                       let normalBuffer = gl.createBuffer();
+                       gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+
+                       gl.bufferData(gl.ARRAY_BUFFER,new Float32Array( normals ), gl.STATIC_DRAW );
+
+
+                       // 保存buffer  attrib
+                       ia.world.buffer.attribute.positions = positions;
+                       ia.world.buffer.attribute.normals = normals
+                       ia.world.buffer.attribute.colors = colors;
+                       ia.world.buffer.attribute.indices = index;
+
+
+
+                       return {
+
+                           position:positionBuffer,
+                           normal:normalBuffer,
+                           color:colorsBuffer,
+                           indices:indexBuffer
+
+                       }
+
+                 }
              }
-
-
 
          },
          // 这里提供最基本的mvMat ，pMat和 vPos 配置
@@ -550,7 +704,7 @@
              if(needClear)
              {
                  gl.clearColor(0.0, 0.0, 0.0, 1.0);  // rgba 值
-                 gl.clearDepth(1.0);                 // 清除所有图层
+                 gl.clearDepth(1.0);          // 清除所有图层
                  gl.enable(gl.DEPTH_TEST);           // 开启深度测试
                  gl.depthFunc(gl.LEQUAL);            // 遮挡效果
 
@@ -578,6 +732,9 @@
                  programInfo.uniformLocations.modelViewMatrix,
                  false,
                  umvMat);
+
+
+
              ia.world.program = programInfo.program;
 
              {
@@ -626,6 +783,8 @@
                          programInfo.attribLocations.vertexColor);
                      break;
                  }
+
+
                  case 1:{
 
                      gl.bindBuffer(gl.ARRAY_BUFFER, buffers.textureCoord);
@@ -647,10 +806,21 @@
                      break;
                  }
 
+                 case 2:{
+                     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
+                     gl.vertexAttribPointer(
+                         programInfo.attribLocations.vertexColor,
+                         numComponents,
+                         type,
+                         normalize,
+                         stride,
+                         offset);
+                     gl.enableVertexAttribArray(
+                         programInfo.attribLocations.vertexColor);
+                     break;
+                 }
                  default : console.log( 'deving ')
              }
-
-
 
          },
 
