@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/example/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/project/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="211">
               <caret line="1305" column="16" selection-start-line="1305" selection-start-column="16" selection-end-line="1305" selection-end-column="16" />
             </state>
           </provider>
@@ -34,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/project/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
+            <state relative-caret-position="325">
+              <caret line="13" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -61,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="34">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
               <folding>
                 <element signature="e#200#305#0" />
                 <element signature="e#330#415#0" />
@@ -215,8 +214,8 @@
         <option value="$PROJECT_DIR$/example/project/index.html" />
         <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
         <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html" />
-        <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" />
         <option value="$PROJECT_DIR$/example/project/index.js" />
+        <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" />
       </list>
     </option>
   </component>
@@ -433,12 +432,12 @@
       <workItem from="1560907809789" duration="22184000" />
       <workItem from="1560993691320" duration="5232000" />
       <workItem from="1561079810931" duration="9241000" />
-      <workItem from="1561339402818" duration="11097000" />
+      <workItem from="1561339402818" duration="11263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304681000" />
+    <option name="totallyTimeSpent" value="304847000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -808,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="1305" column="16" selection-start-line="1305" selection-start-column="16" selection-end-line="1305" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/triangle/triangle_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -832,26 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding>
-            <element signature="e#200#305#0" />
-            <element signature="e#330#415#0" />
-            <element signature="e#445#487#0" />
-            <element signature="e#1853#2081#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_1_cube.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -863,6 +835,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="1305" column="16" selection-start-line="1305" selection-start-column="16" selection-end-line="1305" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+          <folding>
+            <element signature="e#200#305#0" />
+            <element signature="e#330#415#0" />
+            <element signature="e#445#487#0" />
+            <element signature="e#1853#2081#0" />
+          </folding>
         </state>
       </provider>
     </entry>
