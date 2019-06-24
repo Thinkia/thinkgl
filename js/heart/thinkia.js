@@ -942,7 +942,7 @@
 
          },
 
-         drawTexture(mode=ia.world.gl.TRIANGLES, count=ia.world.buffer.attribute.indices.length, type=ia.world.gl.UNSIGNED_SHORT, offset=0) {
+         drawTexture( offset=0, count=ia.world.buffer.attribute.indices.length, type=ia.world.gl.UNSIGNED_SHORT, mode=ia.world.gl.TRIANGLES) {
 
              let gl = ia.world.gl;
 
@@ -1302,6 +1302,7 @@
 
                 },
 
+                //  求得经过旋转变换后的三维坐标
                 applyMat4:function ( vec ,mat4 ) {
 
                     let temVec = [vec[0],vec[1],vec[2] ];
@@ -1310,7 +1311,49 @@
                         vec[i] = ( mat4[ i ] * temVec[0] + mat4[ 4 +i ] * temVec[1] + mat4[ 8+i ] * temVec[2] + mat4[ 12+i ] ) * w;
 
                     return vec ;
+                },
+
+
+                /**
+                 *
+                 * @param vec
+                 * @param vec2
+                 *
+                 * 返回结果为两向量夹角  弧度
+                 */
+                applyVec3:function (vec,vec2 ) {
+
+                    let  temVec=[],temVec2=[];
+
+                    let result;
+
+                    let cosTheta;
+
+                    for(let i=0;i<3;i++)
+                    {
+                        temVec[i] = vec[i];
+                        temVec2[i] = vec2[i];
+                    }
+
+                    let top =0;
+                    let bot ;
+
+                    for( let i=0;i<3;i++)
+                        top+=temVec[i]*temVec2[i];
+
+                    bot = Math.sqrt(temVec[0]*temVec[0] +temVec[1]*temVec[1] +temVec[2]*temVec[2]) *
+                          Math.sqrt(temVec2[0]*temVec2[0] +temVec2[1]*temVec2[1] +temVec2[2]*temVec2[2]) ;
+
+                    cosTheta = top/bot;
+
+                    result =180* Math.acos( cosTheta )/Math.PI;
+
+                    return result;
+
                 }
+
+
+
                 
             }
         };
