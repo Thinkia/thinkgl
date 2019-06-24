@@ -1,7 +1,7 @@
 /**
- * 2019.6.13
+ * 2019.6.24
  *
- * 这里演示  单面渲染;
+ * 这里演示  单面渲染;  控制立方体任意一个面，根据原始法向量 与当前视角变换控制是否渲染
  *
  *
  */
@@ -124,6 +124,8 @@ let cube={
 
 }
 
+let oriVec3=[0,0,0]
+
 let baseNormal=[0,0,1];
 
 let rotateAngle = 0;
@@ -154,6 +156,7 @@ function main() {
 
             iaWorld.helloIaWorld(buffers,true);
 
+            // 绘制6个面
             for( let i=0;i<6;i++)
             {
                 // 原始法向量
@@ -161,7 +164,7 @@ function main() {
 
                 // 当前法向量
                 let dir = ia.thinkMath.vec3.applyMat4( faceNormal,ia.view.mat4 );
-                let ori = ia.thinkMath.vec3.applyMat4( [0,0,0],ia.view.mat4 );
+                let ori = ia.thinkMath.vec3.applyMat4( oriVec3,ia.view.mat4 );
 
                 let curNormal = [ dir[0]-ori[0],dir[1]-ori[1],dir[2]-ori[2]];
 
@@ -172,7 +175,6 @@ function main() {
 
 
             }
-
 
             requestAnimationFrame(render)
 
