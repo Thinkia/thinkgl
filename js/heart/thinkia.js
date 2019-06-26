@@ -1104,7 +1104,7 @@
                     lMat4[ 11 ] = a41 * b13 + a42 * b23 + a43 * b33 + a44 * b43;
                     lMat4[ 15 ] = a41 * b14 + a42 * b24 + a43 * b34 + a44 * b44;
 
-
+                    return lMat4;
                 },
 
                 getInverse:function ( mat4 ) {
