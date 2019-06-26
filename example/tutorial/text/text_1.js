@@ -1,6 +1,6 @@
 /**
  *
- *   文字标签示例              2019.6.26  thinkia
+ *   文字标签示例  2019.6.26  thinkia
  *   根据三维坐标，计算屏幕坐标    将文字设置到屏幕坐标中
  *
  *   其实刚好与射线的原理相反：
@@ -57,13 +57,13 @@ function main() {
 
     function setFont() {
 
-        // 获取[1.0,1.0,0.0]  的三维坐标
-        let vec3 = ia.thinkMath.vec3.applyMat4([1.0,1.0,0.0],ia.view.mat4 )
+        // 获取[1.0,1.0,0.0]  的三维坐标   mv变换后的坐标
+        let vec3 = ia.thinkMath.vec3.applyMat4([1.0,1.0,0.0],ia.view.mat4 );
 
-        // 获取 投影坐标
+        // 获取 投影变换后坐标
         ia.thinkMath.vec3.applyMat4(vec3,ia.eyes.mat4 ) ;
 
-        // 坐标换算
+        // 坐标换算(  -1 , 1)   因为 window 的宽高 刚好等于 canvas的宽高  ； 实际上要使用canvas的宽高才更合适;
         screen.x = window.innerWidth*(vec3[0] +1)/2;
 
         screen.y =  window.innerHeight*( 1-vec3[1] )/2;
