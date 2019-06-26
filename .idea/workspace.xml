@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/tutorial/src/pano/Yokohama3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/project/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/project/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,28 +19,47 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="944" column="9" selection-start-line="944" selection-start-column="9" selection-end-line="944" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/project/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+            <state relative-caret-position="4400">
+              <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/project/src/localData/1.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/project/src/localData/2.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
+            <state relative-caret-position="275">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -47,47 +67,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/project/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="325">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="127" selection-start-line="127" selection-end-line="131" selection-end-column="22" />
-              <folding>
-                <element signature="e#198#2084#0" />
-                <element signature="n#!!block;n#main#0" />
-              </folding>
+            <state relative-caret-position="275">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/project/src/localData/17.jpg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_1_cube.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="17" lean-forward="true" selection-end-line="104" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/project/src/localData/22.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/project/src/localData/25.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/project/src/localData/26.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/project/src/localData/28.jpg">
+        <entry file="file://$PROJECT_DIR$/example/tutorial/src/pano/Yokohama3.jpg">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -142,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/example/test/helloIa.js" />
         <option value="$PROJECT_DIR$/example/test/lookIa.js" />
         <option value="$PROJECT_DIR$/example/tutorial/point/line_1.html" />
         <option value="$PROJECT_DIR$/example/tutorial/line/line_2.html" />
@@ -190,9 +194,10 @@
         <option value="$PROJECT_DIR$/example/project/src/ver.json" />
         <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
         <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html" />
-        <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" />
         <option value="$PROJECT_DIR$/example/project/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/example/project/index.js" />
+        <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" />
       </list>
     </option>
   </component>
@@ -202,7 +207,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -213,6 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,27 +236,6 @@
               <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="localData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
@@ -277,22 +262,8 @@
               <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-              <item name="texture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-              <item name="texture" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-              <item name="triangle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pano" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
@@ -315,7 +286,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +294,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/project/src/localData" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/tutorial/src/pano" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -336,14 +306,15 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\project\src\localData" />
-      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\point\src" />
-      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\texture\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial" />
       <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\line_1.html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\src\pano" />
+      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\project\src\localData" />
+      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\point\src" />
+      <recent name="C:\Users\VT_LiShuchang\Desktop\thinkgl\example\tutorial\texture\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -358,7 +329,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.geo_2_cube.html">
     <configuration name="geo_1_cube.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thinkgl/example/tutorial/geometry/geo_1_cube.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -383,8 +354,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.geo_2_cube.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.texture_1.html" />
         <item itemvalue="JavaScript Debug.geo_1_cube.html" />
         <item itemvalue="JavaScript Debug.line_1.html" />
@@ -429,12 +400,14 @@
       <workItem from="1560993691320" duration="5232000" />
       <workItem from="1561079810931" duration="9241000" />
       <workItem from="1561339402818" duration="13014000" />
-      <workItem from="1561427061106" duration="5435000" />
+      <workItem from="1561427061106" duration="6768000" />
+      <workItem from="1561451536165" duration="2056000" />
+      <workItem from="1561512491061" duration="2977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312033000" />
+    <option name="totallyTimeSpent" value="318399000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -449,7 +422,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100105375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14699684" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -461,8 +434,8 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.3286334" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.7881981" weight="0.3449024" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49894625" visible="true" weight="0.09652928" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50105375" side_tool="true" visible="true" weight="0.09652928" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49789253" visible="true" weight="0.28199565" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021075" side_tool="true" visible="true" weight="0.28199565" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -512,20 +485,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_5_monster-animate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_6_monster-animateBeta.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/triangle/triangle_2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1325">
@@ -607,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_1_cube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="17" lean-forward="true" selection-end-line="104" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407500">
@@ -625,20 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -739,12 +677,6 @@
     <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/project/src/localData/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/project/src/localData/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/project/src/localData/4.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -769,48 +701,81 @@
     <entry file="file://$PROJECT_DIR$/example/project/src/localData/25.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23600">
+          <caret line="944" column="9" selection-start-line="944" selection-start-column="9" selection-end-line="944" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/project/src/localData/26.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/example/project/src/localData/28.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="127" selection-start-line="127" selection-end-line="131" selection-end-column="22" />
-          <folding>
-            <element signature="e#198#2084#0" />
-            <element signature="n#!!block;n#main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="944" column="9" selection-start-line="944" selection-start-column="9" selection-end-line="944" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="325">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/project/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="4400">
+          <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/project/src/localData/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/project/src/localData/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/point/point_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_1_cube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="17" lean-forward="true" selection-end-line="104" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/src/pano/Yokohama3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
