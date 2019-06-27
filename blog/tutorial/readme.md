@@ -3,6 +3,10 @@
                  
                                                                 --2019.6.27   thinkia
 
++ 什么是thinkgl？
+  
+   thinkgl 是由thinkia写的一个webgl库
+
 +  为什么要写thinkgl?
 
        目前已有three.js,babylon.js等主流webgl库；国内也有蛮好的库比如claygl,G3D,Hilo3d,他们的作者都是很棒很有趣的人；

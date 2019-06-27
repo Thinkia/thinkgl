@@ -43,7 +43,7 @@ iaWorld.jsonObj.loadJson( monster_url,( data )=>
     maxFrame = data.morphTargets.length;
 
     // 使用三维坐标点
-    iaWorld.vAttrib.numComponents = 3;
+    ia.colorful.useSimplePoint(3 );
 
     iaWorld.initIaWorld();
 
