@@ -45,7 +45,7 @@ iaWorld.jsonObj.loadJson( monster_url,( data )=>
     // 使用三维坐标点
     iaWorld.vAttrib.numComponents = 3;
 
-    iaWorld.initIaWorld( );
+    iaWorld.initIaWorld();
 
     // 增加视角控制
     lookControlIa(iaWorld.canvas,ia);
