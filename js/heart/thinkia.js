@@ -839,7 +839,7 @@
 
          // 画点   num 一般为2或者3   vertexCount 为要绘制的顶点数
 
-         drawPoints:function ( size =10, offset=0,count ) {
+         codrawPoints:function ( size =10, offset=0,count ) {
 
              let num=ia.world.vAttrib.numComponents;
              let gl = ia.world.gl;
