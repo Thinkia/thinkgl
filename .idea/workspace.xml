@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/blog/tutorial/line.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/tutorial/point.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tutorial/point.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/tutorial/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tutorial/readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,9 +33,19 @@
         <entry file="file://$PROJECT_DIR$/blog/tutorial/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="600">
+              <first_editor relative-caret-position="264">
                 <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
               </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/tutorial/line.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -79,11 +88,6 @@
               <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/simpleCube.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -452,12 +456,12 @@
       <workItem from="1561600750295" duration="42000" />
       <workItem from="1561600907410" duration="9547000" />
       <workItem from="1561616874121" duration="7968000" />
-      <workItem from="1561684512327" duration="9168000" />
+      <workItem from="1561684512327" duration="11447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353576000" />
+    <option name="totallyTimeSpent" value="355855000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -483,9 +487,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.3286334" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.7876712" weight="0.3449024" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" visible="true" weight="0.054229934" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5057956" side_tool="true" visible="true" weight="0.054229934" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.78714436" visible="true" weight="0.3449024" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" weight="0.27223426" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21285564" side_tool="true" weight="0.3449024" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -535,13 +539,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_2.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -857,10 +854,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog/tutorial/line.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/tutorial/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="600">
+          <first_editor relative-caret-position="264">
             <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           </first_editor>
           <second_editor />
