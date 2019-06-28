@@ -52,8 +52,38 @@
                 pos[1] = ia.view.mat4[13];
                 pos[2] = ia.view.mat4[14];
                 return pos;
+            },
 
+            //  mat4 初始朝向
+            target:[0,0,-1],
 
+            // mat4旋转信息
+            rotateAngle:{
+
+                // 转轴
+                axis:'XYZ',
+
+                // 转角
+                value:0,
+
+            },
+
+            getCurRotateAngle:function () {
+
+                let normal =[];
+                for( let i=0;i<ia.view.target.length;i++)
+                {
+                    normal[i] = ia.view.target[i];
+                }
+
+                let dir = ia.thinkMath.vec3.applyMat4( normal,ia.view.mat4 );
+                let ori = ia.thinkMath.vec3.applyMat4( [0,0,0],ia.view.mat4 );
+
+                let curNormal = [ dir[0]-ori[0],dir[1]-ori[1],dir[2]-ori[2]];
+
+                ia.view.rotateAngle.value = ia.thinkMath.vec3.applyVec3( normal,curNormal );
+
+                return ia.view.rotateAngle.value
             }
 
         };
