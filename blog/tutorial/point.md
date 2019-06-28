@@ -9,11 +9,11 @@
    
 #### 1.使用thinkgl画点： 绘制一个点
 
-+ demo1：  https://thinkia.github.io/thinkgl/example/tutorial/point/point_1.html  
-
-+ 点击屏幕 code 链接即可跳转到源码处
+ demo1：  https://thinkia.github.io/thinkgl/example/tutorial/point/point_1.html  
 
     
+    点击屏幕 code 链接即可跳转到源码处
+
     我看了看自己的源码，静坐在电脑前思考了很久…… 我该如何来解释我的代码？能让更多读者通俗易懂
     
     的明白，又不能浪费读者宝贵的时间。代码里的ia ,iaWorld可当作thinkgl中调用三维函数的媒介，后
@@ -38,10 +38,10 @@
     
 #### 2.使用thinkgl画点：绘制多个不同位置不同颜色的点
 
-+ demo2:  https://thinkia.github.io/thinkgl/example/tutorial/point/point_2.html
+demo2:  https://thinkia.github.io/thinkgl/example/tutorial/point/point_2.html
 
-+ 点击屏幕 code 链接即可跳转到源码处   
 
+    点击屏幕 code 链接即可跳转到源码处   
      
     与绘制一个点相比，变化在于positions顶点坐标数组和colors颜色数组；
     
@@ -73,11 +73,11 @@
     
 
 #### 3.使用thinkgl画点：在n个点中自由选择任意个点绘制并设置其大小    
-+   demo3: https://thinkia.github.io/thinkgl/example/tutorial/point/point_3.html
+ demo3: https://thinkia.github.io/thinkgl/example/tutorial/point/point_3.html
 
-+   与demo2相比第一个点更小了，第二个点未绘制
-    
-    
+
+     与demo2相比第一个点更小了，第二个点未绘制
+      
      这里介绍下drawPoints参数
      
      iaWorld.drawPoints( size,offset,count)
@@ -108,4 +108,4 @@
 
 + 随机爬行的monster:  
 
-  https://thinkia.github.io/thinkgl/example/tutorial/point/point_6_monster-animateBeta.html 
+   https://thinkia.github.io/thinkgl/example/tutorial/point/point_6_monster-animateBeta.html 

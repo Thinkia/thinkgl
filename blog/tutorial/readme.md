@@ -1,15 +1,18 @@
 ####  about thinkgl               
-+ 愿景     
+ 愿景     
+
 
       我希望thinkgl只需要传入顶点和颜色，调用画点，线，三角面的方法即可绘制所有有趣的三维图形。
                  
                                                                 --2019.6.27   thinkia
 
-+ 什么是thinkgl？
+ 什么是thinkgl？
   
-   thinkgl 是由thinkia写的一个webgl库
+  
+     thinkgl 是由thinkia写的一个webgl库
 
-+  为什么要写thinkgl?
+  为什么要写thinkgl?
+
 
        目前已有three.js,babylon.js等主流webgl库；国内也有蛮好的库比如claygl,G3D,Hilo3d,他们的作者都是很棒很有趣的人；
        
@@ -23,7 +26,8 @@
       
        分享一下摸象的过程和一些蒲扇的细节；
        
-+  和其他的webgl库有什么区别？
+  和其他的webgl库有什么区别？
+      
       
        并没有本质区别。都是对webgl API的封装只是形式和方法不一样；比如：主流框架都是喜欢用scene,camera这样的概念来描绘
        
@@ -33,7 +37,8 @@
        
        眼睛action.eyes.blink( fov ,near ,far ,aspect); 它的本质其实还是改变投影矩阵，只是在thinkgl里面换了一种说法而已; 
 
-+  thinkgl 现在能够直接用于项目开发吗？
+   thinkgl 现在能够直接用于项目开发吗？
 
-   很多功能都只是针对我目前的项目而开发。暂时是不建议的，用于学习交流还是可以的；
+
+     很多功能都只是针对我目前的项目而开发。暂时是不建议的，用于学习交流还是可以的；
      
