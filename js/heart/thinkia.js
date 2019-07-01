@@ -854,6 +854,36 @@
 
          },
 
+         updateMat4:function( updateEyes=false,updateView=true ){
+
+             let gl = ia.world.gl;
+             let programInfo = ia.world.programInfo;
+
+             // u :uniform   pMat: 投影矩阵
+             let upMat = ia.eyes.mat4;
+
+             // u:uniform  mvMat : mv矩阵
+             let umvMat = ia.view.mat4;
+
+             gl.useProgram(programInfo.program);
+
+             if( updateEyes)
+             {
+                 gl.uniformMatrix4fv(
+                     programInfo.uniformLocations.projectionMatrix,
+                     false,
+                     upMat);
+             }
+
+             if( updateView)
+             {
+                 gl.uniformMatrix4fv(
+                     programInfo.uniformLocations.modelViewMatrix,
+                     false,
+                     umvMat);
+             }
+         },
+
          clearColor:function(){
              let gl = ia.world.gl;
 

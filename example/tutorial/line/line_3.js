@@ -41,6 +41,8 @@ function main() {
         ia.action.view.rotate([0,0,-1],2*Math.PI/180);
 
         iaWorld.helloIaWorld( buffers );
+
+
         iaWorld.drawLines();
 
         requestAnimationFrame(render)
