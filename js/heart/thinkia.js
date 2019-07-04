@@ -267,7 +267,7 @@
                      // Tell the shader we bound the texture to texture unit 0
                      gl.uniform1i(ia.world.programInfo.uniformLocations.uSampler, 0);
 
-                      gl.drawElements(gl.TRIANGLES,4,gl.UNSIGNED_SHORT,0);
+                     gl.drawElements(gl.TRIANGLES,4,gl.UNSIGNED_SHORT,0);
 
                  }
              },
