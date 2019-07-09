@@ -86,7 +86,7 @@ function main() {
 
     function render() {
 
-        ia.action.view.rotate([0,1,1],1*Math.PI/180)
+        ia.action.view.rotate([0,1,1],1*Math.PI/180);
 
         iaWorld.helloIaWorld( buffers );
         times++;

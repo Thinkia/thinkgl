@@ -1358,6 +1358,7 @@
                 },
 
                 //  求得经过旋转变换后的三维坐标
+
                 applyMat4:function ( vec ,mat4 ) {
 
                     let temVec = [vec[0],vec[1],vec[2] ];

@@ -10,7 +10,7 @@ let ia = Ia();
 
 let iaWorld = ia.world;
 
-ia.action.view.jump([0,0,-5])
+ia.action.view.jump([0,0,-5]);
 
 let positions = [
 
@@ -26,7 +26,7 @@ let colors = [
     1.0,0.0,0.0,1.0,   // 红 red
     1.0,0.0,0.0,1.0,   // 红 red
 
-]
+];
 
 main();
 

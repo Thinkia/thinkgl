@@ -141,9 +141,8 @@ main();
 
 function main() {
 
-
     // 使用texture着色
-    ia.colorful.useTexture() ;
+    ia.colorful.useTexture();
 
     iaWorld.initIaWorld();
 
