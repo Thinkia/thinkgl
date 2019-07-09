@@ -2,7 +2,7 @@
 
      iaWorld.drawLines( way，offset,count ) 
      
-     默认参数way == 1，offset=0,count==n( 顶点总数 )
+     默认参数way == 1，offset==0,count==n( 顶点总数 )
      
      way的可传参数有 1 ，2，3分别表示
      
