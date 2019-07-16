@@ -53,6 +53,7 @@ function main() {
         iaWorld.helloIaWorld( buffers );
         iaWorld.drawTriangle();
         requestAnimationFrame( render)
+
     }
 
     function setFont() {
