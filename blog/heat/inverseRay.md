@@ -21,4 +21,27 @@
     
             screen.y =  window.innerHeight*( 1-vec3[1] )/2;
             
-            
+ 
+#### 那么反过来二维坐标怎么转三维？（射线）
+
+demo: https://thinkia.github.io/thinkgl/example/test/rayIa.html
+
+    1.首先获取屏幕点击的坐标 event.clientX 和 event.clientY
+    
+    2.预设z为0.5 
+     
+    let x =( event.clientX / window.innerWidth ) * 2 - 1;
+    let y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    let vec = [ x,y,0.5 ];
+      
+    3.乘投影矩阵的逆 获取 三维向量       
+    
+    ia.thinkMath.vec3.applyMat4( vec,inversePMat  )   
+    
+    4.将射线与平面做相交计算，计算出交点;
+    
+    ia.thinkMath.vec3.intersectionLinePlane()
+    
+    
+    
+       
