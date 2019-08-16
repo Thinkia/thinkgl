@@ -33,6 +33,7 @@
                 cell:[1,0,0],
 
             },
+            quaternion:[0,0,0,1],
             isOpen : false,
 
         };
@@ -1211,6 +1212,64 @@
                     te[ 15 ] = ( n12 * n23 * n31 - n13 * n22 * n31 + n13 * n21 * n32 - n11 * n23 * n32 - n12 * n21 * n33 + n11 * n22 * n33 ) * detInv;
 
                     return te;
+                },
+
+                // 待验证
+                lookAt:function ( mat4, eye,target,up ) {
+
+                    let te = mat4;
+
+                    let z =[
+                        eye[0]-target[0],
+                        eye[1]-target[1],
+                        eye[2]-target[2],
+                    ]
+                    // eye 与 target 在同一坐标
+                    if(z[0]===0&&z[1]===0&&z[2]===0 )
+                    {
+                        z[2] = 1;
+                    }
+
+                    let x =[
+                        up[0]-z[0],
+                        up[1]-z[1],
+                        up[2]-z[2],
+                    ]
+
+                    if ( x[0]===0&&x[1]===0&&x[2]===0 ) {
+
+                        // up and z are parallel
+
+                        if ( Math.abs( up[2] ) === 1 ) {
+
+                            z[0] += 0.0001;
+
+                        } else {
+
+                            z[2] += 0.0001;
+
+                        }
+
+                        z.normalize();
+                        x =[
+                            up[0]-z[0],
+                            up[1]-z[1],
+                            up[2]-z[2],
+                        ]
+
+                    }
+
+                    x.normalize();
+                    let y =[
+                        z[0]-x[0],
+                        z[1]-x[1],
+                        z[2]-x[2],
+                    ]
+
+                    te[ 0 ] = x[0]; te[ 4 ] = y[0]; te[ 8 ] = z[0];
+                    te[ 1 ] = x[1]; te[ 5 ] = y[1]; te[ 9 ] = z[1];
+                    te[ 2 ] = x[2]; te[ 6 ] = y[2]; te[ 10 ] = z[2];
+
                 }
 
 

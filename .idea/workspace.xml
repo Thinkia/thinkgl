@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/thinkia/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/thinkia/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/heart/thinkia.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/heart/thinkia.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,38 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/helloIa.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3525">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/lookIa.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/rayIa.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2900">
-              <caret line="116" column="60" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/test/rotateIa.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/test/simpleCube.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,11 +51,71 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/text/text_1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
               <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/thinkia/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="125">
+                <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="1272" column="17" lean-forward="true" selection-start-line="1272" selection-start-column="17" selection-end-line="1272" selection-end-column="17" />
+              <folding>
+                <element signature="e#29847#31152#0" />
+                <element signature="e#31621#34033#0" />
+                <element signature="e#31844#32206#0" />
+                <element signature="e#34087#36213#0" />
+                <element signature="e#36261#39775#0" />
+                <element signature="e#36410#36555#0" />
+                <element signature="e#40526#40712#0" />
+                <element signature="e#40012#41174#0" />
+                <element signature="e#41086#42010#0" />
+                <element signature="e#42116#42871#0" />
+                <element signature="e#42959#43336#0" />
+                <element signature="e#43464#43762#0" />
+                <element signature="e#43842#45152#0" />
+                <element signature="e#45240#45638#0" />
+                <element signature="e#45658#45814#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/tutorial/line.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="294">
+                <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -202,7 +232,6 @@
         <option value="$PROJECT_DIR$/example/tutorial/line/line_4.html" />
         <option value="$PROJECT_DIR$/example/tutorial/line/line_4.js" />
         <option value="$PROJECT_DIR$/example/tutorial/triangle/triangle_1.js" />
-        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
         <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_1_cube.js" />
         <option value="$PROJECT_DIR$/example/tutorial/geometry/geo_2_cube.js" />
         <option value="$PROJECT_DIR$/blog/tutorial/line.md" />
@@ -210,10 +239,11 @@
         <option value="$PROJECT_DIR$/example/tutorial/text/text_1.js" />
         <option value="$PROJECT_DIR$/example/tutorial/triangle/triangle_6_monster.html" />
         <option value="$PROJECT_DIR$/example/tutorial/triangle/triangle_6_monster.js" />
-        <option value="$PROJECT_DIR$/blog/thinkia/readme.md" />
         <option value="$PROJECT_DIR$/blog/thinkia/2019.07/shanghai.md" />
         <option value="$PROJECT_DIR$/blog/heat/inverseRay.md" />
         <option value="$PROJECT_DIR$/example/test/walkIa.js" />
+        <option value="$PROJECT_DIR$/blog/thinkia/readme.md" />
+        <option value="$PROJECT_DIR$/js/heart/thinkia.js" />
       </list>
     </option>
   </component>
@@ -223,11 +253,11 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="419" />
+    <option name="y" value="71" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -240,6 +270,23 @@
             <path>
               <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
               <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="thinkia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
@@ -264,6 +311,12 @@
               <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="thinkgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thinkgl" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="heart" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -277,7 +330,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3D-boilerplate" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -404,12 +457,13 @@
       <workItem from="1563431170037" duration="599000" />
       <workItem from="1563498940687" duration="3924000" />
       <workItem from="1563759900796" duration="599000" />
-      <workItem from="1565570909847" duration="618000" />
+      <workItem from="1565570909847" duration="1662000" />
+      <workItem from="1565921302879" duration="1348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411424000" />
+    <option name="totallyTimeSpent" value="413816000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -421,9 +475,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="419" y="71" width="1386" height="788" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19568452" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15356083" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,8 +489,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.3286334" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.78714436" weight="0.37744033" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" visible="true" weight="0.19815668" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.78714436" weight="0.37634408" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" visible="true" weight="0.082442746" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21285564" side_tool="true" weight="0.3449024" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -486,13 +541,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/line/line_5.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -667,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="1361" column="16" selection-start-line="1361" selection-start-column="16" selection-end-line="1361" selection-end-column="16" />
-          <folding>
-            <element signature="e#144#691#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/text/text_1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
@@ -759,26 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/thinkia/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="23" selection-start-column="23" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/tutorial/line.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="566">
-            <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/tutorial/triangle.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -823,24 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/tutorial/point.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2750">
-            <caret line="110" column="93" selection-start-line="98" selection-start-column="3" selection-end-line="110" selection-end-column="93" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/tutorial/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/test/walkIa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -866,6 +866,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/tutorial/point.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2750">
+            <caret line="110" column="93" selection-start-line="98" selection-start-column="3" selection-end-line="110" selection-end-column="93" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/tutorial/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/tutorial/line.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="294">
+            <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/thinkia/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="125">
+            <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/heart/thinkia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="1272" column="17" lean-forward="true" selection-start-line="1272" selection-start-column="17" selection-end-line="1272" selection-end-column="17" />
+          <folding>
+            <element signature="e#29847#31152#0" />
+            <element signature="e#31621#34033#0" />
+            <element signature="e#31844#32206#0" />
+            <element signature="e#34087#36213#0" />
+            <element signature="e#36261#39775#0" />
+            <element signature="e#36410#36555#0" />
+            <element signature="e#40526#40712#0" />
+            <element signature="e#40012#41174#0" />
+            <element signature="e#41086#42010#0" />
+            <element signature="e#42116#42871#0" />
+            <element signature="e#42959#43336#0" />
+            <element signature="e#43464#43762#0" />
+            <element signature="e#43842#45152#0" />
+            <element signature="e#45240#45638#0" />
+            <element signature="e#45658#45814#0" />
+          </folding>
         </state>
       </provider>
     </entry>
