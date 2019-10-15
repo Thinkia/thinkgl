@@ -23,7 +23,7 @@ let positions = [
 let colors = [
 
     1.0,0.0,0.0,1.0,   // 红 red
-    1.0,0.0,0.0,1.0,   // 红 red
+    1.0,0.0,0.0,0.0,   // 红 red
     1.0,0.0,0.0,1.0,   // 红 red
 
 ];
@@ -33,6 +33,9 @@ main();
 function main() {
 
     iaWorld.initIaWorld( );
+
+    iaWorld.gl.enable(iaWorld.gl.BLEND)
+    iaWorld.gl.blendFunc(iaWorld.gl.SRC_ALPHA, iaWorld.gl.ONE_MINUS_SRC_ALPHA);
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer( positions ,colors );
 
