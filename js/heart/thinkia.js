@@ -250,7 +250,6 @@
          },
          programInfo:{},
          gl:{
-
          },
          expand:{
 
@@ -351,6 +350,10 @@
          },
          program:{ },
          canvas:'',
+         blend2opacity: function() {
+             ia.world.gl.enable(ia.world.gl.BLEND);
+             ia.world.gl.blendFunc(ia.world.gl.SRC_ALPHA, ia.world.gl.ONE_MINUS_SRC_ALPHA);
+         },
             /**
              *
              * @param needClear    是否清理canvas
@@ -1469,7 +1472,7 @@
 
 
 
-                
+
             }
         };
 

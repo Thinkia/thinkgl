@@ -33,7 +33,7 @@ main();
 function main() {
 
     iaWorld.initIaWorld( );
-
+    // 开启混合  透明模式
     iaWorld.gl.enable(iaWorld.gl.BLEND)
     iaWorld.gl.blendFunc(iaWorld.gl.SRC_ALPHA, iaWorld.gl.ONE_MINUS_SRC_ALPHA);
 
