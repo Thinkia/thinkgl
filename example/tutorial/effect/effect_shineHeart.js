@@ -25,7 +25,7 @@ let shinePoint = {
 
 let n =500;
 
-let a = 0.1;
+let a = 0.08;
 
 // 桃心方程
 
@@ -45,8 +45,6 @@ for ( let i =1;i<n;i++)
 let times = 0;
 let maxTimes = heart.positions.length/2 -1
 
-let shineMaxNum = n/10
-let shineNum = 0
 
 main();
 
@@ -63,7 +61,6 @@ function main() {
 
   function render() {
     times++
-    shineNum++
     iaWorld.helloIaWorld( buffers,false );
     iaWorld.drawLines(2);
     shinePoint.positions.push(heart.positions[2*times ],heart.positions[2*times -1 ])
@@ -88,6 +85,4 @@ function main() {
     }
     requestAnimationFrame( render );
   }
-
-
 }

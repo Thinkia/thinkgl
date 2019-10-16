@@ -177,11 +177,8 @@ function main() {
                 if( rotateAngle >normalAngele )
                 iaWorld.drawTexture(i*12,6 );
 
-
             }
-
             requestAnimationFrame(render)
-
         }
 
     });
