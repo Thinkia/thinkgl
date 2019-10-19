@@ -62,7 +62,7 @@ function main() {
         let vec3 = ia.thinkMath.vec3.applyMat4([1.0,1.0,0.0],ia.view.mat4 );
 
         // 获取 投影变换后坐标
-        ia.thinkMath.vec3.applyMat4(vec3,ia.eyes.mat4 ) ;
+        ia.thinkMath.vec3.applyMat4(vec3,ia.eyes.mat4 );
 
         // 坐标换算(  -1 , 1)   因为 window 的宽高 刚好等于 canvas的宽高  ； 实际上要使用canvas的宽高才更合适;
         screen.x = window.innerWidth*(vec3[0] +1)/2;

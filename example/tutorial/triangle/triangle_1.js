@@ -41,7 +41,6 @@ function main() {
 
     iaWorld.helloIaWorld( buffers );
 
-    iaWorld.drawLines(3);
-
+    iaWorld.drawTriangle(3);
 
 }
