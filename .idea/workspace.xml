@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a254077-e3e2-479a-88e6-2b1a6864b225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/gifEffect.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/tutorial/texture/gifEffect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tutorial/texture/gifEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/tutorial/texture/gifEffect.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/tutorial/texture/gifEffect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="171">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -52,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/tutorial/texture/gifEffect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="61" column="36" lean-forward="true" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -214,8 +212,8 @@
         <option value="$PROJECT_DIR$/example/tutorial/text/text_1.js" />
         <option value="$PROJECT_DIR$/example/tutorial/ray/rayTest.html" />
         <option value="$PROJECT_DIR$/example/tutorial/triangle/triangle_1.js" />
-        <option value="$PROJECT_DIR$/example/tutorial/texture/gifEffect.html" />
         <option value="$PROJECT_DIR$/example/tutorial/ray/rayTest.js" />
+        <option value="$PROJECT_DIR$/example/tutorial/texture/gifEffect.html" />
         <option value="$PROJECT_DIR$/example/tutorial/texture/gifEffect.js" />
       </list>
     </option>
@@ -446,12 +444,12 @@
       <workItem from="1571453600561" duration="1836000" />
       <workItem from="1571501560387" duration="4752000" />
       <workItem from="1571555859991" duration="3280000" />
-      <workItem from="1571582131129" duration="2467000" />
+      <workItem from="1571582131129" duration="3503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="455046000" />
+    <option name="totallyTimeSpent" value="456082000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -478,7 +476,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.32718894" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.78714436" weight="0.04608295" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" weight="0.10752688" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49420443" visible="true" weight="0.48540705" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21285564" side_tool="true" weight="0.3449024" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -900,15 +898,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/texture/gifEffect.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="171">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/tutorial/texture/gifEffect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+        <state relative-caret-position="225">
+          <caret line="61" column="36" lean-forward="true" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
         </state>
       </provider>
     </entry>

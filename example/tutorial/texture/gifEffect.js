@@ -26,9 +26,6 @@ let square = {
 
   ],
 
-  // 纹理坐标
-  coord:[
-  ],
   // 三角面片顶点索引
   indices:[
     0,  1,  2,      0,  2,  3,
@@ -54,7 +51,7 @@ function main() {
 
   initUVArray()
 
-  buffers = iaWorld.buffer.textureBuffer.initBuffer( square.positions ,square.coord[0][0],square.indices );
+  buffers = iaWorld.buffer.textureBuffer.initBuffer( square.positions ,uvArray[0],square.indices );
 
   // 纹理加载完毕之后渲染
 
@@ -88,20 +85,16 @@ function main() {
 
   // 根据UV级别返回uv数组
   function initUVArray(num = lv ) {
-
     for(let i=0;i<num; i++) {
-      square.coord[i] =[]
       for(let j=0;j<num;j++) {
-        square.coord[i][j] = [
+        uvArray.push([
           j/num,(i+1)/num,
           (j+1)/num,(i+1)/num,
           (j+1)/num,i/num,
           j/num,i/num
-        ]
-        uvArray.push(square.coord[i][j])
+        ])
       }
     }
-
   }
 
 }
