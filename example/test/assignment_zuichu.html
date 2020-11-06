@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+
+<body>
+   <canvas width="570" height="570" id="my_Canvas"></canvas>
+
+   <script>
+      /*============= Creating a canvas =================*/
+      var canvas = document.getElementById('my_Canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      document.body.style.background = '#000';
+      document.body.style.overflow = 'hidden';
+      document.body.style.margin = '0';
+      gl = canvas.getContext('webgl2');
+
+      /*============ Defining and storing the geometry =========*/
+
+      // cube
+      var vertices = [
+         // back
+         -1, -1, -1,
+         1, -1, -1,
+         1, 1, -1,
+         -1, 1, -1,
+
+         // front
+         -1, -1, 1,
+         1, -1, 1,
+         1, 1, 1,
+         -1, 1, 1,
+
+         // left
+         -1, -1, -1,
+         -1, 1, -1,
+         -1, 1, 1,
+         -1, -1, 1,
+
+         // right
+         1, -1, -1,
+         1, 1, -1,
+         1, 1, 1,
+         1, -1, 1,
+
+         // top
+         -1, -1, -1,
+         -1, -1, 1,
+         1, -1, 1,
+         1, -1, -1,
+
+         // bot
+         -1, 1, -1,
+         -1, 1, 1,
+         1, 1, 1,
+         1, 1, -1,
+      ];
+
+      var colors = [
+         .5, 0, .7,
+         .5, 0, .7,
+         .5, 0, .7,
+         .5, 0, .7,
+
+         1, 1, 3,
+         1, 1, 3,
+         1, 1, 3,
+         1, 1, 3,
+
+         0, 0, 1,
+         0, 0, 1,
+         0, 0, 1,
+         0, 0, 1,
+
+         .99, 0, 0,
+         .99, 0, 0,
+         .99, 0, 0,
+         .99, 0, 0,
+
+         1, 1, 0,
+         1, 1, 0,
+         1, 1, 0,
+         1, 1, 0,
+
+         0, 1, 0,
+         0, 1, 0,
+         0, 1, 0,
+         0, 1, 0
+      ];
+
+      var indices = [
+         0, 1, 2,
+         0, 2, 3,
+
+         4, 5, 6,
+         4, 6, 7,
+
+         8, 9, 10,
+         8, 10, 11,
+
+         12, 13, 14,
+         12, 14, 15,
+
+         16, 17, 18,
+         16, 18, 19,
+
+         20, 21, 22,
+         20, 22, 23
+      ];
+
+      // 顶点数
+      let n = 800;
+
+      // 桃心缩放系数
+      let a = 0.5;
+
+      // 桃心方程
+      for (let i = 1; i < n; i++) {
+         let theta = i * 2.0 * Math.PI / n;
+         let x = 16 * Math.pow(Math.sin(theta), 3);
+         let y = 13 * Math.cos(theta) - 5 * Math.cos(2 * theta) - 2 * Math.cos(3 * theta) - Math.cos(4 * theta);
+         vertices.push(a * x);
+         vertices.push(a * y);
+         vertices.push(0);
+
+         colors.push(1);
+         colors.push(0);
+         colors.push(0);
+      }
+
+      // Create and store data into vertex buffer
+      var vertex_buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+
+      // Create and store data into color buffer
+      var color_buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, color_buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+
+      // Create and store data into index buffer
+      var index_buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_buffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+
+      /*=================== Shaders =========================*/
+      // 红色点不受Mmatrix影响
+      var vertCode = `
+            attribute vec3 position;
+            uniform mat4 Pmatrix;
+            uniform mat4 Vmatrix;
+            uniform mat4 Mmatrix;
+            attribute vec3 color;
+            varying vec3 vColor;
+            varying float scale;
+            void main(void) { 
+               
+            if(color.x == 1.0 && color.y == 0.0 && color.z == 0.0 ) {
+               gl_Position = Pmatrix*Vmatrix*vec4(position, 1.5);
+            }else {
+               gl_Position = Pmatrix*Vmatrix*Mmatrix*vec4(position, 1.);
+            }
+            gl_PointSize = 2.0;
+            vColor = color;
+         }`
+
+      var fragCode = `
+            precision mediump float;
+            varying vec3 vColor;
+            void main(void) {
+            gl_FragColor = vec4(vColor, 1.);
+         }`
+
+      var vertShader = gl.createShader(gl.VERTEX_SHADER);
+      gl.shaderSource(vertShader, vertCode);
+      gl.compileShader(vertShader);
+
+      var fragShader = gl.createShader(gl.FRAGMENT_SHADER);
+      gl.shaderSource(fragShader, fragCode);
+      gl.compileShader(fragShader);
+
+      var shaderProgram = gl.createProgram();
+      gl.attachShader(shaderProgram, vertShader);
+      gl.attachShader(shaderProgram, fragShader);
+      gl.linkProgram(shaderProgram);
+
+      /* ====== Associating attributes to vertex shader =====*/
+      var Pmatrix = gl.getUniformLocation(shaderProgram, "Pmatrix");
+      var Vmatrix = gl.getUniformLocation(shaderProgram, "Vmatrix");
+      var Mmatrix = gl.getUniformLocation(shaderProgram, "Mmatrix");
+
+      gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+      var position = gl.getAttribLocation(shaderProgram, "position");
+      gl.vertexAttribPointer(position, 3, gl.FLOAT, false, 0, 0);
+
+      // Position
+      gl.enableVertexAttribArray(position);
+      gl.bindBuffer(gl.ARRAY_BUFFER, color_buffer);
+      var color = gl.getAttribLocation(shaderProgram, "color");
+      gl.vertexAttribPointer(color, 3, gl.FLOAT, false, 0, 0);
+
+      // Color
+      gl.enableVertexAttribArray(color);
+      gl.useProgram(shaderProgram);
+
+      /*==================== MATRIX =====================*/
+
+      function get_projection(angle, a, zMin, zMax) {
+         var ang = Math.tan((angle * .5) * Math.PI / 180);
+         return [
+            0.5 / ang, 0, 0, 0,
+            0, 0.5 * a / ang, 0, 0,
+            0, 0, -(zMax + zMin) / (zMax - zMin), -1,
+            0, 0, (-2 * zMax * zMin) / (zMax - zMin), 0
+         ];
+      }
+
+      var proj_matrix = get_projection(90, canvas.width / canvas.height, 1, 100);
+
+      // get the ortho matrix
+      // TO BE DONE
+      function get_projectionOrtho(r, l, t, b, n, f) {
+         return [
+            2 / (r - l), 0, 0, (l + r) / (l - r),
+            0, 2 / (t - b), 0, (b + t) / (b - t),
+            0, 0, 1 / (f - n), n / (n - f),
+            0, 0, 0, 1
+         ]
+      }
+
+      // normalize vec3
+      function normalizeVec3(vec) {
+         let normaVec3 = [];
+         let length = Math.sqrt(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
+
+         if (length < 0.000001) return;
+
+         normaVec3[0] = vec[0] / length;
+         normaVec3[1] = vec[1] / length;
+         normaVec3[2] = vec[2] / length;
+         return normaVec3;
+      }
+
+      // cross 
+      function cross(x, z) {
+         let y = [];
+         y[0] = z[1] * x[2] - z[2] * x[1];
+         y[1] = z[2] * x[0] - z[0] * x[2];
+         y[2] = z[0] * x[1] - z[1] * x[0];
+         return y;
+      }
+      // dot
+      function dot(x, y) {
+         return x[0] * y[0] + x[1] * y[1] + x[2] * y[2];
+      }
+
+
+      // Look At function
+      // TO BE DONE
+      function get_viewMatrix(eye = [0, 0, 1], target = [0, 0, 0], up = [0, 1, 0]) {
+         let x = []
+         let y = []
+         let z = []
+         let mah;
+         // vec3 sub
+         for (let i = 0; i < 3; i++) {
+            z[i] = eye[i] - target[i];
+         }
+         // normalize z
+         z = normalizeVec3(z);
+
+         for (let i = 0; i < 3; i++) {
+            y[i] = up[i];
+         }
+
+         // x == y cross z
+         x = cross(y, z);
+
+         // y == z cross x
+
+         y = cross(z, x);
+
+         // normalize x
+         x = normalizeVec3(x);
+
+         // normalize y
+         y = normalizeVec3(y);
+
+         // 行主序
+         return [
+            x[0], x[1], x[2], -dot(x, eye),
+            y[0], y[1], y[2], -dot(y, eye),
+            z[0], z[1], z[2], -dot(z, eye),
+            0.0, 0.0, 0.0, 1.0
+         ]
+
+      }
+
+      var mov_matrix = [1, 0, 0, 0,
+         0, 1, 0, 0,
+         0, 0, 1, 0,
+         0, 0, 0, 1];
+
+      var view_matrix = [1, 0, 0, 0,
+         0, 1, 0, 0,
+         0, 0, 1, 0,
+         0, 0, 0, 1];
+
+      // translating z
+      view_matrix[14] = view_matrix[14] - 8;//zoom
+      /*==================== Rotation ====================*/
+      // TO BE DONE
+      function rotateZ(m, angle) {
+         return rotateVec3(m, [0, 0, 1], angle, false);
+      }
+      // TO BE DONE
+      function rotateX(m, angle) {
+         return rotateVec3(m, [1, 0, 0], angle, false);
+      }
+      // TO BE DONE
+      function rotateY(m, angle) {
+         return rotateVec3(m, [0, 1, 0], angle, false);
+      }
+
+      /**
+       * 绕任意向量旋转
+       * mat4: m矩阵
+       * vec: 转轴
+       * rad: 转的角度
+       * needNor: 是否将此向量归一化
+       * */
+      function rotateVec3(mat4, vec, rad, needNor = true) {
+         let normaVec3 = vec;
+
+         // vec is normalized?
+
+         //  如果传的是单位向量,  needNor 可以设置为false;   在一些反复计算中可以减少计算量 优化程序;
+
+         if (needNor) {
+
+            normaVec3 = normalizeVec3(vec);
+
+         }
+
+         // rotate
+         let s = Math.sin(rad);
+         let c = Math.cos(rad);
+         let t = 1 - c;
+
+         let a00 = mat4[0], a01 = mat4[1], a02 = mat4[2], a03 = mat4[3],
+            a10 = mat4[4], a11 = mat4[5], a12 = mat4[6], a13 = mat4[7],
+            a20 = mat4[8], a21 = mat4[9], a22 = mat4[10], a23 = mat4[11];
+
+         let b00 = normaVec3[0] * normaVec3[0] * t + c, b01 = normaVec3[1] * normaVec3[0] * t + normaVec3[2] * s, b02 = normaVec3[2] * normaVec3[0] * t - normaVec3[1] * s,
+            b10 = normaVec3[0] * normaVec3[1] * t - normaVec3[2] * s, b11 = normaVec3[1] * normaVec3[1] * t + c, b12 = normaVec3[2] * normaVec3[1] * t + normaVec3[0] * s,
+            b20 = normaVec3[0] * normaVec3[2] * t + normaVec3[1] * s, b21 = normaVec3[1] * normaVec3[2] * t - normaVec3[0] * s, b22 = normaVec3[2] * normaVec3[2] * t + c;
+
+         mat4[0] = a00 * b00 + a10 * b01 + a20 * b02;
+         mat4[1] = a01 * b00 + a11 * b01 + a21 * b02;
+         mat4[2] = a02 * b00 + a12 * b01 + a22 * b02;
+         mat4[3] = a03 * b00 + a13 * b01 + a23 * b02;
+
+         mat4[4] = a00 * b10 + a10 * b11 + a20 * b12;
+         mat4[5] = a01 * b10 + a11 * b11 + a21 * b12;
+         mat4[6] = a02 * b10 + a12 * b11 + a22 * b12;
+         mat4[7] = a03 * b10 + a13 * b11 + a23 * b12;
+
+         mat4[8] = a00 * b20 + a10 * b21 + a20 * b22;
+         mat4[9] = a01 * b20 + a11 * b21 + a21 * b22;
+         mat4[10] = a02 * b20 + a12 * b21 + a22 * b22;
+         mat4[11] = a03 * b20 + a13 * b21 + a23 * b22;
+      }
+
+      var render = function () {
+         // rotateX(mov_matrix, Math.PI / 4);
+         rotateVec3(mov_matrix, [1, 1, 1], Math.PI / 180);
+         gl.enable(gl.DEPTH_TEST);
+         gl.depthFunc(gl.LEQUAL);
+         gl.clearColor(0.0, 0.0, 0.0, 0.9);
+         gl.clearDepth(1.0);
+
+         gl.viewport(0.0, 0.0, canvas.width, canvas.height);
+         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+         gl.uniformMatrix4fv(Pmatrix, false, proj_matrix);
+         gl.uniformMatrix4fv(Vmatrix, false, view_matrix);
+         gl.uniformMatrix4fv(Mmatrix, false, mov_matrix);
+         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_buffer);
+         // 绘制立方体
+         gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+         // 绘制爱心
+         gl.drawArrays(gl.POINTS, indices.length + 1, vertices.length / 3 - 1)
+         requestAnimationFrame(render);
+      }
+      render()
+   </script>
+</body>
+
+</html>

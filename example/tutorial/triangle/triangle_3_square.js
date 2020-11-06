@@ -24,17 +24,30 @@ let positions = [
     0.0,2.0,
 
     4.0,0.0,
+    0.0,2.0,
+
+    4.0,0.0,
     4.0,2.0,
 
+    1.0,1.0,
+    0.0,1.0,
+    1.0,0.0,
 ];
 
 let colors = [
 
-    1.0,0.0,0.0,1.0,   //  red
-    1.0,0.0,0.0,1.0,   //  red
 
-    0.0,0.0,1.0,1.0,   //  blue
-    0.0,0.0,1.0,1.0,   //  blue
+    1.0,0.0,0.0,1.0,
+    1.0,0.0,0.0,1.0,
+    1.0,0.0,0.0,1.0,
+
+    1.0,0.0,0.0,1.0,
+    1.0,0.0,0.0,1.0,
+    1.0,0.0,0.0,1.0,
+
+    0.0,0.0,0.0,1.0,   //  blue
+    0.0,0.0,0.0,1.0,   //  blue
+    0.0,0.0,0.0,1.0,   //  blue
 
 ]
 
@@ -45,22 +58,25 @@ function main() {
 
 
     iaWorld.initIaWorld();
+    // 开启混合  透明模式
+    iaWorld.gl.enable(iaWorld.gl.BLEND)
+    iaWorld.gl.blendFunc(iaWorld.gl.SRC_ALPHA, iaWorld.gl.ONE_MINUS_SRC_ALPHA);
 
     let buffers = iaWorld.buffer.positionBuffer.initBuffer(positions, colors);
 
 
     iaWorld.helloIaWorld(buffers);
 
-    iaWorld.drawTriangle();
+    iaWorld.drawTriangle(1);
 
 
 
-    iaWorld2.initIaWorld(false);
-    let buffers2 = iaWorld2.buffer.positionBuffer.initBuffer(positions, colors);
-
-
-    iaWorld2.helloIaWorld(buffers2,false);
-
-    iaWorld2.drawTriangle();
+    // iaWorld2.initIaWorld(false);
+    // let buffers2 = iaWorld2.buffer.positionBuffer.initBuffer(positions, colors);
+    //
+    //
+    // iaWorld2.helloIaWorld(buffers2,false);
+    //
+    // iaWorld2.drawTriangle();
 
 }
